@@ -21,6 +21,17 @@
 		70A71DFA18DF549B0085F62D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 70A71DDC18DF549A0085F62D /* UIKit.framework */; };
 		70A71E0218DF549B0085F62D /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 70A71E0018DF549B0085F62D /* InfoPlist.strings */; };
 		70A71E0418DF549B0085F62D /* MusicRemoteControllerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 70A71E0318DF549B0085F62D /* MusicRemoteControllerTests.m */; };
+		70A71E0F18DF559D0085F62D /* PlayerModeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 70A71E0E18DF559D0085F62D /* PlayerModeViewController.m */; };
+		70A71E1218DF55A80085F62D /* RemoteModeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 70A71E1118DF55A80085F62D /* RemoteModeViewController.m */; };
+		70A71E1418DF565C0085F62D /* CoreBluetooth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 70A71E1318DF565C0085F62D /* CoreBluetooth.framework */; };
+		70A71E1618DF566E0085F62D /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 70A71E1518DF566E0085F62D /* MediaPlayer.framework */; };
+		70A71E1F18DF58330085F62D /* Next.png in Resources */ = {isa = PBXBuildFile; fileRef = 70A71E1818DF58330085F62D /* Next.png */; };
+		70A71E2018DF58330085F62D /* nonimage.png in Resources */ = {isa = PBXBuildFile; fileRef = 70A71E1918DF58330085F62D /* nonimage.png */; };
+		70A71E2118DF58330085F62D /* Play.png in Resources */ = {isa = PBXBuildFile; fileRef = 70A71E1A18DF58330085F62D /* Play.png */; };
+		70A71E2218DF58330085F62D /* Rev.png in Resources */ = {isa = PBXBuildFile; fileRef = 70A71E1B18DF58330085F62D /* Rev.png */; };
+		70A71E2318DF58330085F62D /* stop.png in Resources */ = {isa = PBXBuildFile; fileRef = 70A71E1C18DF58330085F62D /* stop.png */; };
+		70A71E2418DF58330085F62D /* VolDown.png in Resources */ = {isa = PBXBuildFile; fileRef = 70A71E1D18DF58330085F62D /* VolDown.png */; };
+		70A71E2518DF58330085F62D /* VolUp.png in Resources */ = {isa = PBXBuildFile; fileRef = 70A71E1E18DF58330085F62D /* VolUp.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +64,19 @@
 		70A71DFF18DF549B0085F62D /* MusicRemoteControllerTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "MusicRemoteControllerTests-Info.plist"; sourceTree = "<group>"; };
 		70A71E0118DF549B0085F62D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		70A71E0318DF549B0085F62D /* MusicRemoteControllerTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MusicRemoteControllerTests.m; sourceTree = "<group>"; };
+		70A71E0D18DF559D0085F62D /* PlayerModeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlayerModeViewController.h; sourceTree = "<group>"; };
+		70A71E0E18DF559D0085F62D /* PlayerModeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlayerModeViewController.m; sourceTree = "<group>"; };
+		70A71E1018DF55A80085F62D /* RemoteModeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RemoteModeViewController.h; sourceTree = "<group>"; };
+		70A71E1118DF55A80085F62D /* RemoteModeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RemoteModeViewController.m; sourceTree = "<group>"; };
+		70A71E1318DF565C0085F62D /* CoreBluetooth.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreBluetooth.framework; path = System/Library/Frameworks/CoreBluetooth.framework; sourceTree = SDKROOT; };
+		70A71E1518DF566E0085F62D /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
+		70A71E1818DF58330085F62D /* Next.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Next.png; sourceTree = "<group>"; };
+		70A71E1918DF58330085F62D /* nonimage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = nonimage.png; sourceTree = "<group>"; };
+		70A71E1A18DF58330085F62D /* Play.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Play.png; sourceTree = "<group>"; };
+		70A71E1B18DF58330085F62D /* Rev.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Rev.png; sourceTree = "<group>"; };
+		70A71E1C18DF58330085F62D /* stop.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = stop.png; sourceTree = "<group>"; };
+		70A71E1D18DF58330085F62D /* VolDown.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = VolDown.png; sourceTree = "<group>"; };
+		70A71E1E18DF58330085F62D /* VolUp.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = VolUp.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +84,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				70A71E1618DF566E0085F62D /* MediaPlayer.framework in Frameworks */,
+				70A71E1418DF565C0085F62D /* CoreBluetooth.framework in Frameworks */,
 				70A71DDB18DF549A0085F62D /* CoreGraphics.framework in Frameworks */,
 				70A71DDD18DF549A0085F62D /* UIKit.framework in Frameworks */,
 				70A71DD918DF549A0085F62D /* Foundation.framework in Frameworks */,
@@ -101,6 +127,8 @@
 		70A71DD718DF549A0085F62D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				70A71E1518DF566E0085F62D /* MediaPlayer.framework */,
+				70A71E1318DF565C0085F62D /* CoreBluetooth.framework */,
 				70A71DD818DF549A0085F62D /* Foundation.framework */,
 				70A71DDA18DF549A0085F62D /* CoreGraphics.framework */,
 				70A71DDC18DF549A0085F62D /* UIKit.framework */,
@@ -114,6 +142,10 @@
 			children = (
 				70A71DE718DF549A0085F62D /* AppDelegate.h */,
 				70A71DE818DF549A0085F62D /* AppDelegate.m */,
+				70A71E0D18DF559D0085F62D /* PlayerModeViewController.h */,
+				70A71E0E18DF559D0085F62D /* PlayerModeViewController.m */,
+				70A71E1018DF55A80085F62D /* RemoteModeViewController.h */,
+				70A71E1118DF55A80085F62D /* RemoteModeViewController.m */,
 				70A71DEA18DF549A0085F62D /* Main.storyboard */,
 				70A71DED18DF549A0085F62D /* ViewController.h */,
 				70A71DEE18DF549A0085F62D /* ViewController.m */,
@@ -126,6 +158,7 @@
 		70A71DDF18DF549A0085F62D /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				70A71E1718DF58330085F62D /* images */,
 				70A71DE018DF549A0085F62D /* MusicRemoteController-Info.plist */,
 				70A71DE118DF549A0085F62D /* InfoPlist.strings */,
 				70A71DE418DF549A0085F62D /* main.m */,
@@ -150,6 +183,20 @@
 				70A71E0018DF549B0085F62D /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		70A71E1718DF58330085F62D /* images */ = {
+			isa = PBXGroup;
+			children = (
+				70A71E1818DF58330085F62D /* Next.png */,
+				70A71E1918DF58330085F62D /* nonimage.png */,
+				70A71E1A18DF58330085F62D /* Play.png */,
+				70A71E1B18DF58330085F62D /* Rev.png */,
+				70A71E1C18DF58330085F62D /* stop.png */,
+				70A71E1D18DF58330085F62D /* VolDown.png */,
+				70A71E1E18DF58330085F62D /* VolUp.png */,
+			);
+			path = images;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -199,6 +246,14 @@
 				LastUpgradeCheck = 0510;
 				ORGANIZATIONNAME = "Yusuke Sato";
 				TargetAttributes = {
+					70A71DD418DF549A0085F62D = {
+						DevelopmentTeam = KT5UFMR857;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 0;
+							};
+						};
+					};
 					70A71DF518DF549B0085F62D = {
 						TestTargetID = 70A71DD418DF549A0085F62D;
 					};
@@ -229,7 +284,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				70A71DF118DF549A0085F62D /* Images.xcassets in Resources */,
+				70A71E2318DF58330085F62D /* stop.png in Resources */,
 				70A71DE318DF549A0085F62D /* InfoPlist.strings in Resources */,
+				70A71E2218DF58330085F62D /* Rev.png in Resources */,
+				70A71E2018DF58330085F62D /* nonimage.png in Resources */,
+				70A71E2418DF58330085F62D /* VolDown.png in Resources */,
+				70A71E2118DF58330085F62D /* Play.png in Resources */,
+				70A71E1F18DF58330085F62D /* Next.png in Resources */,
+				70A71E2518DF58330085F62D /* VolUp.png in Resources */,
 				70A71DEC18DF549A0085F62D /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -249,8 +311,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				70A71E1218DF55A80085F62D /* RemoteModeViewController.m in Sources */,
 				70A71DEF18DF549A0085F62D /* ViewController.m in Sources */,
 				70A71DE918DF549A0085F62D /* AppDelegate.m in Sources */,
+				70A71E0F18DF559D0085F62D /* PlayerModeViewController.m in Sources */,
 				70A71DE518DF549A0085F62D /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -333,7 +397,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 			};
@@ -365,7 +429,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};
@@ -376,9 +440,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "MusicRemoteController/MusicRemoteController-Prefix.pch";
 				INFOPLIST_FILE = "MusicRemoteController/MusicRemoteController-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -389,9 +455,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "MusicRemoteController/MusicRemoteController-Prefix.pch";
 				INFOPLIST_FILE = "MusicRemoteController/MusicRemoteController-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -456,6 +524,7 @@
 				70A71E0918DF549B0085F62D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		70A71E0A18DF549B0085F62D /* Build configuration list for PBXNativeTarget "MusicRemoteControllerTests" */ = {
 			isa = XCConfigurationList;
@@ -464,6 +533,7 @@
 				70A71E0C18DF549B0085F62D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
