@@ -12,7 +12,31 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    // Override point for customization after application launch.
+    UIStoryboard *storyboard;
+    NSString *storyBoardName;
+    
+    NSString *modelname = [[UIDevice currentDevice] model];
+    
+    NSLog(@"%@", modelname);
+    
+    CGRect r = [[UIScreen mainScreen] bounds];
+    NSLog(@"%f",r.size.height);
+    if(r.size.height == 480){
+        NSLog(@"Old iPhone");
+        storyBoardName = @"iPhone4";
+    }else{
+        NSLog(@"New iPhone");
+        storyBoardName = @"iPhone5";
+    }
+    
+    storyboard = [UIStoryboard storyboardWithName:storyBoardName bundle:nil];
+    
+    UIViewController *mainViewController = [storyboard instantiateInitialViewController];
+    
+    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen]bounds]];
+    self.window.rootViewController = mainViewController;
+    [self.window makeKeyAndVisible];
+    
     return YES;
 }
 							

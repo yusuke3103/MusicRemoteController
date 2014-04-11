@@ -7,7 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "NADView.h"
 
 @interface ViewController : UIViewController
+@property (weak, nonatomic) IBOutlet NADView *nadView;
 
 @end

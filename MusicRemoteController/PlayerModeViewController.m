@@ -19,7 +19,13 @@
     [super viewDidLoad];
 	_player = [MPMusicPlayerController iPodMusicPlayer];
     
+    if ([_player playbackState] == 0){
+        [_player setQueueWithQuery: [MPMediaQuery songsQuery]];
+    }
+    
     [self playerStateCheck];
+    
+    
     
     _vi_volume.backgroundColor = [UIColor clearColor];
     MPVolumeView *volumeView = [[MPVolumeView alloc] initWithFrame:_vi_volume.bounds];
@@ -89,7 +95,7 @@
     _lb_Artist.text = SongArtist;
     
     // アートワーク
-    UIImage *image = [SongArtwork imageWithSize:CGSizeMake(280.0f,280.0f)];
+    UIImage *image = [SongArtwork imageWithSize:CGSizeMake(200.0f,200.0f)];
     if (image == NULL){
         image = [UIImage imageNamed:@"nonimage.png"];
     }
@@ -145,6 +151,7 @@
 
 - (void) centralManager:(CBCentralManager *)central didDiscoverPeripheral:(CBPeripheral *)peripheral advertisementData:(NSDictionary *)advertisementData RSSI:(NSNumber *)RSSI
 {
+    NSLog(@"%@",RSSI);
     _peripheral = peripheral;
     [_centralManager stopScan];
     [_centralManager connectPeripheral:peripheral options:nil];
@@ -231,6 +238,7 @@
 - (void) playerStateCheck
 {
     int state = [_player playbackState];
+    NSLog(@"%d",state);
     if (state == 1){
         [_bt_Play setImage:[UIImage imageNamed:@"stop.png"] forState:UIControlStateNormal];
     }else{
