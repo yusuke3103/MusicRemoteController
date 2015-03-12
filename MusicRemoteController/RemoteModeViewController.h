@@ -23,12 +23,16 @@
 @property (weak, nonatomic) IBOutlet UIButton *bt_Play;
 @property (weak, nonatomic) IBOutlet UIButton *bt_Next;
 @property (weak, nonatomic) IBOutlet UIButton *bt_Prev;
+@property (weak, nonatomic) IBOutlet UIButton *bt_Up;
+@property (weak, nonatomic) IBOutlet UIButton *bt_Down;
 
 
 
 - (IBAction)bt_Play_Push:(id)sender;
 - (IBAction)bt_Next_Push:(id)sender;
 - (IBAction)bt_Prev_Push:(id)sender;
+- (IBAction)bt_Up_Push:(id)sender;
+- (IBAction)bt_Down_Push:(id)sender;
 
 
 

@@ -106,7 +106,7 @@
 - (void) handle_VolumeChange
 {
     NSLog(@"Volume Change");
-    NSLog(@"%@",_vi_volume);
+    NSLog(@"%f",[_player volume]);
 }
 
 
@@ -223,16 +223,36 @@
                 [_player skipToNextItem];
                 break;
             case 3: // VolUp
-                
+                [self setVolume:1];
                 break;
             case 4: // VolDown
-                
+                [self setVolume:0];
                 break;
             default:
                 NSLog(@"error");
                 break;
         }
     }
+}
+
+- (void) setVolume:(int)flg
+{
+    float vol = [_player volume];
+    switch (flg) {
+        case 1:
+            vol += 0.0625;
+            break;
+        case 0:
+            vol -= 0.0625;
+            break;
+    }
+    
+    if (vol <= 0.0 ) {
+        vol = 0.0;
+    }else if (vol >= 1.0){
+        vol = 1.0;
+    }
+    [_player setVolume:vol];
 }
 
 - (void) playerStateCheck

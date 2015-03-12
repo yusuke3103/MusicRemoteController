@@ -101,4 +101,16 @@
     BOOL didSendValue = [_peripheralManager updateValue:updatedValue forCharacteristic:_characteristic onSubscribedCentrals:nil];
 }
 
+- (IBAction)bt_Up_Push:(id)sender {
+    uint update = 3;
+    NSData *updatedValue = [NSData dataWithBytes:&update length:sizeof(update)];
+    BOOL didSendValue = [_peripheralManager updateValue:updatedValue forCharacteristic:_characteristic onSubscribedCentrals:nil];
+}
+
+- (IBAction)bt_Down_Push:(id)sender {
+    uint update = 4;
+    NSData *updatedValue = [NSData dataWithBytes:&update length:sizeof(update)];
+    BOOL didSendValue = [_peripheralManager updateValue:updatedValue forCharacteristic:_characteristic onSubscribedCentrals:nil];
+}
+
 @end
