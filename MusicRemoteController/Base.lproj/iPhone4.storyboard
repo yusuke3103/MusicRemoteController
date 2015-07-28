@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14D87h" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="x4P-V2-Cwr">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14F6a" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="x4P-V2-Cwr">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
     </dependencies>
     <scenes>
         <!--Navigation Controller-->
@@ -107,7 +107,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="bt_Play_Push:" destination="6gA-4L-8hr" eventType="touchUpInside" id="h8g-Gp-LGU"/>
+                                    <action selector="btnPlayPush:" destination="6gA-4L-8hr" eventType="touchUpInside" id="dHR-Da-grm"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="z6B-iM-Li6">
@@ -116,16 +116,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="bt_Next_Push:" destination="6gA-4L-8hr" eventType="touchUpInside" id="Uvr-pG-BvY"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pgp-Fh-I3x">
-                                <rect key="frame" x="78" y="358" width="30" height="30"/>
-                                <state key="normal" title="Button" image="Rev.png">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="bt_Prev_Push:" destination="6gA-4L-8hr" eventType="touchUpInside" id="naG-Y7-rep"/>
+                                    <action selector="btnNextPush:" destination="6gA-4L-8hr" eventType="touchUpInside" id="Bt4-A0-lqp"/>
                                 </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="nonimage.png" translatesAutoresizingMaskIntoConstraints="NO" id="ier-cy-I0h">
@@ -134,25 +125,25 @@
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="🔈" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fxC-yb-D78">
                                 <rect key="frame" x="17" y="397" width="42" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="🔊" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3vl-Us-tt6">
                                 <rect key="frame" x="257" y="396" width="42" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="曲名" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RPf-Id-1D7">
                                 <rect key="frame" x="20" y="305" width="280" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="アーティスト名" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ssa-Jk-EVL">
                                 <rect key="frame" x="20" y="329" width="279" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hNg-fI-cyF">
@@ -167,18 +158,27 @@
                                     <userDefinedRuntimeAttribute type="string" keyPath="nendSpotID" value="155697"/>
                                 </userDefinedRuntimeAttributes>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pgp-Fh-I3x">
+                                <rect key="frame" x="78" y="358" width="30" height="30"/>
+                                <state key="normal" title="Button" image="Rev.png">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="btnPrevPush:" destination="6gA-4L-8hr" eventType="touchUpInside" id="gib-Pz-wqC"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" title="プレイヤーモード" id="uYW-nY-IDl"/>
                     <connections>
-                        <outlet property="bt_Next" destination="z6B-iM-Li6" id="Gv7-av-0fs"/>
-                        <outlet property="bt_Play" destination="BQg-3K-dcN" id="1JD-rc-k1L"/>
-                        <outlet property="bt_Prev" destination="pgp-Fh-I3x" id="Aya-L3-O3g"/>
-                        <outlet property="im_Artwork" destination="ier-cy-I0h" id="sUE-hC-UOd"/>
-                        <outlet property="lb_Artist" destination="ssa-Jk-EVL" id="0fx-Q5-6w6"/>
-                        <outlet property="lb_Title" destination="RPf-Id-1D7" id="RFE-T2-QF2"/>
-                        <outlet property="vi_volume" destination="hNg-fI-cyF" id="x57-rd-Q3R"/>
+                        <outlet property="barVolume" destination="hNg-fI-cyF" id="NqR-Mx-Zvn"/>
+                        <outlet property="btnNext" destination="z6B-iM-Li6" id="HUO-D9-8o4"/>
+                        <outlet property="btnPlay" destination="BQg-3K-dcN" id="cPL-c5-PMD"/>
+                        <outlet property="btnPrev" destination="pgp-Fh-I3x" id="Y8Q-Ho-Y5F"/>
+                        <outlet property="imageArtwork" destination="ier-cy-I0h" id="kaP-re-vip"/>
+                        <outlet property="lblArtist" destination="ssa-Jk-EVL" id="l7g-uJ-d7g"/>
+                        <outlet property="lblTitle" destination="RPf-Id-1D7" id="Gcw-oq-Si5"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VhJ-ne-NDZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -188,7 +188,7 @@
         <!--リモコンモード-->
         <scene sceneID="7OZ-x0-unD">
             <objects>
-                <viewController id="dYY-7C-0A6" customClass="RemotoModeViewController" sceneMemberID="viewController">
+                <viewController id="dYY-7C-0A6" customClass="RemoteModeViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="cUe-Ju-BNB"/>
                         <viewControllerLayoutGuide type="bottom" id="D7a-m6-vrn"/>
@@ -203,7 +203,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="bt_Play_Push:" destination="dYY-7C-0A6" eventType="touchUpInside" id="fae-B8-jfU"/>
+                                    <action selector="btnPlay:" destination="dYY-7C-0A6" eventType="touchUpInside" id="rV2-BV-YmP"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="abv-es-0rD">
@@ -212,7 +212,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="bt_Next_Push:" destination="dYY-7C-0A6" eventType="touchUpInside" id="Kp3-KY-7nj"/>
+                                    <action selector="btnNextPush:" destination="dYY-7C-0A6" eventType="touchUpInside" id="GcH-CD-aSW"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zf7-xv-vn6">
@@ -221,7 +221,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="bt_Prev_Push:" destination="dYY-7C-0A6" eventType="touchUpInside" id="naL-0B-hQa"/>
+                                    <action selector="btnPrevPush:" destination="dYY-7C-0A6" eventType="touchUpInside" id="B1n-nk-trR"/>
                                 </connections>
                             </button>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="67p-qf-4bs" customClass="NADView">
@@ -232,15 +232,28 @@
                                     <userDefinedRuntimeAttribute type="string" keyPath="nendSpotID" value="155697"/>
                                 </userDefinedRuntimeAttributes>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sHl-Ut-4Aa">
+                                <rect key="frame" x="189" y="302" width="30" height="30"/>
+                                <state key="normal" title="Button" image="VolUp.png">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="btnUpPush:" destination="dYY-7C-0A6" eventType="touchUpInside" id="HdJ-zc-wUI"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="G9B-5G-z48">
+                                <rect key="frame" x="101" y="302" width="30" height="30"/>
+                                <state key="normal" title="Button" image="VolDown.png">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="btnDownPush:" destination="dYY-7C-0A6" eventType="touchUpInside" id="iWg-xQ-rLE"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" title="リモコンモード" id="AbE-Ut-OEo"/>
-                    <connections>
-                        <outlet property="bt_Next" destination="abv-es-0rD" id="vWN-7W-qfK"/>
-                        <outlet property="bt_Play" destination="ajC-CV-Pfg" id="ctr-Pw-Jeq"/>
-                        <outlet property="bt_Prev" destination="Zf7-xv-vn6" id="2F8-cK-Xkl"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WoW-NG-nKF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -251,6 +264,8 @@
         <image name="Next.png" width="30" height="30"/>
         <image name="Play.png" width="30" height="30"/>
         <image name="Rev.png" width="30" height="30"/>
+        <image name="VolDown.png" width="30" height="30"/>
+        <image name="VolUp.png" width="30" height="30"/>
         <image name="nonimage.png" width="200" height="200"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">

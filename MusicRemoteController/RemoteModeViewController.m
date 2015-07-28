@@ -3,114 +3,135 @@
 //  MusicRemoteController
 //
 //  Created by Yusuke Sato on 2014/03/24.
+//  UPDATE VERSION 1.2.0 2015/07/26.
 //  Copyright (c) 2014年 Yusuke Sato. All rights reserved.
 //
 
 #import "RemoteModeViewController.h"
 
-@interface RemotoModeViewController ()
+#define SERVICE_UUID_STRING @"7865087B-D9D0-423A-9C80-042D9BBEA524"
+#define CHARACTERISTIC_UUID_STRING @"608072DD-6825-4293-B3E7-324CF0B5CA08"
 
-@end
+@implementation RemoteModeViewController
 
-@implementation RemotoModeViewController
-
-- (void)viewDidLoad
+-(void)viewDidAppear:(BOOL)animated
 {
-    [super viewDidLoad];
+    [super viewDidAppear:NO];
     
-    St_Service = @"7865087B-D9D0-423A-9C80-042D9BBEA524";
-    St_Characteristic = @"608072DD-6825-4293-B3E7-324CF0B5CA08";
     
-    UUID_Service = [CBUUID UUIDWithString:St_Service];
-    UUID_Characteristic = [CBUUID UUIDWithString:St_Characteristic];
-    
-    _peripheralManager = [[CBPeripheralManager alloc] initWithDelegate:self queue:nil];
-    
+    self.serviceUUID = [CBUUID UUIDWithString:SERVICE_UUID_STRING];
+    self.characteristicUUID = [CBUUID UUIDWithString:CHARACTERISTIC_UUID_STRING];
+    // セントラルマネージャ初期化
+    self.centralManager = [[CBCentralManager alloc] initWithDelegate:self queue:nil];
 }
 
-//==========================
-// CoreBluetooth Programing
-//==========================
 
-- (void) peripheralManagerDidUpdateState:(CBPeripheralManager *)peripheral
+// ==========================
+//      CoreBluetooth
+// ==========================
+-(void)centralManagerDidUpdateState:(CBCentralManager *)central
 {
-    switch (peripheral.state) {
-        case CBPeripheralManagerStatePoweredOn:
-            [self setUpService];
-            break;
-            
-        default:
-            break;
+    NSLog(@"centralManagerDidUpdateState");
+    
+    if (central.state == CBCentralManagerStatePoweredOn) {
+        [central scanForPeripheralsWithServices:@[self.serviceUUID] options:nil];
     }
 }
 
-- (void) setUpService
+-(void) centralManager:(CBCentralManager *)central didDiscoverPeripheral:(CBPeripheral *)peripheral advertisementData:(NSDictionary *)advertisementData RSSI:(NSNumber *)RSSI
 {
-    /*
-     _characteristic = [[CBMutableCharacteristic alloc] initWithType:UUID_Characteristic properties:CBCharacteristicPropertyIndicate value:nil permissions:CBAttributePermissionsReadable];
-     */
+    NSLog(@"didDiscoverPeripheral");
     
-    _characteristic = [[CBMutableCharacteristic alloc] initWithType:UUID_Characteristic properties:CBCharacteristicPropertyIndicateEncryptionRequired value:nil permissions:CBAttributePermissionsReadEncryptionRequired];
-    
-    _service = [[CBMutableService alloc] initWithType:UUID_Service primary:YES];
-    
-    [_service setCharacteristics:@[_characteristic]];
-    
-    [_peripheralManager addService:_service];
+    self.peripheral = peripheral;
+    [central stopScan];
+    NSLog(@"%@",peripheral);
+    [central connectPeripheral:peripheral options:nil];
 }
 
-- (void) peripheralManager:(CBPeripheralManager *)peripheral didAddService:(CBService *)service error:(NSError *)error
+-(void) centralManager:(CBCentralManager *)central didConnectPeripheral:(CBPeripheral *)peripheral
+{
+    NSLog(@"didConnectPeripheral");
+    
+    self.peripheral.delegate = self;
+    [self.peripheral discoverServices:@[self.serviceUUID]];
+}
+
+-(void) peripheral:(CBPeripheral *)peripheral didDiscoverServices:(NSError *)error
+{
+    NSLog(@"didDiscoverServices");
+    for (CBService *service in peripheral.services) {
+        if ([service.UUID isEqual:self.serviceUUID]) {
+            [peripheral discoverCharacteristics:@[self.characteristicUUID] forService:service];
+        }
+    }
+}
+-(void) peripheral:(CBPeripheral *)peripheral didDiscoverCharacteristicsForService:(CBService *)service error:(NSError *)error
+{
+    
+    if ([service.UUID isEqual:self.serviceUUID]) {
+        for (CBCharacteristic *characteristic in service.characteristics) {
+            if ([characteristic.UUID isEqual:self.characteristicUUID]) {
+                self.characteristic = characteristic;
+                [self.peripheral readValueForCharacteristic:self.characteristic];
+                //[peripheral setNotifyValue:YES forCharacteristic:characteristic];
+            }
+        }
+    }
+}
+
+
+- (IBAction)btnPlay:(id)sender {
+    uint val = 0;
+    NSData *data = [NSData dataWithBytes:&val length:1];
+    [self.peripheral writeValue:data forCharacteristic:self.characteristic type:CBCharacteristicWriteWithResponse];
+}
+
+- (IBAction)btnPrevPush:(id)sender {
+    uint val = 2;
+    NSData *data = [NSData dataWithBytes:&val length:1];
+    [self.peripheral writeValue:data forCharacteristic:self.characteristic type:CBCharacteristicWriteWithResponse];
+}
+
+- (IBAction)btnNextPush:(id)sender {
+    uint val = 1;
+    NSData *data = [NSData dataWithBytes:&val length:1];
+    [self.peripheral writeValue:data forCharacteristic:self.characteristic type:CBCharacteristicWriteWithResponse];
+}
+
+
+- (IBAction)btnUpPush:(id)sender {
+    uint val = 3;
+    NSData *data = [NSData dataWithBytes:&val length:1];
+    [self.peripheral writeValue:data forCharacteristic:self.characteristic type:CBCharacteristicWriteWithResponse];
+}
+
+- (IBAction)btnDownPush:(id)sender {
+    uint val = 4;
+    NSData *data = [NSData dataWithBytes:&val length:1];
+    [self.peripheral writeValue:data forCharacteristic:self.characteristic type:CBCharacteristicWriteWithResponse];
+    
+}
+
+-(void) peripheral:(CBPeripheral *)peripheral didWriteValueForCharacteristic:(CBCharacteristic *)characteristic error:(NSError *)error
 {
     if (error) {
-        NSLog (@"Error:%@",[error localizedDescription]);
-    }else{
-        [_peripheralManager startAdvertising:@{CBAdvertisementDataLocalNameKey:@"iPhone",CBAdvertisementDataServiceUUIDsKey:@[UUID_Service]}];
+        NSLog(@"Write失敗...error:%@", error);
+        return;
     }
-}
-
-- (void) peripheralManager:(CBPeripheralManager *)peripher central:(CBCentral *)central didSubscribeToCharacteristic:(CBCharacteristic *)characteristic
-{
     
+    NSLog(@"Write成功！");
 }
 
-
-
-- (void)didReceiveMemoryWarning
+- (void) peripheral:(CBPeripheral *)peripheral
+didUpdateValueForCharacteristic:(CBCharacteristic *)characteristic
+              error:(NSError *)error
 {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+    if (error) {
+        NSLog(@"Failed... error: %@", error);
+        return;
+    }
+    
+    NSLog(@"Succeeded！ service uuid:%@, characteristice uuid:%@, value%@",
+          characteristic.service.UUID, characteristic.UUID, characteristic.value);
 }
-
-
-
-- (IBAction)bt_Play_Push:(id)sender {
-    uint update = 0;
-    NSData *updatedValue = [NSData dataWithBytes:&update length:sizeof(update)];
-    BOOL didSendValue = [_peripheralManager updateValue:updatedValue forCharacteristic:_characteristic onSubscribedCentrals:nil];
-}
-
-- (IBAction)bt_Next_Push:(id)sender {
-    uint update = 1;
-    NSData *updatedValue = [NSData dataWithBytes:&update length:sizeof(update)];
-    BOOL didSendValue = [_peripheralManager updateValue:updatedValue forCharacteristic:_characteristic onSubscribedCentrals:nil];
-}
-
-- (IBAction)bt_Prev_Push:(id)sender {
-    uint update = 2;
-    NSData *updatedValue = [NSData dataWithBytes:&update length:sizeof(update)];
-    BOOL didSendValue = [_peripheralManager updateValue:updatedValue forCharacteristic:_characteristic onSubscribedCentrals:nil];
-}
-
-- (IBAction)bt_Up_Push:(id)sender {
-    uint update = 3;
-    NSData *updatedValue = [NSData dataWithBytes:&update length:sizeof(update)];
-    BOOL didSendValue = [_peripheralManager updateValue:updatedValue forCharacteristic:_characteristic onSubscribedCentrals:nil];
-}
-
-- (IBAction)bt_Down_Push:(id)sender {
-    uint update = 4;
-    NSData *updatedValue = [NSData dataWithBytes:&update length:sizeof(update)];
-    BOOL didSendValue = [_peripheralManager updateValue:updatedValue forCharacteristic:_characteristic onSubscribedCentrals:nil];
-}
-
 @end

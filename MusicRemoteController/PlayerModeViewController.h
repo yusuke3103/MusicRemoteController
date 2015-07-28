@@ -3,6 +3,7 @@
 //  MusicRemoteController
 //
 //  Created by Yusuke Sato on 2014/03/24.
+//  UPDATE VERSION 1.2.0 2015/07/26.
 //  Copyright (c) 2014年 Yusuke Sato. All rights reserved.
 //
 
@@ -10,39 +11,25 @@
 #import <CoreBluetooth/CoreBluetooth.h>
 #import <MediaPlayer/MediaPlayer.h>
 
-@interface PlayerModeViewController : UIViewController <CBCentralManagerDelegate>
-{
-    NSString *St_Service;
-    NSString *St_Characteristic;
-    CBUUID *UUID_Service;
-    CBUUID *UUID_Characteristic;
-}
-//==========================
-// MediaPlayer Programing
-//==========================
-@property MPMusicPlayerController *player;
+@interface PlayerModeViewController : UIViewController <CBPeripheralManagerDelegate>
+@property (strong, nonatomic) CBPeripheralManager *peripheralManager;
+@property (strong, nonatomic) CBMutableCharacteristic *characteristic;
+@property (strong, nonatomic) CBUUID *serviceUUID;
+@property (strong, nonatomic) CBUUID *characteristicUUID;
+
+@property (strong, nonatomic) MPMusicPlayerController *player;
+@property (strong, nonatomic) NSNotificationCenter *ncenter;
 @property BOOL isPlaying;
-@property NSNotificationCenter *ncenter;
 
+@property (weak, nonatomic) IBOutlet UIView *barVolume;
+@property (weak, nonatomic) IBOutlet UIImageView *imageArtwork;
+@property (weak, nonatomic) IBOutlet UILabel *lblTitle;
+@property (weak, nonatomic) IBOutlet UILabel *lblArtist;
+@property (weak, nonatomic) IBOutlet UIButton *btnPrev;
+@property (weak, nonatomic) IBOutlet UIButton *btnPlay;
+@property (weak, nonatomic) IBOutlet UIButton *btnNext;
 
-@property (weak, nonatomic) IBOutlet UILabel *lb_Artist;
-@property (weak, nonatomic) IBOutlet UILabel *lb_Title;
-@property (weak, nonatomic) IBOutlet UIImageView *im_Artwork;
-@property (weak, nonatomic) IBOutlet UIButton *bt_Prev;
-@property (weak, nonatomic) IBOutlet UIButton *bt_Play;
-@property (weak, nonatomic) IBOutlet UIButton *bt_Next;
-@property (weak, nonatomic) IBOutlet UIView *vi_volume;
-
-- (IBAction)bt_Prev_Push:(id)sender;
-- (IBAction)bt_Play_Push:(id)sender;
-- (IBAction)bt_Next_Push:(id)sender;
-
-
-
-//==========================
-// CoreBluetooth Programing
-//==========================
-@property (strong,nonatomic) CBCentralManager *centralManager;
-@property (strong,nonatomic) CBPeripheral *peripheral;
-@property (strong,nonatomic) NSMutableData *data;
+- (IBAction)btnPrevPush:(id)sender;
+- (IBAction)btnPlayPush:(id)sender;
+- (IBAction)btnNextPush:(id)sender;
 @end

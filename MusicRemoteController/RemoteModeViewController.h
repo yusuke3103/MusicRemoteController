@@ -3,37 +3,25 @@
 //  MusicRemoteController
 //
 //  Created by Yusuke Sato on 2014/03/24.
+//  UPDATE VERSION 1.2.0 2015/07/26.
 //  Copyright (c) 2014年 Yusuke Sato. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
 #import <CoreBluetooth/CoreBluetooth.h>
 
-@interface RemotoModeViewController : UIViewController
-{
-    NSString *St_Service;
-    NSString *St_Characteristic;
-    CBUUID *UUID_Service;
-    CBUUID *UUID_Characteristic;
-}
-@property (nonatomic,strong) CBPeripheralManager *peripheralManager;
-@property (nonatomic,strong) CBCharacteristic *characteristic;
-@property (nonatomic,strong) CBMutableService *service;
+@interface RemoteModeViewController : UIViewController <CBCentralManagerDelegate, CBPeripheralDelegate>
+@property (strong, nonatomic) CBCentralManager *centralManager;
+@property (strong, nonatomic) CBPeripheral *peripheral;
+@property (strong, nonatomic) CBCharacteristic *characteristic;
+@property (strong, nonatomic) CBUUID *serviceUUID;
+@property (strong, nonatomic) CBUUID *characteristicUUID;
 
-@property (weak, nonatomic) IBOutlet UIButton *bt_Play;
-@property (weak, nonatomic) IBOutlet UIButton *bt_Next;
-@property (weak, nonatomic) IBOutlet UIButton *bt_Prev;
-@property (weak, nonatomic) IBOutlet UIButton *bt_Up;
-@property (weak, nonatomic) IBOutlet UIButton *bt_Down;
-
-
-
-- (IBAction)bt_Play_Push:(id)sender;
-- (IBAction)bt_Next_Push:(id)sender;
-- (IBAction)bt_Prev_Push:(id)sender;
-- (IBAction)bt_Up_Push:(id)sender;
-- (IBAction)bt_Down_Push:(id)sender;
-
+- (IBAction)btnPlay:(id)sender;
+- (IBAction)btnPrevPush:(id)sender;
+- (IBAction)btnNextPush:(id)sender;
+- (IBAction)btnUpPush:(id)sender;
+- (IBAction)btnDownPush:(id)sender;
 
 
 

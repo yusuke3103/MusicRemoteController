@@ -3,83 +3,166 @@
 //  MusicRemoteController
 //
 //  Created by Yusuke Sato on 2014/03/24.
+//  UPDATE VERSION 1.2.0 2015/07/26.
 //  Copyright (c) 2014年 Yusuke Sato. All rights reserved.
 //
 
 #import "PlayerModeViewController.h"
+
+#define SERVICE_UUID_STRING @"7865087B-D9D0-423A-9C80-042D9BBEA524"
+#define CHARACTERISTIC_UUID_STRING @"608072DD-6825-4293-B3E7-324CF0B5CA08"
 
 @interface PlayerModeViewController ()
 @property CBUUID *uuid;
 @end
 
 @implementation PlayerModeViewController
-
-- (void)viewDidLoad
+-(void) viewDidLoad
 {
     [super viewDidLoad];
-	_player = [MPMusicPlayerController iPodMusicPlayer];
     
-    if ([_player playbackState] == 0){
-        [_player setQueueWithQuery: [MPMediaQuery songsQuery]];
+    // MPMediaPlayer
+    self.player = [MPMusicPlayerController iPodMusicPlayer];
+    
+    if ([self.player playbackState] == MPMusicPlaybackStateStopped){
+        [self.player setQueueWithQuery:[MPMediaQuery songsQuery]];
     }
     
-    [self playerStateCheck];
+    self.barVolume.backgroundColor = [UIColor clearColor];
+    MPVolumeView *volumeView = [[MPVolumeView alloc] initWithFrame:self.barVolume.bounds];
+    [self.barVolume addSubview:volumeView];
     
-    
-    
-    _vi_volume.backgroundColor = [UIColor clearColor];
-    MPVolumeView *volumeView = [[MPVolumeView alloc] initWithFrame:_vi_volume.bounds];
-    [_vi_volume addSubview:volumeView];
-    
-    _ncenter = [NSNotificationCenter defaultCenter];
-    [_ncenter addObserver:self selector:@selector(handle_PlaybackStateChange) name:MPMusicPlayerControllerPlaybackStateDidChangeNotification object:_player];
-    [_ncenter addObserver:self selector:@selector(handle_NowPlayingItemChanged) name:MPMusicPlayerControllerNowPlayingItemDidChangeNotification object:_player];
-    [_ncenter addObserver:self selector:@selector(handle_VolumeChange) name:MPMusicPlayerControllerVolumeDidChangeNotification object:_player];
-    [_player beginGeneratingPlaybackNotifications];
-    
-    
-    
-    
-    
+    self.ncenter = [NSNotificationCenter defaultCenter];
+    [self.ncenter addObserver:self selector:@selector(playbackStateChange) name:MPMusicPlayerControllerPlaybackStateDidChangeNotification object:self.player];
+    [self.ncenter addObserver:self selector:@selector(nowPlayingItemChanged) name:MPMusicPlayerControllerNowPlayingItemDidChangeNotification object:self.player];
+    [self.ncenter addObserver:self selector:@selector(volumeChange) name:MPMusicPlayerControllerVolumeDidChangeNotification object:self.player];
+    [self.player beginGeneratingPlaybackNotifications];
     
     
     // CoreBluetooth
-    
-    // UUID
-    St_Service = @"7865087B-D9D0-423A-9C80-042D9BBEA524";
-    St_Characteristic = @"608072DD-6825-4293-B3E7-324CF0B5CA08";
-    
-    UUID_Service = [CBUUID UUIDWithString:St_Service];
-    UUID_Characteristic = [CBUUID UUIDWithString:St_Characteristic];
-    
-    _centralManager = [[CBCentralManager alloc] initWithDelegate:self queue:nil];
-    
-    
-    
+    self.serviceUUID = [CBUUID UUIDWithString:SERVICE_UUID_STRING];
+    self.characteristicUUID = [CBUUID UUIDWithString:CHARACTERISTIC_UUID_STRING];
+    self.peripheralManager = [[CBPeripheralManager alloc] initWithDelegate:self queue:nil];
 }
 
-- (void)didReceiveMemoryWarning
+//==========================
+// CoreBluetooth Programing
+//==========================
+-(void) peripheralManagerDidUpdateState:(CBPeripheralManager *)peripheral
 {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+    NSLog(@"peripheralManagerDidUpdateState");
+    if (peripheral.state == CBPeripheralManagerStatePoweredOn){
+        
+        CBCharacteristicProperties properties = (CBCharacteristicPropertyRead | CBCharacteristicPropertyWrite | CBCharacteristicPropertyNotify);
+        CBAttributePermissions permissions = (CBAttributePermissionsReadEncryptionRequired | CBAttributePermissionsWriteEncryptionRequired);
+        self.characteristic = [[CBMutableCharacteristic alloc] initWithType:self.characteristicUUID properties:properties value:nil permissions:permissions];
+        CBMutableService *service = [[CBMutableService alloc] initWithType:self.serviceUUID primary:YES];
+        [service setCharacteristics:@[self.characteristic]];
+        [peripheral addService:service];
+        
+    }
 }
 
+-(void) peripheralManager:(CBPeripheralManager *)peripheral didAddService:(CBService *)service error:(NSError *)error
+{
+    NSLog(@"didAddService");
+    if (error){
+        NSLog(@"SERVICE ADD ERROR");
+        NSLog(@"%@",[error localizedDescription]);
+    }else{
+        [peripheral startAdvertising:@{CBAdvertisementDataLocalNameKey:@"MRC", CBAdvertisementDataServiceUUIDsKey:@[self.serviceUUID]}];
+    }
+}
 
+- (void)peripheralManager:(CBPeripheralManager *)peripheral didReceiveWriteRequests:(NSArray *)requests {
+    
+    for (CBATTRequest *aRequest in requests) {
+        
+        if ([aRequest.characteristic.UUID isEqual:self.characteristic.UUID]) {
+            
+            // CBCharacteristicのvalueに、CBATTRequestのvalueをセット
+            [self pushRemoteController:aRequest.value];
+        }
+    }
+    
+    // リクエストに応答
+    [self.peripheralManager respondToRequest:requests[0]
+                                  withResult:CBATTErrorSuccess];
+}
+
+- (void)peripheralManager:(CBPeripheralManager *)peripheral
+    didReceiveReadRequest:(CBATTRequest *)request
+{
+    if ([request.characteristic.UUID isEqual:self.characteristic.UUID]) {
+        
+        // CBMutableCharacteristicのvalueをCBATTRequestのvalueにセット
+        request.value = self.characteristic.value;
+        
+        // リクエストに応答
+        [self.peripheralManager respondToRequest:request
+                                      withResult:CBATTErrorSuccess];
+    }
+}
+
+-(void)pushRemoteController:(NSData *)val
+{
+    NSLog(@"REQUEST VALUE IS %@",val);
+    int param = *(int *)([val bytes]);
+    switch (param) {
+        case 0 :
+            if (_isPlaying == YES){
+                [_player pause];
+                _isPlaying = NO;
+            }else{
+                [_player play];
+                _isPlaying = YES;
+            }
+            break;
+        case 1 :
+            NSLog(@"PeripheralでRevボタンが押されました。");
+            [_player skipToPreviousItem];
+            break;
+        case 2: //早送り
+            NSLog(@"PeripheralでNextボタンが押されました。");
+            [_player skipToNextItem];
+            break;
+        case 3: // VolUp
+            [self setVolume:1];
+            break;
+        case 4: // VolDown
+            [self setVolume:0];
+            break;
+        default:
+            NSLog(@"error");
+            break;
+    }
+}
 //==========================
 // MediaPlayer Programing
 //==========================
+- (void) playerStateCheck
+{
+    int state = [_player playbackState];
+    NSLog(@"%d",state);
+    if (state == 1){
+        [self.btnPlay setImage:[UIImage imageNamed:@"stop.png"] forState:UIControlStateNormal];
+    }else{
+        [self.btnPlay setImage:[UIImage imageNamed:@"Play.png"] forState:UIControlStateNormal];
+    }
+}
 
-- (void) handle_PlaybackStateChange
+
+- (void) playbackStateChange
 {
     NSLog(@"Playback State Item Change");
     [self playerStateCheck];
     
 }
 
-- (void) handle_NowPlayingItemChanged
+- (void) nowPlayingItemChanged
 {
     NSLog(@"Playing Item Changed");
-    MPMediaItem *NowPlayingItem = [_player nowPlayingItem];
+    MPMediaItem *NowPlayingItem = [self.player nowPlayingItem];
     NSString *SongTitle = [NowPlayingItem valueForProperty:MPMediaItemPropertyTitle];
     NSString *SongArtist = [NowPlayingItem valueForProperty:MPMediaItemPropertyArtist];
     MPMediaItemArtwork *SongArtwork = [NowPlayingItem valueForProperty:MPMediaItemPropertyArtwork];
@@ -89,150 +172,46 @@
     //====
     
     // タイトル
-    _lb_Title.text = SongTitle;
+    self.lblTitle.text = SongTitle;
     
     // アーティスト
-    _lb_Artist.text = SongArtist;
+    self.lblArtist.text = SongArtist;
     
     // アートワーク
     UIImage *image = [SongArtwork imageWithSize:CGSizeMake(200.0f,200.0f)];
     if (image == NULL){
         image = [UIImage imageNamed:@"nonimage.png"];
     }
-    [_im_Artwork setImage:image];
+    [self.imageArtwork setImage:image];
     
 }
 
-- (void) handle_VolumeChange
+- (void) volumeChange
 {
     NSLog(@"Volume Change");
-    NSLog(@"%f",[_player volume]);
+    NSLog(@"%f",[self.player volume]);
 }
 
 
-- (IBAction)bt_Prev_Push:(id)sender {
-    [_player skipToPreviousItem];
+- (IBAction)btnPrevPush:(id)sender {
+    [self.player skipToPreviousItem];
 }
 
-- (IBAction)bt_Play_Push:(id)sender {
-    if(_isPlaying == NO) {
-        [_bt_Play setImage:[UIImage imageNamed:@"stop.png"] forState:UIControlStateNormal];
-        [_player play];
-        _isPlaying = YES;
+- (IBAction)btnPlayPush:(id)sender {
+    if(self.isPlaying == NO) {
+        [self.btnPlay setImage:[UIImage imageNamed:@"stop.png"] forState:UIControlStateNormal];
+        [self.player play];
+        self.isPlaying = YES;
     }else{
-        _isPlaying = NO;
-        [_bt_Play setImage:[UIImage imageNamed:@"Play.png"] forState:UIControlStateNormal];
-        [_player pause];
+        self.isPlaying = NO;
+        [self.btnPlay setImage:[UIImage imageNamed:@"Play.png"] forState:UIControlStateNormal];
+        [self.player pause];
         
     }
 }
 
-- (IBAction)bt_Next_Push:(id)sender {
+- (IBAction)btnNextPush:(id)sender {
     [_player skipToNextItem];
-}
-
-//==========================
-// CoreBluetooth Programing
-//==========================
-
-- (void) centralManagerDidUpdateState:(CBCentralManager *)central
-{
-    switch (central.state) {
-        case CBCentralManagerStatePoweredOff:
-            break;
-        case CBCentralManagerStatePoweredOn:
-            
-            [_centralManager scanForPeripheralsWithServices:@[UUID_Service] options:nil];
-            break;
-        default:
-            break;
-    }
-}
-
-- (void) centralManager:(CBCentralManager *)central didDiscoverPeripheral:(CBPeripheral *)peripheral advertisementData:(NSDictionary *)advertisementData RSSI:(NSNumber *)RSSI
-{
-    NSLog(@"%@",RSSI);
-    _peripheral = peripheral;
-    [_centralManager stopScan];
-    [_centralManager connectPeripheral:peripheral options:nil];
-    
-}
-
-- (void) centralManager:(CBCentralManager *)central didConnectPeripheral:(CBPeripheral *)peripheral
-{
-    _peripheral.delegate = self;
-    [_peripheral discoverServices:@[UUID_Service]];
-}
-
-- (void) peripheral:(CBPeripheral *)peripheral didDiscoverServices:(NSError *)error
-{
-    for (CBService *service in peripheral.services){
-        if([service.UUID isEqual:UUID_Service]){
-            [_peripheral discoverCharacteristics:@[UUID_Characteristic] forService:service];
-        }
-    }
-}
-
-- (void) peripheral:(CBPeripheral *)peripheral didDiscoverCharacteristicsForService:(CBService *)service error:(NSError *)error
-{
-    if([service.UUID isEqual:UUID_Service]){
-        for (CBCharacteristic *characteristic in service.characteristics) {
-            if ([characteristic.UUID isEqual:UUID_Characteristic]){
-                [_peripheral setNotifyValue:YES forCharacteristic:characteristic];            }
-        }
-    }
-}
-
-- (void) peripheral:(CBPeripheral *)peripheral didModifyServices:(NSArray *)invalidatedServices
-{
-    [_centralManager scanForPeripheralsWithServices:@[UUID_Service] options:nil];
-}
-
-- (void) peripheral:(CBPeripheral *)peripheral didUpdateNotificationStateForCharacteristic:(CBCharacteristic *)characteristic error:(NSError *)error
-{
-    if (error){
-        NSLog(@"%@",error.description);
-    }else{
-        [_peripheral readValueForCharacteristic:characteristic];
-    }
-}
-
-- (void) peripheral:(CBPeripheral *)peripheral didUpdateValueForCharacteristic:(CBCharacteristic *)characteristic error:(NSError *)error
-{
-    if (characteristic.value != nil){
-        NSData *data = characteristic.value;
-        int data_num = *(int *)([data bytes]);
-        NSLog(@"%d",data_num);
-        switch (data_num) {
-            case 0:
-                NSLog(@"PeripheralでPlayボタンが押されました。");
-                if (_isPlaying == YES){
-                    [_player pause];
-                    _isPlaying = NO;
-                }else{
-                    [_player play];
-                    _isPlaying = YES;
-                }
-                break;
-            case 1: //巻き戻し
-                NSLog(@"PeripheralでRevボタンが押されました。");
-                [_player skipToPreviousItem];
-                break;
-            case 2: //早送り
-                NSLog(@"PeripheralでNextボタンが押されました。");
-                [_player skipToNextItem];
-                break;
-            case 3: // VolUp
-                [self setVolume:1];
-                break;
-            case 4: // VolDown
-                [self setVolume:0];
-                break;
-            default:
-                NSLog(@"error");
-                break;
-        }
-    }
 }
 
 - (void) setVolume:(int)flg
@@ -252,19 +231,8 @@
     }else if (vol >= 1.0){
         vol = 1.0;
     }
-    [_player setVolume:vol];
+    [self.player setVolume:vol];
 }
 
-- (void) playerStateCheck
-{
-    int state = [_player playbackState];
-    NSLog(@"%d",state);
-    if (state == 1){
-        [_bt_Play setImage:[UIImage imageNamed:@"stop.png"] forState:UIControlStateNormal];
-    }else{
-        [_bt_Play setImage:[UIImage imageNamed:@"Play.png"] forState:UIControlStateNormal];
-    }
-}
 
 @end
-
