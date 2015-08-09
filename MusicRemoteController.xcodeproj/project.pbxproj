@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		70188BE71B779450003C91BE /* InterfaceController.m in Sources */ = {isa = PBXBuildFile; fileRef = 70188BE61B779450003C91BE /* InterfaceController.m */; };
+		70188BE91B779450003C91BE /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 70188BE81B779450003C91BE /* Images.xcassets */; };
+		70188BED1B779451003C91BE /* MusicRemoteController WatchKit App.app in Resources */ = {isa = PBXBuildFile; fileRef = 70188BEC1B779451003C91BE /* MusicRemoteController WatchKit App.app */; };
+		70188BF51B779451003C91BE /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 70188BF31B779451003C91BE /* Interface.storyboard */; };
+		70188BF71B779451003C91BE /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 70188BF61B779451003C91BE /* Images.xcassets */; };
+		70188BFA1B779451003C91BE /* MusicRemoteController WatchKit Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 70188BE11B779450003C91BE /* MusicRemoteController WatchKit Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		708EF24818E8F7D800EE4616 /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 708EF24718E8F7D800EE4616 /* AdSupport.framework */; };
 		708EF24A18E8F7E300EE4616 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 708EF24918E8F7E300EE4616 /* Security.framework */; };
 		708EF25218E96B0D00EE4616 /* iPhone4.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 708EF25018E96B0D00EE4616 /* iPhone4.storyboard */; };
@@ -41,6 +47,20 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		70188BEE1B779451003C91BE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 70A71DCD18DF549A0085F62D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 70188BEB1B779451003C91BE;
+			remoteInfo = "MusicRemoteController WatchKit App";
+		};
+		70188BF81B779451003C91BE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 70A71DCD18DF549A0085F62D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 70188BE01B779450003C91BE;
+			remoteInfo = "MusicRemoteController WatchKit Extension";
+		};
 		70A71DFB18DF549B0085F62D /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 70A71DCD18DF549A0085F62D /* Project object */;
@@ -50,7 +70,30 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		70188BDC1B779435003C91BE /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				70188BFA1B779451003C91BE /* MusicRemoteController WatchKit Extension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		70188BE11B779450003C91BE /* MusicRemoteController WatchKit Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "MusicRemoteController WatchKit Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		70188BE41B779450003C91BE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		70188BE51B779450003C91BE /* InterfaceController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = InterfaceController.h; sourceTree = "<group>"; };
+		70188BE61B779450003C91BE /* InterfaceController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = InterfaceController.m; sourceTree = "<group>"; };
+		70188BE81B779450003C91BE /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		70188BEC1B779451003C91BE /* MusicRemoteController WatchKit App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "MusicRemoteController WatchKit App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		70188BF21B779451003C91BE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		70188BF41B779451003C91BE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
+		70188BF61B779451003C91BE /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		708EF24718E8F7D800EE4616 /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = System/Library/Frameworks/AdSupport.framework; sourceTree = SDKROOT; };
 		708EF24918E8F7E300EE4616 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		708EF25118E96B0D00EE4616 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/iPhone4.storyboard; sourceTree = "<group>"; };
@@ -94,6 +137,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		70188BDE1B779450003C91BE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		70A71DD218DF549A0085F62D /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -123,6 +173,43 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		70188BE21B779450003C91BE /* MusicRemoteController WatchKit Extension */ = {
+			isa = PBXGroup;
+			children = (
+				70188BE51B779450003C91BE /* InterfaceController.h */,
+				70188BE61B779450003C91BE /* InterfaceController.m */,
+				70188BE81B779450003C91BE /* Images.xcassets */,
+				70188BE31B779450003C91BE /* Supporting Files */,
+			);
+			path = "MusicRemoteController WatchKit Extension";
+			sourceTree = "<group>";
+		};
+		70188BE31B779450003C91BE /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				70188BE41B779450003C91BE /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		70188BF01B779451003C91BE /* MusicRemoteController WatchKit App */ = {
+			isa = PBXGroup;
+			children = (
+				70188BF31B779451003C91BE /* Interface.storyboard */,
+				70188BF61B779451003C91BE /* Images.xcassets */,
+				70188BF11B779451003C91BE /* Supporting Files */,
+			);
+			path = "MusicRemoteController WatchKit App";
+			sourceTree = "<group>";
+		};
+		70188BF11B779451003C91BE /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				70188BF21B779451003C91BE /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
 		708EF23E18E8F7B700EE4616 /* NendAd */ = {
 			isa = PBXGroup;
 			children = (
@@ -140,6 +227,8 @@
 				708EF23E18E8F7B700EE4616 /* NendAd */,
 				70A71DDE18DF549A0085F62D /* MusicRemoteController */,
 				70A71DFD18DF549B0085F62D /* MusicRemoteControllerTests */,
+				70188BE21B779450003C91BE /* MusicRemoteController WatchKit Extension */,
+				70188BF01B779451003C91BE /* MusicRemoteController WatchKit App */,
 				70A71DD718DF549A0085F62D /* Frameworks */,
 				70A71DD618DF549A0085F62D /* Products */,
 			);
@@ -150,6 +239,8 @@
 			children = (
 				70A71DD518DF549A0085F62D /* MusicRemoteController.app */,
 				70A71DF618DF549B0085F62D /* MusicRemoteControllerTests.xctest */,
+				70188BE11B779450003C91BE /* MusicRemoteController WatchKit Extension.appex */,
+				70188BEC1B779451003C91BE /* MusicRemoteController WatchKit App.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -236,6 +327,39 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		70188BE01B779450003C91BE /* MusicRemoteController WatchKit Extension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 70188BFE1B779451003C91BE /* Build configuration list for PBXNativeTarget "MusicRemoteController WatchKit Extension" */;
+			buildPhases = (
+				70188BDD1B779450003C91BE /* Sources */,
+				70188BDE1B779450003C91BE /* Frameworks */,
+				70188BDF1B779450003C91BE /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				70188BEF1B779451003C91BE /* PBXTargetDependency */,
+			);
+			name = "MusicRemoteController WatchKit Extension";
+			productName = "MusicRemoteController WatchKit Extension";
+			productReference = 70188BE11B779450003C91BE /* MusicRemoteController WatchKit Extension.appex */;
+			productType = "com.apple.product-type.watchkit-extension";
+		};
+		70188BEB1B779451003C91BE /* MusicRemoteController WatchKit App */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 70188BFB1B779451003C91BE /* Build configuration list for PBXNativeTarget "MusicRemoteController WatchKit App" */;
+			buildPhases = (
+				70188BEA1B779451003C91BE /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "MusicRemoteController WatchKit App";
+			productName = "MusicRemoteController WatchKit App";
+			productReference = 70188BEC1B779451003C91BE /* MusicRemoteController WatchKit App.app */;
+			productType = "com.apple.product-type.application.watchapp";
+		};
 		70A71DD418DF549A0085F62D /* MusicRemoteController */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 70A71E0718DF549B0085F62D /* Build configuration list for PBXNativeTarget "MusicRemoteController" */;
@@ -243,10 +367,12 @@
 				70A71DD118DF549A0085F62D /* Sources */,
 				70A71DD218DF549A0085F62D /* Frameworks */,
 				70A71DD318DF549A0085F62D /* Resources */,
+				70188BDC1B779435003C91BE /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				70188BF91B779451003C91BE /* PBXTargetDependency */,
 			);
 			name = MusicRemoteController;
 			productName = MusicRemoteController;
@@ -280,6 +406,13 @@
 				LastUpgradeCheck = 0510;
 				ORGANIZATIONNAME = "Yusuke Sato";
 				TargetAttributes = {
+					70188BE01B779450003C91BE = {
+						CreatedOnToolsVersion = 6.4;
+						DevelopmentTeam = KT5UFMR857;
+					};
+					70188BEB1B779451003C91BE = {
+						CreatedOnToolsVersion = 6.4;
+					};
 					70A71DD418DF549A0085F62D = {
 						DevelopmentTeam = KT5UFMR857;
 						SystemCapabilities = {
@@ -308,11 +441,31 @@
 			targets = (
 				70A71DD418DF549A0085F62D /* MusicRemoteController */,
 				70A71DF518DF549B0085F62D /* MusicRemoteControllerTests */,
+				70188BE01B779450003C91BE /* MusicRemoteController WatchKit Extension */,
+				70188BEB1B779451003C91BE /* MusicRemoteController WatchKit App */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		70188BDF1B779450003C91BE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				70188BED1B779451003C91BE /* MusicRemoteController WatchKit App.app in Resources */,
+				70188BE91B779450003C91BE /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		70188BEA1B779451003C91BE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				70188BF51B779451003C91BE /* Interface.storyboard in Resources */,
+				70188BF71B779451003C91BE /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		70A71DD318DF549A0085F62D /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -343,6 +496,14 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		70188BDD1B779450003C91BE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				70188BE71B779450003C91BE /* InterfaceController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		70A71DD118DF549A0085F62D /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -366,6 +527,16 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		70188BEF1B779451003C91BE /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 70188BEB1B779451003C91BE /* MusicRemoteController WatchKit App */;
+			targetProxy = 70188BEE1B779451003C91BE /* PBXContainerItemProxy */;
+		};
+		70188BF91B779451003C91BE /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 70188BE01B779450003C91BE /* MusicRemoteController WatchKit Extension */;
+			targetProxy = 70188BF81B779451003C91BE /* PBXContainerItemProxy */;
+		};
 		70A71DFC18DF549B0085F62D /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 70A71DD418DF549A0085F62D /* MusicRemoteController */;
@@ -374,6 +545,14 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		70188BF31B779451003C91BE /* Interface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				70188BF41B779451003C91BE /* Base */,
+			);
+			name = Interface.storyboard;
+			sourceTree = "<group>";
+		};
 		708EF25018E96B0D00EE4616 /* iPhone4.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -401,6 +580,90 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		70188BFC1B779451003C91BE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				IBSC_MODULE = MusicRemoteController_WatchKit_Extension;
+				INFOPLIST_FILE = "MusicRemoteController WatchKit App/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+				"TARGETED_DEVICE_FAMILY[sdk=iphonesimulator*]" = "1,4";
+			};
+			name = Debug;
+		};
+		70188BFD1B779451003C91BE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				IBSC_MODULE = MusicRemoteController_WatchKit_Extension;
+				INFOPLIST_FILE = "MusicRemoteController WatchKit App/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+				"TARGETED_DEVICE_FAMILY[sdk=iphonesimulator*]" = "1,4";
+			};
+			name = Release;
+		};
+		70188BFF1B779451003C91BE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "MusicRemoteController WatchKit Extension/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		70188C001B779451003C91BE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "MusicRemoteController WatchKit Extension/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
 		70A71E0518DF549B0085F62D /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -559,6 +822,22 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		70188BFB1B779451003C91BE /* Build configuration list for PBXNativeTarget "MusicRemoteController WatchKit App" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				70188BFC1B779451003C91BE /* Debug */,
+				70188BFD1B779451003C91BE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		70188BFE1B779451003C91BE /* Build configuration list for PBXNativeTarget "MusicRemoteController WatchKit Extension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				70188BFF1B779451003C91BE /* Debug */,
+				70188C001B779451003C91BE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
 		70A71DD018DF549A0085F62D /* Build configuration list for PBXProject "MusicRemoteController" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

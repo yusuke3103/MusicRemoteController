@@ -17,9 +17,9 @@
 @end
 
 @implementation PlayerModeViewController
--(void) viewDidLoad
+-(void) viewDidAppear:(BOOL)animated
 {
-    [super viewDidLoad];
+    [super viewDidAppear:NO];
     
     // MPMediaPlayer
     self.player = [MPMusicPlayerController iPodMusicPlayer];
