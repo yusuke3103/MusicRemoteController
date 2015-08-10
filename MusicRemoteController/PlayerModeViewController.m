@@ -96,7 +96,8 @@
     if ([request.characteristic.UUID isEqual:self.characteristic.UUID]) {
         
         // CBMutableCharacteristicのvalueをCBATTRequestのvalueにセット
-        request.value = self.characteristic.value;
+        
+        request.value = [self getResponseValue];
         
         // リクエストに応答
         [self.peripheralManager respondToRequest:request
@@ -234,5 +235,18 @@
     [self.player setVolume:vol];
 }
 
+- (NSData *)getResponseValue{
+    
+    uint val;
+    
+    if (self.isPlaying){
+        val = 1;
+    }else{
+        val = 0;
+    }
+    
+    return [NSData dataWithBytes:&val length:1];
+    
+}
 
 @end

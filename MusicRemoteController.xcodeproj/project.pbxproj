@@ -13,10 +13,12 @@
 		70188BF51B779451003C91BE /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 70188BF31B779451003C91BE /* Interface.storyboard */; };
 		70188BF71B779451003C91BE /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 70188BF61B779451003C91BE /* Images.xcassets */; };
 		70188BFA1B779451003C91BE /* MusicRemoteController WatchKit Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 70188BE11B779450003C91BE /* MusicRemoteController WatchKit Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		70188C011B779581003C91BE /* CoreBluetooth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 70A71E1318DF565C0085F62D /* CoreBluetooth.framework */; };
 		708EF24818E8F7D800EE4616 /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 708EF24718E8F7D800EE4616 /* AdSupport.framework */; };
 		708EF24A18E8F7E300EE4616 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 708EF24918E8F7E300EE4616 /* Security.framework */; };
 		708EF25218E96B0D00EE4616 /* iPhone4.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 708EF25018E96B0D00EE4616 /* iPhone4.storyboard */; };
 		708EF25418E9915F00EE4616 /* iPhone5.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 708EF25318E9915F00EE4616 /* iPhone5.storyboard */; };
+		709A052C1B78DDB4000FA9A0 /* ErrorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 709A052B1B78DDB4000FA9A0 /* ErrorViewController.m */; };
 		70A71DD918DF549A0085F62D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 70A71DD818DF549A0085F62D /* Foundation.framework */; };
 		70A71DDB18DF549A0085F62D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 70A71DDA18DF549A0085F62D /* CoreGraphics.framework */; };
 		70A71DDD18DF549A0085F62D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 70A71DDC18DF549A0085F62D /* UIKit.framework */; };
@@ -98,6 +100,8 @@
 		708EF24918E8F7E300EE4616 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		708EF25118E96B0D00EE4616 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/iPhone4.storyboard; sourceTree = "<group>"; };
 		708EF25318E9915F00EE4616 /* iPhone5.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = iPhone5.storyboard; sourceTree = "<group>"; };
+		709A052A1B78DDB4000FA9A0 /* ErrorViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ErrorViewController.h; sourceTree = "<group>"; };
+		709A052B1B78DDB4000FA9A0 /* ErrorViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ErrorViewController.m; sourceTree = "<group>"; };
 		70A71DD518DF549A0085F62D /* MusicRemoteController.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MusicRemoteController.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		70A71DD818DF549A0085F62D /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		70A71DDA18DF549A0085F62D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -141,6 +145,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				70188C011B779581003C91BE /* CoreBluetooth.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -180,6 +185,8 @@
 				70188BE61B779450003C91BE /* InterfaceController.m */,
 				70188BE81B779450003C91BE /* Images.xcassets */,
 				70188BE31B779450003C91BE /* Supporting Files */,
+				709A052A1B78DDB4000FA9A0 /* ErrorViewController.h */,
+				709A052B1B78DDB4000FA9A0 /* ErrorViewController.m */,
 			);
 			path = "MusicRemoteController WatchKit Extension";
 			sourceTree = "<group>";
@@ -501,6 +508,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				70188BE71B779450003C91BE /* InterfaceController.m in Sources */,
+				709A052C1B78DDB4000FA9A0 /* ErrorViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -829,6 +837,7 @@
 				70188BFD1B779451003C91BE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		70188BFE1B779451003C91BE /* Build configuration list for PBXNativeTarget "MusicRemoteController WatchKit Extension" */ = {
 			isa = XCConfigurationList;
@@ -837,6 +846,7 @@
 				70188C001B779451003C91BE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		70A71DD018DF549A0085F62D /* Build configuration list for PBXProject "MusicRemoteController" */ = {
 			isa = XCConfigurationList;

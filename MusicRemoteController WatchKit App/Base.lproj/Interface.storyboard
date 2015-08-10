@@ -1,15 +1,101 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="6221" systemVersion="13E28" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="AgC-eL-Hgc">
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="7706" systemVersion="14F25a" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="AgC-eL-Hgc">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6213"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="3733"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="7701"/>
     </dependencies>
     <scenes>
         <!--Interface Controller-->
         <scene sceneID="aou-V4-d1y">
             <objects>
-                <controller id="AgC-eL-Hgc" customClass="InterfaceController" customModuleProvider=""/>
+                <controller id="AgC-eL-Hgc" customClass="InterfaceController">
+                    <items>
+                        <label alignment="left" id="FDZ-q1-Wcd"/>
+                        <group width="1" alignment="left" id="b2v-2w-WGl">
+                            <items>
+                                <label alignment="left" text="ステータス：" id="qet-iD-ONH">
+                                    <fontDescription key="font" type="system" pointSize="11"/>
+                                </label>
+                                <label alignment="left" text="Label" id="xXO-mG-d8u">
+                                    <fontDescription key="font" type="system" pointSize="11"/>
+                                </label>
+                            </items>
+                        </group>
+                        <button width="1" height="38" alignment="left" title="再生" id="XiB-Bx-85x">
+                            <connections>
+                                <action selector="btnPlay:" destination="AgC-eL-Hgc" id="O9u-9s-Mvm"/>
+                            </connections>
+                        </button>
+                        <button width="1" alignment="right" title="次へ" id="mFM-EZ-Esf">
+                            <connections>
+                                <action selector="btnNextPush:" destination="AgC-eL-Hgc" id="A02-Y5-7f0"/>
+                            </connections>
+                        </button>
+                        <button width="1" alignment="left" title="前へ" id="NVj-qR-wK8">
+                            <connections>
+                                <action selector="btnPrevPush:" destination="AgC-eL-Hgc" id="kwC-eD-1Bd"/>
+                            </connections>
+                        </button>
+                        <group width="1" alignment="left" id="ghn-h9-64t">
+                            <items>
+                                <button alignment="left" title="ー" id="DxE-Lg-lHe"/>
+                                <label alignment="center" verticalAlignment="center" text="音量" id="grS-8L-BVd"/>
+                                <button alignment="right" title="＋" id="GMU-cC-raT">
+                                    <connections>
+                                        <action selector="btnUpPush:" destination="AgC-eL-Hgc" id="03d-nL-OUT"/>
+                                    </connections>
+                                </button>
+                            </items>
+                        </group>
+                    </items>
+                    <connections>
+                        <outlet property="btnDown" destination="DxE-Lg-lHe" id="4bF-8c-Ebs"/>
+                        <outlet property="btnNext" destination="mFM-EZ-Esf" id="1VQ-p1-ikt"/>
+                        <outlet property="btnPlay" destination="XiB-Bx-85x" id="Lzi-yp-MFY"/>
+                        <outlet property="btnPrev" destination="NVj-qR-wK8" id="NpS-w1-e4r"/>
+                        <outlet property="btnUp" destination="GMU-cC-raT" id="Mdj-Y3-4qK"/>
+                        <outlet property="lblStatus" destination="xXO-mG-d8u" id="43y-Ey-noC"/>
+                    </connections>
+                </controller>
             </objects>
+            <point key="canvasLocation" x="556" y="262"/>
+        </scene>
+        <!--ErrorView-->
+        <scene sceneID="zDM-Qg-NhW">
+            <objects>
+                <controller identifier="ErrorView" id="xUJ-JT-yx3" customClass="ErrorViewController">
+                    <items>
+                        <label width="1" alignment="left" text="接続エラー" textAlignment="center" id="2CZ-kC-OxV">
+                            <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            <fontDescription key="font" type="system" pointSize="14"/>
+                        </label>
+                        <label width="1" alignment="left" text="接続に失敗しました。" id="26i-Bl-68U">
+                            <fontDescription key="font" type="system" pointSize="10"/>
+                        </label>
+                        <label width="1" alignment="left" text="ペアリングが未完了の可能性があります。" numberOfLines="2" id="VNc-Mg-2Wv">
+                            <fontDescription key="font" type="system" pointSize="10"/>
+                        </label>
+                        <label width="1" alignment="left" text="1.AppleWatchと同期しているデバイスをリモコンモードで起動" numberOfLines="3" id="Y6g-wY-NjK">
+                            <fontDescription key="font" type="system" pointSize="10"/>
+                        </label>
+                        <label width="1" alignment="left" text="２.プレイヤーとして利用したいデバイスをプレイヤーモードで起動" numberOfLines="3" id="m7M-oM-Gsq">
+                            <fontDescription key="font" type="system" pointSize="10"/>
+                        </label>
+                        <label width="1" alignment="left" text="３.ペアリングウィンドウが表示された場合、指示にしたがいペアリングを完了してください。" numberOfLines="4" id="U1p-lR-uZQ">
+                            <fontDescription key="font" type="system" pointSize="10"/>
+                        </label>
+                        <label width="1" alignment="left" text="※上記作業を行ってもご使用になれない場合、アプリの再起動を試してください。" numberOfLines="4" id="xQQ-Bz-Fbe">
+                            <fontDescription key="font" type="system" pointSize="10"/>
+                        </label>
+                        <button width="1" alignment="left" title="戻る" id="rPr-jf-nys">
+                            <connections>
+                                <segue destination="AgC-eL-Hgc" kind="push" id="xfm-Pr-6v6"/>
+                            </connections>
+                        </button>
+                    </items>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="909" y="160.5"/>
         </scene>
     </scenes>
 </document>
