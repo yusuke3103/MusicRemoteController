@@ -16,7 +16,8 @@
                                 <label alignment="left" text="ステータス：" id="qet-iD-ONH">
                                     <fontDescription key="font" type="system" pointSize="11"/>
                                 </label>
-                                <label alignment="left" text="Label" id="xXO-mG-d8u">
+                                <label alignment="left" text="NG" id="xXO-mG-d8u">
+                                    <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                     <fontDescription key="font" type="system" pointSize="11"/>
                                 </label>
                             </items>
@@ -26,25 +27,29 @@
                                 <action selector="btnPlay:" destination="AgC-eL-Hgc" id="O9u-9s-Mvm"/>
                             </connections>
                         </button>
-                        <button width="1" alignment="right" title="次へ" id="mFM-EZ-Esf">
-                            <connections>
-                                <action selector="btnNextPush:" destination="AgC-eL-Hgc" id="A02-Y5-7f0"/>
-                            </connections>
-                        </button>
-                        <button width="1" alignment="left" title="前へ" id="NVj-qR-wK8">
-                            <connections>
-                                <action selector="btnPrevPush:" destination="AgC-eL-Hgc" id="kwC-eD-1Bd"/>
-                            </connections>
-                        </button>
+                        <group width="1" alignment="left" id="50N-CJ-gY6">
+                            <items>
+                                <button width="0.50000000000000011" alignment="left" title="前へ" id="NVj-qR-wK8">
+                                    <connections>
+                                        <action selector="btnPrevPush:" destination="AgC-eL-Hgc" id="kwC-eD-1Bd"/>
+                                    </connections>
+                                </button>
+                                <button width="0.50000000000000011" alignment="right" title="次へ" id="mFM-EZ-Esf">
+                                    <connections>
+                                        <action selector="btnNextPush:" destination="AgC-eL-Hgc" id="A02-Y5-7f0"/>
+                                    </connections>
+                                </button>
+                            </items>
+                        </group>
                         <group width="1" alignment="left" id="ghn-h9-64t">
                             <items>
                                 <button alignment="left" title="ー" id="DxE-Lg-lHe"/>
-                                <label alignment="center" verticalAlignment="center" text="音量" id="grS-8L-BVd"/>
                                 <button alignment="right" title="＋" id="GMU-cC-raT">
                                     <connections>
                                         <action selector="btnUpPush:" destination="AgC-eL-Hgc" id="03d-nL-OUT"/>
                                     </connections>
                                 </button>
+                                <label alignment="center" verticalAlignment="center" text="音量" id="grS-8L-BVd"/>
                             </items>
                         </group>
                     </items>
@@ -58,7 +63,7 @@
                     </connections>
                 </controller>
             </objects>
-            <point key="canvasLocation" x="556" y="262"/>
+            <point key="canvasLocation" x="585" y="272"/>
         </scene>
         <!--ErrorView-->
         <scene sceneID="zDM-Qg-NhW">
@@ -95,7 +100,7 @@
                     </items>
                 </controller>
             </objects>
-            <point key="canvasLocation" x="909" y="160.5"/>
+            <point key="canvasLocation" x="334" y="137"/>
         </scene>
     </scenes>
 </document>
