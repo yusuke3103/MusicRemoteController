@@ -17,12 +17,20 @@
 -(void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:NO];
-    
-    
+    [self btnStateChange:NO];
     self.serviceUUID = [CBUUID UUIDWithString:SERVICE_UUID_STRING];
     self.characteristicUUID = [CBUUID UUIDWithString:CHARACTERISTIC_UUID_STRING];
     // セントラルマネージャ初期化
     self.centralManager = [[CBCentralManager alloc] initWithDelegate:self queue:nil];
+}
+
+-(void) btnStateChange:(BOOL)flg{
+    
+    [self.btnPrev setEnabled:flg];
+    [self.btnPlay setEnabled:flg];
+    [self.btnNext setEnabled:flg];
+    [self.btnUp setEnabled:flg];
+    [self.btnDown setEnabled:flg];
 }
 
 
@@ -130,7 +138,7 @@ didUpdateValueForCharacteristic:(CBCharacteristic *)characteristic
         NSLog(@"Failed... error: %@", error);
         return;
     }
-    
+    [self btnStateChange:YES];
     NSLog(@"Succeeded！ service uuid:%@, characteristice uuid:%@, value%@",
           characteristic.service.UUID, characteristic.UUID, characteristic.value);
 }

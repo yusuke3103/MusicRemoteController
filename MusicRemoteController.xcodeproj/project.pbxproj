@@ -22,7 +22,6 @@
 		70A71DD918DF549A0085F62D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 70A71DD818DF549A0085F62D /* Foundation.framework */; };
 		70A71DDB18DF549A0085F62D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 70A71DDA18DF549A0085F62D /* CoreGraphics.framework */; };
 		70A71DDD18DF549A0085F62D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 70A71DDC18DF549A0085F62D /* UIKit.framework */; };
-		70A71DE318DF549A0085F62D /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 70A71DE118DF549A0085F62D /* InfoPlist.strings */; };
 		70A71DE518DF549A0085F62D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 70A71DE418DF549A0085F62D /* main.m */; };
 		70A71DE918DF549A0085F62D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 70A71DE818DF549A0085F62D /* AppDelegate.m */; };
 		70A71DEF18DF549A0085F62D /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 70A71DEE18DF549A0085F62D /* ViewController.m */; };
@@ -30,7 +29,6 @@
 		70A71DF818DF549B0085F62D /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 70A71DF718DF549B0085F62D /* XCTest.framework */; };
 		70A71DF918DF549B0085F62D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 70A71DD818DF549A0085F62D /* Foundation.framework */; };
 		70A71DFA18DF549B0085F62D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 70A71DDC18DF549A0085F62D /* UIKit.framework */; };
-		70A71E0218DF549B0085F62D /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 70A71E0018DF549B0085F62D /* InfoPlist.strings */; };
 		70A71E0418DF549B0085F62D /* MusicRemoteControllerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 70A71E0318DF549B0085F62D /* MusicRemoteControllerTests.m */; };
 		70A71E0F18DF559D0085F62D /* PlayerModeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 70A71E0E18DF559D0085F62D /* PlayerModeViewController.m */; };
 		70A71E1218DF55A80085F62D /* RemoteModeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 70A71E1118DF55A80085F62D /* RemoteModeViewController.m */; };
@@ -96,6 +94,8 @@
 		70188BF21B779451003C91BE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		70188BF41B779451003C91BE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
 		70188BF61B779451003C91BE /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		7025A9271B7B7DE90059286A /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/iPhone4.strings; sourceTree = "<group>"; };
+		7025A9281B7B7DE90059286A /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Interface.strings; sourceTree = "<group>"; };
 		708EF24718E8F7D800EE4616 /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = System/Library/Frameworks/AdSupport.framework; sourceTree = SDKROOT; };
 		708EF24918E8F7E300EE4616 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		708EF25118E96B0D00EE4616 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/iPhone4.storyboard; sourceTree = "<group>"; };
@@ -107,7 +107,6 @@
 		70A71DDA18DF549A0085F62D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		70A71DDC18DF549A0085F62D /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		70A71DE018DF549A0085F62D /* MusicRemoteController-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "MusicRemoteController-Info.plist"; sourceTree = "<group>"; };
-		70A71DE218DF549A0085F62D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		70A71DE418DF549A0085F62D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		70A71DE618DF549A0085F62D /* MusicRemoteController-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MusicRemoteController-Prefix.pch"; sourceTree = "<group>"; };
 		70A71DE718DF549A0085F62D /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -118,7 +117,6 @@
 		70A71DF618DF549B0085F62D /* MusicRemoteControllerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MusicRemoteControllerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		70A71DF718DF549B0085F62D /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		70A71DFF18DF549B0085F62D /* MusicRemoteControllerTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "MusicRemoteControllerTests-Info.plist"; sourceTree = "<group>"; };
-		70A71E0118DF549B0085F62D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		70A71E0318DF549B0085F62D /* MusicRemoteControllerTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MusicRemoteControllerTests.m; sourceTree = "<group>"; };
 		70A71E0D18DF559D0085F62D /* PlayerModeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlayerModeViewController.h; sourceTree = "<group>"; };
 		70A71E0E18DF559D0085F62D /* PlayerModeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlayerModeViewController.m; sourceTree = "<group>"; };
@@ -240,6 +238,7 @@
 				70A71DD618DF549A0085F62D /* Products */,
 			);
 			sourceTree = "<group>";
+			usesTabs = 0;
 		};
 		70A71DD618DF549A0085F62D /* Products */ = {
 			isa = PBXGroup;
@@ -292,7 +291,6 @@
 			children = (
 				70A71E1718DF58330085F62D /* images */,
 				70A71DE018DF549A0085F62D /* MusicRemoteController-Info.plist */,
-				70A71DE118DF549A0085F62D /* InfoPlist.strings */,
 				70A71DE418DF549A0085F62D /* main.m */,
 				70A71DE618DF549A0085F62D /* MusicRemoteController-Prefix.pch */,
 			);
@@ -312,7 +310,6 @@
 			isa = PBXGroup;
 			children = (
 				70A71DFF18DF549B0085F62D /* MusicRemoteControllerTests-Info.plist */,
-				70A71E0018DF549B0085F62D /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -415,13 +412,11 @@
 				TargetAttributes = {
 					70188BE01B779450003C91BE = {
 						CreatedOnToolsVersion = 6.4;
-						DevelopmentTeam = KT5UFMR857;
 					};
 					70188BEB1B779451003C91BE = {
 						CreatedOnToolsVersion = 6.4;
 					};
 					70A71DD418DF549A0085F62D = {
-						DevelopmentTeam = KT5UFMR857;
 						SystemCapabilities = {
 							com.apple.BackgroundModes = {
 								enabled = 1;
@@ -438,7 +433,6 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
-				en,
 				Base,
 			);
 			mainGroup = 70A71DCC18DF549A0085F62D;
@@ -479,7 +473,6 @@
 			files = (
 				70A71DF118DF549A0085F62D /* Images.xcassets in Resources */,
 				70A71E2318DF58330085F62D /* stop.png in Resources */,
-				70A71DE318DF549A0085F62D /* InfoPlist.strings in Resources */,
 				70FFF7691B67C68700A455C0 /* NADView_readme.txt in Resources */,
 				708EF25218E96B0D00EE4616 /* iPhone4.storyboard in Resources */,
 				70A71E2218DF58330085F62D /* Rev.png in Resources */,
@@ -496,7 +489,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				70A71E0218DF549B0085F62D /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -557,6 +549,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				70188BF41B779451003C91BE /* Base */,
+				7025A9281B7B7DE90059286A /* ja */,
 			);
 			name = Interface.storyboard;
 			sourceTree = "<group>";
@@ -565,24 +558,9 @@
 			isa = PBXVariantGroup;
 			children = (
 				708EF25118E96B0D00EE4616 /* Base */,
+				7025A9271B7B7DE90059286A /* ja */,
 			);
 			name = iPhone4.storyboard;
-			sourceTree = "<group>";
-		};
-		70A71DE118DF549A0085F62D /* InfoPlist.strings */ = {
-			isa = PBXVariantGroup;
-			children = (
-				70A71DE218DF549A0085F62D /* en */,
-			);
-			name = InfoPlist.strings;
-			sourceTree = "<group>";
-		};
-		70A71E0018DF549B0085F62D /* InfoPlist.strings */ = {
-			isa = PBXVariantGroup;
-			children = (
-				70A71E0118DF549B0085F62D /* en */,
-			);
-			name = InfoPlist.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -593,6 +571,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -616,6 +595,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -657,8 +637,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_WARN_UNREACHABLE_CODE = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -688,6 +668,7 @@
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -726,7 +707,8 @@
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				COPY_PHASE_STRIP = YES;
 				ENABLE_NS_ASSERTIONS = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -769,8 +751,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "MusicRemoteController/MusicRemoteController-Prefix.pch";
 				INFOPLIST_FILE = "MusicRemoteController/MusicRemoteController-Info.plist";

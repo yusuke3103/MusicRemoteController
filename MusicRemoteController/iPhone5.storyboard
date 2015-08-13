@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14F6a" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="jMN-AF-xPi">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14F25a" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="jMN-AF-xPi">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
     </dependencies>
@@ -120,15 +120,6 @@
                                     <action selector="btnNextPush:" destination="iy2-Re-bFk" eventType="touchUpInside" id="zIW-dN-jc6"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QAd-WW-sIH">
-                                <rect key="frame" x="101" y="264" width="30" height="30"/>
-                                <state key="normal" image="Rev.png">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="btnPrevPush:" destination="iy2-Re-bFk" eventType="touchUpInside" id="Uxi-pS-TDJ"/>
-                                </connections>
-                            </button>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gyd-mo-Hu3" customClass="NADView">
                                 <rect key="frame" x="0.0" y="518" width="320" height="50"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
@@ -146,10 +137,26 @@
                                     <action selector="btnDownPush:" destination="iy2-Re-bFk" eventType="touchUpInside" id="tZh-ds-Id2"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QAd-WW-sIH">
+                                <rect key="frame" x="101" y="264" width="30" height="30"/>
+                                <state key="normal" image="Rev.png">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="btnPrevPush:" destination="iy2-Re-bFk" eventType="touchUpInside" id="Uxi-pS-TDJ"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" title="リモコンモード" id="eWF-D2-63z"/>
+                    <connections>
+                        <outlet property="btnDown" destination="bAW-UZ-iHC" id="tiy-h7-CyK"/>
+                        <outlet property="btnNext" destination="W0s-Ah-ivB" id="bvS-4p-AEk"/>
+                        <outlet property="btnPlay" destination="Vc0-PE-OI9" id="bFm-rt-QQm"/>
+                        <outlet property="btnPrev" destination="QAd-WW-sIH" id="5qU-fp-zF3"/>
+                        <outlet property="btnUp" destination="5AR-W5-3jd" id="p5Q-Yf-LKv"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6lN-WJ-Tqr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

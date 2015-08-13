@@ -43,7 +43,11 @@
                         </group>
                         <group width="1" alignment="left" id="ghn-h9-64t">
                             <items>
-                                <button alignment="left" title="ー" id="DxE-Lg-lHe"/>
+                                <button alignment="left" title="ー" id="DxE-Lg-lHe">
+                                    <connections>
+                                        <action selector="btnDownPush:" destination="AgC-eL-Hgc" id="EC5-dt-OLA"/>
+                                    </connections>
+                                </button>
                                 <button alignment="right" title="＋" id="GMU-cC-raT">
                                     <connections>
                                         <action selector="btnUpPush:" destination="AgC-eL-Hgc" id="03d-nL-OUT"/>
@@ -54,7 +58,7 @@
                         </group>
                     </items>
                     <connections>
-                        <outlet property="btnDown" destination="DxE-Lg-lHe" id="4bF-8c-Ebs"/>
+                        <outlet property="btnDown" destination="DxE-Lg-lHe" id="Qwh-ad-as7"/>
                         <outlet property="btnNext" destination="mFM-EZ-Esf" id="1VQ-p1-ikt"/>
                         <outlet property="btnPlay" destination="XiB-Bx-85x" id="Lzi-yp-MFY"/>
                         <outlet property="btnPrev" destination="NVj-qR-wK8" id="NpS-w1-e4r"/>
