@@ -14,6 +14,7 @@
 		70188BF71B779451003C91BE /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 70188BF61B779451003C91BE /* Images.xcassets */; };
 		70188BFA1B779451003C91BE /* MusicRemoteController WatchKit Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 70188BE11B779450003C91BE /* MusicRemoteController WatchKit Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		70188C011B779581003C91BE /* CoreBluetooth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 70A71E1318DF565C0085F62D /* CoreBluetooth.framework */; };
+		70495D4F1EDB034500BC86BE /* NendAdResource.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 70495D4D1EDB034500BC86BE /* NendAdResource.bundle */; };
 		708EF24818E8F7D800EE4616 /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 708EF24718E8F7D800EE4616 /* AdSupport.framework */; };
 		708EF24A18E8F7E300EE4616 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 708EF24918E8F7E300EE4616 /* Security.framework */; };
 		708EF25218E96B0D00EE4616 /* iPhone4.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 708EF25018E96B0D00EE4616 /* iPhone4.storyboard */; };
@@ -41,8 +42,6 @@
 		70A71E2318DF58330085F62D /* stop.png in Resources */ = {isa = PBXBuildFile; fileRef = 70A71E1C18DF58330085F62D /* stop.png */; };
 		70A71E2418DF58330085F62D /* VolDown.png in Resources */ = {isa = PBXBuildFile; fileRef = 70A71E1D18DF58330085F62D /* VolDown.png */; };
 		70A71E2518DF58330085F62D /* VolUp.png in Resources */ = {isa = PBXBuildFile; fileRef = 70A71E1E18DF58330085F62D /* VolUp.png */; };
-		70FFF7681B67C68700A455C0 /* libNendAd.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 70FFF7641B67C68700A455C0 /* libNendAd.a */; };
-		70FFF7691B67C68700A455C0 /* NADView_readme.txt in Resources */ = {isa = PBXBuildFile; fileRef = 70FFF7661B67C68700A455C0 /* NADView_readme.txt */; };
 		70FFF76B1B67C74500A455C0 /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 70FFF76A1B67C74500A455C0 /* ImageIO.framework */; };
 /* End PBXBuildFile section */
 
@@ -96,6 +95,8 @@
 		70188BF61B779451003C91BE /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		7025A9271B7B7DE90059286A /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/iPhone4.strings; sourceTree = "<group>"; };
 		7025A9281B7B7DE90059286A /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Interface.strings; sourceTree = "<group>"; };
+		70495D4B1EDB034500BC86BE /* NendAd.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = NendAd.framework; sourceTree = "<group>"; };
+		70495D4D1EDB034500BC86BE /* NendAdResource.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = NendAdResource.bundle; sourceTree = "<group>"; };
 		708EF24718E8F7D800EE4616 /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = System/Library/Frameworks/AdSupport.framework; sourceTree = SDKROOT; };
 		708EF24918E8F7E300EE4616 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		708EF25118E96B0D00EE4616 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/iPhone4.storyboard; sourceTree = "<group>"; };
@@ -131,10 +132,6 @@
 		70A71E1C18DF58330085F62D /* stop.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = stop.png; sourceTree = "<group>"; };
 		70A71E1D18DF58330085F62D /* VolDown.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = VolDown.png; sourceTree = "<group>"; };
 		70A71E1E18DF58330085F62D /* VolUp.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = VolUp.png; sourceTree = "<group>"; };
-		70FFF7641B67C68700A455C0 /* libNendAd.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libNendAd.a; sourceTree = "<group>"; };
-		70FFF7651B67C68700A455C0 /* NADInterstitial.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NADInterstitial.h; sourceTree = "<group>"; };
-		70FFF7661B67C68700A455C0 /* NADView_readme.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = NADView_readme.txt; sourceTree = "<group>"; };
-		70FFF7671B67C68700A455C0 /* NADView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NADView.h; sourceTree = "<group>"; };
 		70FFF76A1B67C74500A455C0 /* ImageIO.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ImageIO.framework; path = System/Library/Frameworks/ImageIO.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
@@ -155,7 +152,6 @@
 				708EF24A18E8F7E300EE4616 /* Security.framework in Frameworks */,
 				708EF24818E8F7D800EE4616 /* AdSupport.framework in Frameworks */,
 				70A71E1618DF566E0085F62D /* MediaPlayer.framework in Frameworks */,
-				70FFF7681B67C68700A455C0 /* libNendAd.a in Frameworks */,
 				70A71E1418DF565C0085F62D /* CoreBluetooth.framework in Frameworks */,
 				70A71DDB18DF549A0085F62D /* CoreGraphics.framework in Frameworks */,
 				70A71DDD18DF549A0085F62D /* UIKit.framework in Frameworks */,
@@ -215,21 +211,27 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		708EF23E18E8F7B700EE4616 /* NendAd */ = {
+		70495D4A1EDB034500BC86BE /* NendAd.embeddedframework */ = {
 			isa = PBXGroup;
 			children = (
-				70FFF7641B67C68700A455C0 /* libNendAd.a */,
-				70FFF7651B67C68700A455C0 /* NADInterstitial.h */,
-				70FFF7661B67C68700A455C0 /* NADView_readme.txt */,
-				70FFF7671B67C68700A455C0 /* NADView.h */,
+				70495D4B1EDB034500BC86BE /* NendAd.framework */,
+				70495D4C1EDB034500BC86BE /* Resources */,
 			);
-			path = NendAd;
+			path = NendAd.embeddedframework;
+			sourceTree = "<group>";
+		};
+		70495D4C1EDB034500BC86BE /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				70495D4D1EDB034500BC86BE /* NendAdResource.bundle */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 		70A71DCC18DF549A0085F62D = {
 			isa = PBXGroup;
 			children = (
-				708EF23E18E8F7B700EE4616 /* NendAd */,
+				70495D4A1EDB034500BC86BE /* NendAd.embeddedframework */,
 				70A71DDE18DF549A0085F62D /* MusicRemoteController */,
 				70A71DFD18DF549B0085F62D /* MusicRemoteControllerTests */,
 				70188BE21B779450003C91BE /* MusicRemoteController WatchKit Extension */,
@@ -412,11 +414,14 @@
 				TargetAttributes = {
 					70188BE01B779450003C91BE = {
 						CreatedOnToolsVersion = 6.4;
+						DevelopmentTeam = KT5UFMR857;
 					};
 					70188BEB1B779451003C91BE = {
 						CreatedOnToolsVersion = 6.4;
+						DevelopmentTeam = KT5UFMR857;
 					};
 					70A71DD418DF549A0085F62D = {
+						DevelopmentTeam = KT5UFMR857;
 						SystemCapabilities = {
 							com.apple.BackgroundModes = {
 								enabled = 1;
@@ -424,6 +429,7 @@
 						};
 					};
 					70A71DF518DF549B0085F62D = {
+						DevelopmentTeam = KT5UFMR857;
 						TestTargetID = 70A71DD418DF549A0085F62D;
 					};
 				};
@@ -473,12 +479,12 @@
 			files = (
 				70A71DF118DF549A0085F62D /* Images.xcassets in Resources */,
 				70A71E2318DF58330085F62D /* stop.png in Resources */,
-				70FFF7691B67C68700A455C0 /* NADView_readme.txt in Resources */,
 				708EF25218E96B0D00EE4616 /* iPhone4.storyboard in Resources */,
 				70A71E2218DF58330085F62D /* Rev.png in Resources */,
 				708EF25418E9915F00EE4616 /* iPhone5.storyboard in Resources */,
 				70A71E2018DF58330085F62D /* nonimage.png in Resources */,
 				70A71E2418DF58330085F62D /* VolDown.png in Resources */,
+				70495D4F1EDB034500BC86BE /* NendAdResource.bundle in Resources */,
 				70A71E2118DF58330085F62D /* Play.png in Resources */,
 				70A71E1F18DF58330085F62D /* Next.png in Resources */,
 				70A71E2518DF58330085F62D /* VolUp.png in Resources */,
@@ -573,6 +579,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = KT5UFMR857;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_PREPROCESSOR_DEFINITIONS = (
@@ -598,6 +605,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = KT5UFMR857;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_NO_COMMON_BLOCKS = YES;
 				IBSC_MODULE = MusicRemoteController_WatchKit_Extension;
@@ -618,6 +626,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = KT5UFMR857;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_PREPROCESSOR_DEFINITIONS = (
@@ -641,6 +650,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = KT5UFMR857;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_NO_COMMON_BLOCKS = YES;
 				INFOPLIST_FILE = "MusicRemoteController WatchKit Extension/Info.plist";
@@ -731,6 +741,11 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = KT5UFMR857;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/NendAd.embeddedframework",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "MusicRemoteController/MusicRemoteController-Prefix.pch";
 				INFOPLIST_FILE = "MusicRemoteController/MusicRemoteController-Info.plist";
@@ -753,6 +768,11 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				DEVELOPMENT_TEAM = KT5UFMR857;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/NendAd.embeddedframework",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "MusicRemoteController/MusicRemoteController-Prefix.pch";
 				INFOPLIST_FILE = "MusicRemoteController/MusicRemoteController-Info.plist";
@@ -773,6 +793,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/MusicRemoteController.app/MusicRemoteController";
+				DEVELOPMENT_TEAM = KT5UFMR857;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
@@ -795,6 +816,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/MusicRemoteController.app/MusicRemoteController";
+				DEVELOPMENT_TEAM = KT5UFMR857;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",

@@ -10,7 +10,8 @@
 #import "PlayerModeViewController.h"
 
 #define SERVICE_UUID_STRING @"7865087B-D9D0-423A-9C80-042D9BBEA524"
-#define CHARACTERISTIC_UUID_STRING @"608072DD-6825-4293-B3E7-324CF0B5CA08"
+#define MUSICINFO_UUID_STRING @"085BACFC-5FCD-49D1-B7D7-A331901F6DDE"
+#define BUTTON_UUID_STRING @"608072DD-6825-4293-B3E7-324CF0B5CA08"
 
 @interface PlayerModeViewController ()
 @property CBUUID *uuid;
@@ -41,7 +42,8 @@
     
     // CoreBluetooth
     self.serviceUUID = [CBUUID UUIDWithString:SERVICE_UUID_STRING];
-    self.characteristicUUID = [CBUUID UUIDWithString:CHARACTERISTIC_UUID_STRING];
+    self.buttonUUID = [CBUUID UUIDWithString:BUTTON_UUID_STRING];
+    self.musicInfoUUID = [CBUUID UUIDWithString:MUSICINFO_UUID_STRING];
     self.peripheralManager = [[CBPeripheralManager alloc] initWithDelegate:self queue:nil];
 }
 
@@ -53,11 +55,12 @@
     NSLog(@"peripheralManagerDidUpdateState");
     if (peripheral.state == CBPeripheralManagerStatePoweredOn){
         
-        CBCharacteristicProperties properties = (CBCharacteristicPropertyRead | CBCharacteristicPropertyWrite | CBCharacteristicPropertyNotify);
-        CBAttributePermissions permissions = (CBAttributePermissionsReadEncryptionRequired | CBAttributePermissionsWriteEncryptionRequired);
-        self.characteristic = [[CBMutableCharacteristic alloc] initWithType:self.characteristicUUID properties:properties value:nil permissions:permissions];
+        CBCharacteristic *buttonCharacteristic = [[CBMutableCharacteristic alloc] initWithType:self.buttonUUID properties:(CBCharacteristicPropertyRead | CBCharacteristicPropertyWrite | CBCharacteristicPropertyNotify) value:nil permissions: (CBAttributePermissionsReadEncryptionRequired | CBAttributePermissionsWriteEncryptionRequired)];
+
+        CBCharacteristic *musicInfoCharacteristic = [[CBMutableCharacteristic alloc] initWithType:self.musicInfoUUID properties:(CBCharacteristicPropertyNotify) value:nil permissions: (CBAttributePermissionsReadEncryptionRequired)];
+        
         CBMutableService *service = [[CBMutableService alloc] initWithType:self.serviceUUID primary:YES];
-        [service setCharacteristics:@[self.characteristic]];
+        [service setCharacteristics:@[buttonCharacteristic,musicInfoCharacteristic]];
         [peripheral addService:service];
         
     }
@@ -78,7 +81,7 @@
     
     for (CBATTRequest *aRequest in requests) {
         
-        if ([aRequest.characteristic.UUID isEqual:self.characteristic.UUID]) {
+        if ([aRequest.characteristic.UUID isEqual:self.buttonUUID]) {
             
             // CBCharacteristicのvalueに、CBATTRequestのvalueをセット
             [self pushRemoteController:aRequest.value];
@@ -93,7 +96,7 @@
 - (void)peripheralManager:(CBPeripheralManager *)peripheral
     didReceiveReadRequest:(CBATTRequest *)request
 {
-    if ([request.characteristic.UUID isEqual:self.characteristic.UUID]) {
+    if ([request.characteristic.UUID isEqual:self.buttonUUID]) {
         
         // CBMutableCharacteristicのvalueをCBATTRequestのvalueにセット
         

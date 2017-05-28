@@ -15,7 +15,8 @@
 @property (strong, nonatomic) CBPeripheralManager *peripheralManager;
 @property (strong, nonatomic) CBMutableCharacteristic *characteristic;
 @property (strong, nonatomic) CBUUID *serviceUUID;
-@property (strong, nonatomic) CBUUID *characteristicUUID;
+@property (strong, nonatomic) CBUUID *buttonUUID;
+@property (strong, nonatomic) CBUUID *musicInfoUUID;
 
 @property (strong, nonatomic) MPMusicPlayerController *player;
 @property (strong, nonatomic) NSNotificationCenter *ncenter;
