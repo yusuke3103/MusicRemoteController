@@ -9,8 +9,10 @@
 
 #import "RemoteModeViewController.h"
 
-#define SERVICE_UUID_STRING @"7865087B-D9D0-423A-9C80-042D9BBEA524"
-#define CHARACTERISTIC_UUID_STRING @"608072DD-6825-4293-B3E7-324CF0B5CA08"
+#define SERVICE_UUID_STRING @""
+#define MUSICINFO_UUID_STRING @""
+#define BUTTON_UUID_STRING @""
+
 
 @implementation RemoteModeViewController
 
@@ -19,7 +21,9 @@
     [super viewDidAppear:NO];
     [self btnStateChange:NO];
     self.serviceUUID = [CBUUID UUIDWithString:SERVICE_UUID_STRING];
-    self.characteristicUUID = [CBUUID UUIDWithString:CHARACTERISTIC_UUID_STRING];
+    self.buttonUUID = [CBUUID UUIDWithString:BUTTON_UUID_STRING];
+    self.musicInfoUUID = [CBUUID UUIDWithString:MUSICINFO_UUID_STRING];
+    
     // セントラルマネージャ初期化
     self.centralManager = [[CBCentralManager alloc] initWithDelegate:self queue:nil];
 }
@@ -69,19 +73,26 @@
     NSLog(@"didDiscoverServices");
     for (CBService *service in peripheral.services) {
         if ([service.UUID isEqual:self.serviceUUID]) {
-            [peripheral discoverCharacteristics:@[self.characteristicUUID] forService:service];
+            [peripheral discoverCharacteristics:@[self.buttonUUID,self.musicInfoUUID] forService:service];
         }
     }
 }
 -(void) peripheral:(CBPeripheral *)peripheral didDiscoverCharacteristicsForService:(CBService *)service error:(NSError *)error
 {
-    
     if ([service.UUID isEqual:self.serviceUUID]) {
         for (CBCharacteristic *characteristic in service.characteristics) {
-            if ([characteristic.UUID isEqual:self.characteristicUUID]) {
-                self.characteristic = characteristic;
-                [self.peripheral readValueForCharacteristic:self.characteristic];
+            if ([characteristic.UUID isEqual:self.buttonUUID]) {
+                NSLog(@"Discoverd BUTTON UUID");
+
+                self.buttonCharacteristic = characteristic;
+                [self.peripheral readValueForCharacteristic:self.buttonCharacteristic];
                 //[peripheral setNotifyValue:YES forCharacteristic:characteristic];
+            }
+            
+            if ([characteristic.UUID isEqual:self.musicInfoUUID]){
+                self.musicInfoCharacteristic = characteristic;
+                NSLog(@"Discoverd MUSIC INFO UUID");
+                [peripheral setNotifyValue:YES forCharacteristic:self.musicInfoCharacteristic];
             }
         }
     }
@@ -91,32 +102,32 @@
 - (IBAction)btnPlay:(id)sender {
     uint val = 0;
     NSData *data = [NSData dataWithBytes:&val length:1];
-    [self.peripheral writeValue:data forCharacteristic:self.characteristic type:CBCharacteristicWriteWithResponse];
+    [self.peripheral writeValue:data forCharacteristic:self.buttonCharacteristic type:CBCharacteristicWriteWithResponse];
 }
 
 - (IBAction)btnPrevPush:(id)sender {
     uint val = 2;
     NSData *data = [NSData dataWithBytes:&val length:1];
-    [self.peripheral writeValue:data forCharacteristic:self.characteristic type:CBCharacteristicWriteWithResponse];
+    [self.peripheral writeValue:data forCharacteristic:self.buttonCharacteristic type:CBCharacteristicWriteWithResponse];
 }
 
 - (IBAction)btnNextPush:(id)sender {
     uint val = 1;
     NSData *data = [NSData dataWithBytes:&val length:1];
-    [self.peripheral writeValue:data forCharacteristic:self.characteristic type:CBCharacteristicWriteWithResponse];
+    [self.peripheral writeValue:data forCharacteristic:self.buttonCharacteristic type:CBCharacteristicWriteWithResponse];
 }
 
 
 - (IBAction)btnUpPush:(id)sender {
     uint val = 3;
     NSData *data = [NSData dataWithBytes:&val length:1];
-    [self.peripheral writeValue:data forCharacteristic:self.characteristic type:CBCharacteristicWriteWithResponse];
+    [self.peripheral writeValue:data forCharacteristic:self.buttonCharacteristic type:CBCharacteristicWriteWithResponse];
 }
 
 - (IBAction)btnDownPush:(id)sender {
     uint val = 4;
     NSData *data = [NSData dataWithBytes:&val length:1];
-    [self.peripheral writeValue:data forCharacteristic:self.characteristic type:CBCharacteristicWriteWithResponse];
+    [self.peripheral writeValue:data forCharacteristic:self.buttonCharacteristic type:CBCharacteristicWriteWithResponse];
     
 }
 
@@ -138,8 +149,25 @@ didUpdateValueForCharacteristic:(CBCharacteristic *)characteristic
         NSLog(@"Failed... error: %@", error);
         return;
     }
+    
     [self btnStateChange:YES];
+
+    NSDictionary *reverse = [NSKeyedUnarchiver unarchiveObjectWithData:characteristic.value];
+    
     NSLog(@"Succeeded！ service uuid:%@, characteristice uuid:%@, value%@",
-          characteristic.service.UUID, characteristic.UUID, characteristic.value);
+            characteristic.service.UUID, characteristic.UUID, characteristic.value);
+}
+
+
+
+- (void) peripheral:(CBPeripheral *)peripheral didUpdateNotificationStateForCharacteristic:(CBCharacteristic *)characteristic error:(NSError *)error{
+    if ([characteristic.UUID isEqual:self.musicInfoUUID]){
+        
+        NSLog(@"Notifiy Music Info -%lu-",characteristic.value.length);
+        
+        if ([[UIApplication sharedApplication] applicationState] == UIApplicationStateActive){
+            [self.peripheral readValueForCharacteristic:self.musicInfoCharacteristic];
+        }
+    }
 }
 @end

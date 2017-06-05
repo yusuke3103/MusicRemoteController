@@ -13,9 +13,11 @@
 @interface RemoteModeViewController : UIViewController <CBCentralManagerDelegate, CBPeripheralDelegate>
 @property (strong, nonatomic) CBCentralManager *centralManager;
 @property (strong, nonatomic) CBPeripheral *peripheral;
-@property (strong, nonatomic) CBCharacteristic *characteristic;
+@property (strong, nonatomic) CBCharacteristic *buttonCharacteristic;
+@property (strong, nonatomic) CBCharacteristic *musicInfoCharacteristic;
 @property (strong, nonatomic) CBUUID *serviceUUID;
-@property (strong, nonatomic) CBUUID *characteristicUUID;
+@property (strong, nonatomic) CBUUID *buttonUUID;
+@property (strong, nonatomic) CBUUID *musicInfoUUID;
 
 - (IBAction)btnPlay:(id)sender;
 - (IBAction)btnPrevPush:(id)sender;

@@ -13,7 +13,9 @@
 
 @interface PlayerModeViewController : UIViewController <CBPeripheralManagerDelegate>
 @property (strong, nonatomic) CBPeripheralManager *peripheralManager;
-@property (strong, nonatomic) CBMutableCharacteristic *characteristic;
+@property (strong, nonatomic) CBCharacteristic *buttonCharacteristic;
+@property (strong, nonatomic) CBCharacteristic *musicInfoCharacteristic;
+
 @property (strong, nonatomic) CBUUID *serviceUUID;
 @property (strong, nonatomic) CBUUID *buttonUUID;
 @property (strong, nonatomic) CBUUID *musicInfoUUID;

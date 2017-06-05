@@ -55,12 +55,12 @@
     NSLog(@"peripheralManagerDidUpdateState");
     if (peripheral.state == CBPeripheralManagerStatePoweredOn){
         
-        CBCharacteristic *buttonCharacteristic = [[CBMutableCharacteristic alloc] initWithType:self.buttonUUID properties:(CBCharacteristicPropertyRead | CBCharacteristicPropertyWrite | CBCharacteristicPropertyNotify) value:nil permissions: (CBAttributePermissionsReadEncryptionRequired | CBAttributePermissionsWriteEncryptionRequired)];
+        self.buttonCharacteristic = [[CBMutableCharacteristic alloc] initWithType:self.buttonUUID properties:(CBCharacteristicPropertyRead | CBCharacteristicPropertyWrite | CBCharacteristicPropertyNotify) value:nil permissions: (CBAttributePermissionsReadEncryptionRequired | CBAttributePermissionsWriteEncryptionRequired)];
 
-        CBCharacteristic *musicInfoCharacteristic = [[CBMutableCharacteristic alloc] initWithType:self.musicInfoUUID properties:(CBCharacteristicPropertyNotify) value:nil permissions: (CBAttributePermissionsReadEncryptionRequired)];
+        self.musicInfoCharacteristic = [[CBMutableCharacteristic alloc] initWithType:self.musicInfoUUID properties:(CBCharacteristicPropertyNotify | CBCharacteristicPropertyRead) value:nil permissions: (CBAttributePermissionsReadEncryptionRequired)];
         
         CBMutableService *service = [[CBMutableService alloc] initWithType:self.serviceUUID primary:YES];
-        [service setCharacteristics:@[buttonCharacteristic,musicInfoCharacteristic]];
+        [service setCharacteristics:@[self.buttonCharacteristic,self.musicInfoCharacteristic]];
         [peripheral addService:service];
         
     }
@@ -106,6 +106,30 @@
         [self.peripheralManager respondToRequest:request
                                       withResult:CBATTErrorSuccess];
     }
+    
+    if ([request.characteristic.UUID isEqual:self.musicInfoUUID]){
+        NSLog(@"Request Music Info");
+        
+        if (request.offset > self.musicInfoCharacteristic.value.length){
+            NSLog(@"A");
+            [self.peripheralManager respondToRequest:request withResult:CBATTErrorInvalidOffset];
+            return;
+        }else{
+            NSLog(@"B");
+            request.value = [self.musicInfoCharacteristic.value subdataWithRange:NSMakeRange(request.offset, self.musicInfoCharacteristic.value.length)];
+            [self.peripheralManager respondToRequest:request withResult:CBATTErrorSuccess];
+        }
+        
+        
+        
+    }
+}
+
+- (void) peripheralManager:(CBPeripheralManager *)peripheral
+                         central:(CBCentral *)central
+    didSubscribeToCharacteristic:(CBCharacteristic *)characteristic
+{
+    NSLog(@"Subscribeリクエストを受信");
 }
 
 -(void)pushRemoteController:(NSData *)val
@@ -188,6 +212,18 @@
     }
     [self.imageArtwork setImage:image];
     
+    if (self.musicInfoCharacteristic != nil){
+        
+        NSMutableDictionary *dic = [NSMutableDictionary dictionary];
+        [dic setValue:SongTitle forKey:@"TITLE"];
+        [dic setValue:SongArtist forKey:@"ARTIST"];
+        //[dic setObject:image forKey:@"ARTWORK"];
+   
+        NSData *updValue = [NSKeyedArchiver archivedDataWithRootObject:dic];
+   
+        
+        [self.peripheralManager updateValue:updValue forCharacteristic:_musicInfoCharacteristic onSubscribedCentrals:nil];
+    }
 }
 
 - (void) volumeChange

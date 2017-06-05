@@ -17,6 +17,11 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    
+    //self.nadView.nendApiKey = @"a6eca9dd074372c898dd1df549301f277c53f2b9";
+    
+    //self.nadView.nendSpotID = @"3172";
 }
 
 - (void)didReceiveMemoryWarning
