@@ -10,7 +10,7 @@ import UIKit
 import CoreBluetooth
 import MediaPlayer
 
-class PlayerModeViewController : UIViewController,CBPeripheralManagerDelegate {
+class PlayerModeViewController : NendViewController ,CBPeripheralManagerDelegate {
     
 
     
@@ -26,9 +26,11 @@ class PlayerModeViewController : UIViewController,CBPeripheralManagerDelegate {
     var peripheralManager : CBPeripheralManager!
     var buttonCharacteristic : CBCharacteristic!
     var musicInfoCharacteristic: CBCharacteristic!
-    
+    var notifyCharacteristic: CBCharacteristic!
     var notificationCenter : NotificationCenter!
     var player : MPMusicPlayerController!
+    
+    var nowItem : Data!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -54,6 +56,12 @@ class PlayerModeViewController : UIViewController,CBPeripheralManagerDelegate {
         // MPMediaPlayer
         player = MPMusicPlayerController.systemMusicPlayer()
         
+        // 再生中でない場合適当な全曲からランダム
+        if player.playbackState == .stopped {
+            self.player.setQueue(with: .songs())
+        }
+        
+        
         //
         barVolume.backgroundColor = UIColor.clear
         barVolume.addSubview(MPVolumeView(frame: barVolume.bounds))
@@ -67,6 +75,8 @@ class PlayerModeViewController : UIViewController,CBPeripheralManagerDelegate {
         
         player.beginGeneratingPlaybackNotifications()
         
+        setPlayingItem()
+        
     }
     
     /**
@@ -79,15 +89,42 @@ class PlayerModeViewController : UIViewController,CBPeripheralManagerDelegate {
      * 再生中のアイテム変更
      */
     func nowPlayingItemChanged(){
+    
+        setPlayingItem()
+        
+        if notifyCharacteristic != nil{
+            peripheralManager.updateValue(nowItem, for: notifyCharacteristic as! CBMutableCharacteristic, onSubscribedCentrals: nil)
+        }
+    }
+    
+    func setPlayingItem() {
         
         let nowplayingItem : MPMediaItem = player.nowPlayingItem!
         
-        lblTitle.text = nowplayingItem.title
-        lblArtist.text = nowplayingItem.artist
-        imgArtwork.image = nowplayingItem.artwork?.image(at: CGSize(width: 200, height: 200))
+        let title : String = nowplayingItem.title!
+        let artist : String = nowplayingItem.artist!
         
+        // アートワーク
+        var artwork = (nowplayingItem.artwork?.image(at: CGSize(width: 200, height: 200)))
+        if artwork == nil {
+            artwork = UIImage(named: "nonimage.png")
+        }
+        
+        lblTitle.text = title
+        lblArtist.text = artist
+        imgArtwork.image = artwork
+        
+        var info : Dictionary<String, AnyObject> = [:]
+        info["TITLE"] = lblTitle.text as AnyObject
+        info["ARTIST"] = lblArtist.text as AnyObject
+        
+        do{
+            nowItem = try JSONSerialization.data(withJSONObject: info, options: .prettyPrinted)
+        }catch{
+            print("ERROR:JSONSerialization")
+        }
     }
-    
+
     /**
      * 音量変更
      */
@@ -107,13 +144,15 @@ class PlayerModeViewController : UIViewController,CBPeripheralManagerDelegate {
         if peripheral.state.rawValue == CBPeripheralManagerState.poweredOn.rawValue {
             
             // ボタン押下イベント用
-            buttonCharacteristic = CBMutableCharacteristic(type: UUIDS.BUTTON, properties: [.read, .write, .notifyEncryptionRequired], value: nil, permissions: [.readEncryptionRequired, .writeEncryptionRequired])
+            buttonCharacteristic = CBMutableCharacteristic(type: UUIDS.BUTTON, properties: [.write], value: nil, permissions: [.writeEncryptionRequired])
             
             // 再生楽曲情報用
-            musicInfoCharacteristic = CBMutableCharacteristic(type: UUIDS.MUSIC_INFO, properties: [.read, .notifyEncryptionRequired], value: nil, permissions: [.readEncryptionRequired])
+            musicInfoCharacteristic = CBMutableCharacteristic(type: UUIDS.MUSIC_INFO, properties: [.read ], value: nil, permissions: [.readEncryptionRequired])
+            
+            notifyCharacteristic = CBMutableCharacteristic(type: UUIDS.NOTIFY, properties: [.notify], value: nil, permissions: [.readable])
             
             let service : CBMutableService = CBMutableService(type: UUIDS.SERVICE, primary: true)
-            service.characteristics = [buttonCharacteristic,musicInfoCharacteristic]
+            service.characteristics = [buttonCharacteristic, notifyCharacteristic, musicInfoCharacteristic]
             // サービス追加
             peripheral.add(service)
             
@@ -148,15 +187,41 @@ class PlayerModeViewController : UIViewController,CBPeripheralManagerDelegate {
 
     func peripheralManager(_ peripheral: CBPeripheralManager, didReceiveWrite requests: [CBATTRequest]) {
         print("didReceiveWrite")
+    
         
-        WriteRequest(data: requests[0].value!)
+        for request in requests {
+            
+            if request.characteristic.uuid.isEqual(buttonCharacteristic.uuid) {
+                WriteRequest(data: requests[0].value!)
+            }
+        }
+        
         
         peripheralManager.respond(to: requests[0], withResult: .success)
     }
     
     func peripheralManager(_ peripheral: CBPeripheralManager, didReceiveRead request: CBATTRequest) {
-        print("didReceiveRead")
-        peripheralManager.respond(to: request, withResult: .success)
+        if (request.characteristic.uuid.isEqual(UUIDS.MUSIC_INFO)) {
+            
+            print(request.offset)
+            
+            
+            
+            if request.offset > nowItem.count {
+                
+            }else{
+            
+                print(Range(uncheckedBounds: (request.offset, nowItem.count)))
+                
+                request.value = nowItem.subdata(in: Range(uncheckedBounds: (request.offset, nowItem.count)))
+                
+                peripheral.respond(to: request, withResult: .success)
+
+            print("Read success")
+            }
+        }else{
+            print("Read fail: wrong characteristic uuid:", request.characteristic.uuid)
+        }
     }
     
     func peripheralManager(_ peripheral: CBPeripheralManager, central: CBCentral, didUnsubscribeFrom characteristic: CBCharacteristic) {

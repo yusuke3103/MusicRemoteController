@@ -8,26 +8,20 @@
 
 /* Begin PBXBuildFile section */
 		700E71851EDC590400BD565E /* Define.swift in Sources */ = {isa = PBXBuildFile; fileRef = 700E71841EDC590400BD565E /* Define.swift */; };
-		70188BE71B779450003C91BE /* InterfaceController.m in Sources */ = {isa = PBXBuildFile; fileRef = 70188BE61B779450003C91BE /* InterfaceController.m */; };
 		70188BE91B779450003C91BE /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 70188BE81B779450003C91BE /* Images.xcassets */; };
 		70188BED1B779451003C91BE /* MusicRemoteController WatchKit App.app in Resources */ = {isa = PBXBuildFile; fileRef = 70188BEC1B779451003C91BE /* MusicRemoteController WatchKit App.app */; };
 		70188BF51B779451003C91BE /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 70188BF31B779451003C91BE /* Interface.storyboard */; };
 		70188BF71B779451003C91BE /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 70188BF61B779451003C91BE /* Images.xcassets */; };
 		70188BFA1B779451003C91BE /* MusicRemoteController WatchKit Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 70188BE11B779450003C91BE /* MusicRemoteController WatchKit Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		70188C011B779581003C91BE /* CoreBluetooth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 70A71E1318DF565C0085F62D /* CoreBluetooth.framework */; };
-		70495D4F1EDB034500BC86BE /* NendAdResource.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 70495D4D1EDB034500BC86BE /* NendAdResource.bundle */; };
 		708EF24818E8F7D800EE4616 /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 708EF24718E8F7D800EE4616 /* AdSupport.framework */; };
 		708EF24A18E8F7E300EE4616 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 708EF24918E8F7E300EE4616 /* Security.framework */; };
 		708EF25218E96B0D00EE4616 /* iPhone4.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 708EF25018E96B0D00EE4616 /* iPhone4.storyboard */; };
 		708EF25418E9915F00EE4616 /* iPhone5.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 708EF25318E9915F00EE4616 /* iPhone5.storyboard */; };
 		7092283F1EDC564A00502D4F /* RemoteModeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7092283E1EDC564A00502D4F /* RemoteModeViewController.swift */; };
-		709A052C1B78DDB4000FA9A0 /* ErrorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 709A052B1B78DDB4000FA9A0 /* ErrorViewController.m */; };
 		70A71DD918DF549A0085F62D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 70A71DD818DF549A0085F62D /* Foundation.framework */; };
 		70A71DDB18DF549A0085F62D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 70A71DDA18DF549A0085F62D /* CoreGraphics.framework */; };
 		70A71DDD18DF549A0085F62D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 70A71DDC18DF549A0085F62D /* UIKit.framework */; };
-		70A71DE518DF549A0085F62D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 70A71DE418DF549A0085F62D /* main.m */; };
-		70A71DE918DF549A0085F62D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 70A71DE818DF549A0085F62D /* AppDelegate.m */; };
-		70A71DEF18DF549A0085F62D /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 70A71DEE18DF549A0085F62D /* ViewController.m */; };
 		70A71DF118DF549A0085F62D /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 70A71DF018DF549A0085F62D /* Images.xcassets */; };
 		70A71DF818DF549B0085F62D /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 70A71DF718DF549B0085F62D /* XCTest.framework */; };
 		70A71DF918DF549B0085F62D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 70A71DD818DF549A0085F62D /* Foundation.framework */; };
@@ -43,6 +37,14 @@
 		70A71E2418DF58330085F62D /* VolDown.png in Resources */ = {isa = PBXBuildFile; fileRef = 70A71E1D18DF58330085F62D /* VolDown.png */; };
 		70A71E2518DF58330085F62D /* VolUp.png in Resources */ = {isa = PBXBuildFile; fileRef = 70A71E1E18DF58330085F62D /* VolUp.png */; };
 		70B0719A1EDF14BD009631CC /* PlayerModeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70B071991EDF14BD009631CC /* PlayerModeViewController.swift */; };
+		70B8619E1EE5B24400C63E3D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70B8619D1EE5B24400C63E3D /* AppDelegate.swift */; };
+		70B861A01EE6D61C00C63E3D /* NendViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70B8619F1EE6D61C00C63E3D /* NendViewController.swift */; };
+		70B861A51EE6DA5900C63E3D /* NendAd.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 70B861A21EE6DA5900C63E3D /* NendAd.framework */; };
+		70B861A61EE6DA5900C63E3D /* NendAdResource.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 70B861A41EE6DA5900C63E3D /* NendAdResource.bundle */; };
+		70B861A81EE6DCED00C63E3D /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70B861A71EE6DCED00C63E3D /* MenuViewController.swift */; };
+		70F4A65F1EEBE67A00F584FD /* ImageUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70F4A65E1EEBE67A00F584FD /* ImageUtil.swift */; };
+		70F4A6621EEC156600F584FD /* InterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70F4A6611EEC156600F584FD /* InterfaceController.swift */; };
+		70F4A6641EEC16A800F584FD /* Define.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70F4A6631EEC16A800F584FD /* Define.swift */; };
 		70FFF76B1B67C74500A455C0 /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 70FFF76A1B67C74500A455C0 /* ImageIO.framework */; };
 /* End PBXBuildFile section */
 
@@ -88,8 +90,6 @@
 		700E71841EDC590400BD565E /* Define.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Define.swift; sourceTree = "<group>"; };
 		70188BE11B779450003C91BE /* MusicRemoteController WatchKit Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "MusicRemoteController WatchKit Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
 		70188BE41B779450003C91BE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		70188BE51B779450003C91BE /* InterfaceController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = InterfaceController.h; sourceTree = "<group>"; };
-		70188BE61B779450003C91BE /* InterfaceController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = InterfaceController.m; sourceTree = "<group>"; };
 		70188BE81B779450003C91BE /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		70188BEC1B779451003C91BE /* MusicRemoteController WatchKit App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "MusicRemoteController WatchKit App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		70188BF21B779451003C91BE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -97,27 +97,18 @@
 		70188BF61B779451003C91BE /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		7025A9271B7B7DE90059286A /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/iPhone4.strings; sourceTree = "<group>"; };
 		7025A9281B7B7DE90059286A /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Interface.strings; sourceTree = "<group>"; };
-		70495D4B1EDB034500BC86BE /* NendAd.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = NendAd.framework; sourceTree = "<group>"; };
-		70495D4D1EDB034500BC86BE /* NendAdResource.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = NendAdResource.bundle; sourceTree = "<group>"; };
 		708EF24718E8F7D800EE4616 /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = System/Library/Frameworks/AdSupport.framework; sourceTree = SDKROOT; };
 		708EF24918E8F7E300EE4616 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		708EF25118E96B0D00EE4616 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/iPhone4.storyboard; sourceTree = "<group>"; };
 		708EF25318E9915F00EE4616 /* iPhone5.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = iPhone5.storyboard; sourceTree = "<group>"; };
 		7092283D1EDC564A00502D4F /* MusicRemoteController-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MusicRemoteController-Bridging-Header.h"; sourceTree = "<group>"; };
 		7092283E1EDC564A00502D4F /* RemoteModeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RemoteModeViewController.swift; sourceTree = "<group>"; };
-		709A052A1B78DDB4000FA9A0 /* ErrorViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ErrorViewController.h; sourceTree = "<group>"; };
-		709A052B1B78DDB4000FA9A0 /* ErrorViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ErrorViewController.m; sourceTree = "<group>"; };
 		70A71DD518DF549A0085F62D /* MusicRemoteController.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MusicRemoteController.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		70A71DD818DF549A0085F62D /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		70A71DDA18DF549A0085F62D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		70A71DDC18DF549A0085F62D /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		70A71DE018DF549A0085F62D /* MusicRemoteController-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "MusicRemoteController-Info.plist"; sourceTree = "<group>"; };
-		70A71DE418DF549A0085F62D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		70A71DE618DF549A0085F62D /* MusicRemoteController-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MusicRemoteController-Prefix.pch"; sourceTree = "<group>"; };
-		70A71DE718DF549A0085F62D /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		70A71DE818DF549A0085F62D /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		70A71DED18DF549A0085F62D /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		70A71DEE18DF549A0085F62D /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		70A71DF018DF549A0085F62D /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		70A71DF618DF549B0085F62D /* MusicRemoteControllerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MusicRemoteControllerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		70A71DF718DF549B0085F62D /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
@@ -133,6 +124,15 @@
 		70A71E1D18DF58330085F62D /* VolDown.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = VolDown.png; sourceTree = "<group>"; };
 		70A71E1E18DF58330085F62D /* VolUp.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = VolUp.png; sourceTree = "<group>"; };
 		70B071991EDF14BD009631CC /* PlayerModeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayerModeViewController.swift; sourceTree = "<group>"; };
+		70B8619D1EE5B24400C63E3D /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		70B8619F1EE6D61C00C63E3D /* NendViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NendViewController.swift; sourceTree = "<group>"; };
+		70B861A21EE6DA5900C63E3D /* NendAd.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = NendAd.framework; sourceTree = "<group>"; };
+		70B861A41EE6DA5900C63E3D /* NendAdResource.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = NendAdResource.bundle; sourceTree = "<group>"; };
+		70B861A71EE6DCED00C63E3D /* MenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
+		70F4A65E1EEBE67A00F584FD /* ImageUtil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageUtil.swift; sourceTree = "<group>"; };
+		70F4A6601EEC156500F584FD /* MusicRemoteController WatchKit Extension-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MusicRemoteController WatchKit Extension-Bridging-Header.h"; sourceTree = "<group>"; };
+		70F4A6611EEC156600F584FD /* InterfaceController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InterfaceController.swift; sourceTree = "<group>"; };
+		70F4A6631EEC16A800F584FD /* Define.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Define.swift; sourceTree = "<group>"; };
 		70FFF76A1B67C74500A455C0 /* ImageIO.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ImageIO.framework; path = System/Library/Frameworks/ImageIO.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
@@ -155,6 +155,7 @@
 				70A71E1618DF566E0085F62D /* MediaPlayer.framework in Frameworks */,
 				70A71E1418DF565C0085F62D /* CoreBluetooth.framework in Frameworks */,
 				70A71DDB18DF549A0085F62D /* CoreGraphics.framework in Frameworks */,
+				70B861A51EE6DA5900C63E3D /* NendAd.framework in Frameworks */,
 				70A71DDD18DF549A0085F62D /* UIKit.framework in Frameworks */,
 				70A71DD918DF549A0085F62D /* Foundation.framework in Frameworks */,
 			);
@@ -176,12 +177,11 @@
 		70188BE21B779450003C91BE /* MusicRemoteController WatchKit Extension */ = {
 			isa = PBXGroup;
 			children = (
-				70188BE51B779450003C91BE /* InterfaceController.h */,
-				70188BE61B779450003C91BE /* InterfaceController.m */,
 				70188BE81B779450003C91BE /* Images.xcassets */,
 				70188BE31B779450003C91BE /* Supporting Files */,
-				709A052A1B78DDB4000FA9A0 /* ErrorViewController.h */,
-				709A052B1B78DDB4000FA9A0 /* ErrorViewController.m */,
+				70F4A6611EEC156600F584FD /* InterfaceController.swift */,
+				70F4A6601EEC156500F584FD /* MusicRemoteController WatchKit Extension-Bridging-Header.h */,
+				70F4A6631EEC16A800F584FD /* Define.swift */,
 			);
 			path = "MusicRemoteController WatchKit Extension";
 			sourceTree = "<group>";
@@ -212,27 +212,10 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		70495D4A1EDB034500BC86BE /* NendAd.embeddedframework */ = {
-			isa = PBXGroup;
-			children = (
-				70495D4B1EDB034500BC86BE /* NendAd.framework */,
-				70495D4C1EDB034500BC86BE /* Resources */,
-			);
-			path = NendAd.embeddedframework;
-			sourceTree = "<group>";
-		};
-		70495D4C1EDB034500BC86BE /* Resources */ = {
-			isa = PBXGroup;
-			children = (
-				70495D4D1EDB034500BC86BE /* NendAdResource.bundle */,
-			);
-			path = Resources;
-			sourceTree = "<group>";
-		};
 		70A71DCC18DF549A0085F62D = {
 			isa = PBXGroup;
 			children = (
-				70495D4A1EDB034500BC86BE /* NendAd.embeddedframework */,
+				70B861A11EE6DA5800C63E3D /* NendAd.embeddedframework */,
 				70A71DDE18DF549A0085F62D /* MusicRemoteController */,
 				70A71DFD18DF549B0085F62D /* MusicRemoteControllerTests */,
 				70188BE21B779450003C91BE /* MusicRemoteController WatchKit Extension */,
@@ -275,16 +258,16 @@
 			children = (
 				708EF25018E96B0D00EE4616 /* iPhone4.storyboard */,
 				708EF25318E9915F00EE4616 /* iPhone5.storyboard */,
-				70A71DE718DF549A0085F62D /* AppDelegate.h */,
-				70A71DE818DF549A0085F62D /* AppDelegate.m */,
-				70A71DED18DF549A0085F62D /* ViewController.h */,
-				70A71DEE18DF549A0085F62D /* ViewController.m */,
 				70A71DF018DF549A0085F62D /* Images.xcassets */,
 				70A71DDF18DF549A0085F62D /* Supporting Files */,
 				7092283E1EDC564A00502D4F /* RemoteModeViewController.swift */,
 				7092283D1EDC564A00502D4F /* MusicRemoteController-Bridging-Header.h */,
 				700E71841EDC590400BD565E /* Define.swift */,
 				70B071991EDF14BD009631CC /* PlayerModeViewController.swift */,
+				70B8619D1EE5B24400C63E3D /* AppDelegate.swift */,
+				70B8619F1EE6D61C00C63E3D /* NendViewController.swift */,
+				70B861A71EE6DCED00C63E3D /* MenuViewController.swift */,
+				70F4A65E1EEBE67A00F584FD /* ImageUtil.swift */,
 			);
 			path = MusicRemoteController;
 			sourceTree = "<group>";
@@ -294,7 +277,6 @@
 			children = (
 				70A71E1718DF58330085F62D /* images */,
 				70A71DE018DF549A0085F62D /* MusicRemoteController-Info.plist */,
-				70A71DE418DF549A0085F62D /* main.m */,
 				70A71DE618DF549A0085F62D /* MusicRemoteController-Prefix.pch */,
 			);
 			name = "Supporting Files";
@@ -329,6 +311,23 @@
 				70A71E1E18DF58330085F62D /* VolUp.png */,
 			);
 			path = images;
+			sourceTree = "<group>";
+		};
+		70B861A11EE6DA5800C63E3D /* NendAd.embeddedframework */ = {
+			isa = PBXGroup;
+			children = (
+				70B861A21EE6DA5900C63E3D /* NendAd.framework */,
+				70B861A31EE6DA5900C63E3D /* Resources */,
+			);
+			path = NendAd.embeddedframework;
+			sourceTree = "<group>";
+		};
+		70B861A31EE6DA5900C63E3D /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				70B861A41EE6DA5900C63E3D /* NendAdResource.bundle */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -416,6 +415,7 @@
 					70188BE01B779450003C91BE = {
 						CreatedOnToolsVersion = 6.4;
 						DevelopmentTeam = KT5UFMR857;
+						LastSwiftMigration = 0830;
 					};
 					70188BEB1B779451003C91BE = {
 						CreatedOnToolsVersion = 6.4;
@@ -486,7 +486,7 @@
 				708EF25418E9915F00EE4616 /* iPhone5.storyboard in Resources */,
 				70A71E2018DF58330085F62D /* nonimage.png in Resources */,
 				70A71E2418DF58330085F62D /* VolDown.png in Resources */,
-				70495D4F1EDB034500BC86BE /* NendAdResource.bundle in Resources */,
+				70B861A61EE6DA5900C63E3D /* NendAdResource.bundle in Resources */,
 				70A71E2118DF58330085F62D /* Play.png in Resources */,
 				70A71E1F18DF58330085F62D /* Next.png in Resources */,
 				70A71E2518DF58330085F62D /* VolUp.png in Resources */,
@@ -507,8 +507,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				70188BE71B779450003C91BE /* InterfaceController.m in Sources */,
-				709A052C1B78DDB4000FA9A0 /* ErrorViewController.m in Sources */,
+				70F4A6621EEC156600F584FD /* InterfaceController.swift in Sources */,
+				70F4A6641EEC16A800F584FD /* Define.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -517,11 +517,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				70B0719A1EDF14BD009631CC /* PlayerModeViewController.swift in Sources */,
-				70A71DEF18DF549A0085F62D /* ViewController.m in Sources */,
-				70A71DE918DF549A0085F62D /* AppDelegate.m in Sources */,
+				70F4A65F1EEBE67A00F584FD /* ImageUtil.swift in Sources */,
+				70B861A81EE6DCED00C63E3D /* MenuViewController.swift in Sources */,
+				70B861A01EE6D61C00C63E3D /* NendViewController.swift in Sources */,
 				7092283F1EDC564A00502D4F /* RemoteModeViewController.swift in Sources */,
+				70B8619E1EE5B24400C63E3D /* AppDelegate.swift in Sources */,
 				700E71851EDC590400BD565E /* Define.swift in Sources */,
-				70A71DE518DF549A0085F62D /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -625,6 +626,7 @@
 		70188BFF1B779451003C91BE /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -642,12 +644,16 @@
 				MTL_ENABLE_DEBUG_INFO = YES;
 				PRODUCT_NAME = "${TARGET_NAME}";
 				SKIP_INSTALL = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "MusicRemoteController WatchKit Extension/MusicRemoteController WatchKit Extension-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
 		70188C001B779451003C91BE /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
@@ -662,6 +668,8 @@
 				MTL_ENABLE_DEBUG_INFO = NO;
 				PRODUCT_NAME = "${TARGET_NAME}";
 				SKIP_INSTALL = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "MusicRemoteController WatchKit Extension/MusicRemoteController WatchKit Extension-Bridging-Header.h";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
@@ -740,6 +748,7 @@
 		70A71E0818DF549B0085F62D /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_MODULES = YES;
@@ -753,12 +762,9 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "MusicRemoteController/MusicRemoteController-Prefix.pch";
 				INFOPLIST_FILE = "MusicRemoteController/MusicRemoteController-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/NendAd",
-				);
+				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
@@ -772,6 +778,7 @@
 		70A71E0918DF549B0085F62D /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_MODULES = YES;
@@ -785,12 +792,9 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "MusicRemoteController/MusicRemoteController-Prefix.pch";
 				INFOPLIST_FILE = "MusicRemoteController/MusicRemoteController-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/NendAd",
-				);
+				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				ONLY_ACTIVE_ARCH = YES;
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";

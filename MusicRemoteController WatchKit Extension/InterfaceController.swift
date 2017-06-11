@@ -1,15 +1,18 @@
 //
-//  RemoteModeViewController.swift
+//  InterfaceController.swift
 //  MusicRemoteController
 //
-//  Created by Yusuke Sato on 2017/05/29.
+//  Created by Yusuke Sato on 2017/06/10.
 //  Copyright © 2017年 Yusuke Sato. All rights reserved.
 //
 
-import UIKit
+import WatchKit
+import Foundation
 import CoreBluetooth
 
-class RemoteModeViewController : NendViewController, CBCentralManagerDelegate, CBPeripheralDelegate {
+class InterfaceController: WKInterfaceController, CBCentralManagerDelegate, CBPeripheralDelegate {
+    
+    var alert : UIAlertView!
     
     var centralManager: CBCentralManager!
     var buttonCharacteristic : CBCharacteristic!
@@ -17,32 +20,37 @@ class RemoteModeViewController : NendViewController, CBCentralManagerDelegate, C
     var notifyCharacteristic : CBCharacteristic!
     var remotePeripheral : CBPeripheral!
     
-    var nowPlayItem : Data!
+    @IBOutlet var lblTitle: WKInterfaceLabel!
+    @IBOutlet var lblArtist: WKInterfaceLabel!
     
-    let alert : UIAlertView = UIAlertView(title: "接続中...", message: nil, delegate: nil, cancelButtonTitle: "キャンセル")
-    let indicator : UIActivityIndicatorView = UIActivityIndicatorView()
-    
-    @IBOutlet var lblTitle: UILabel!
-    @IBOutlet var lblArtist: UILabel!
-    @IBOutlet var btnPlay: UIButton!
-    @IBOutlet var btnNext: UIButton!
-    @IBOutlet var btnPrev: UIButton!
-    @IBOutlet var btnVolUp: UIButton!
-    @IBOutlet var btnVolDown: UIButton!
-
-    
-
-    
-    
-    override func viewDidLoad() {
+    override func awake(withContext context: Any?) {
+        super.awake(withContext: context)
         
-        super.viewDidLoad()
+        initAlertDialog()
+    }
+    
+    override func willActivate() {
+        super.willActivate()
+        
         centralManager = CBCentralManager(delegate: self, queue: nil)
-        
-        initAlert()
         
         alert.show()
     }
+    
+    func initAlertDialog(){
+        alert = UIAlertView(title: "接続中...", message: "接続", delegate: nil, cancelButtonTitle: "キャンセル", otherButtonTitles: "OK", "")
+        
+    
+        let indicator : UIActivityIndicatorView = UIActivityIndicatorView()
+        indicator.frame = CGRect(x: 0, y: 0, width: 50, height: 50)
+        indicator.activityIndicatorViewStyle = .whiteLarge
+        indicator.color = UIColor.black
+        
+        indicator.startAnimating()
+        
+        alert.setValue(indicator, forKey: "accessoryView")
+    }
+    
     
     func centralManagerDidUpdateState(_ central: CBCentralManager) {
         print("Central Manager Did Update State");
@@ -50,9 +58,8 @@ class RemoteModeViewController : NendViewController, CBCentralManagerDelegate, C
         if central.state.rawValue == CBCentralManagerState.poweredOn.rawValue {
             centralManager.scanForPeripherals(withServices: [UUIDS.SERVICE], options: nil)
         }
-
     }
-
+    
     func centralManager(_ central: CBCentralManager, didDiscover peripheral: CBPeripheral, advertisementData: [String : Any], rssi RSSI: NSNumber) {
         
         // スキャン停止
@@ -61,7 +68,7 @@ class RemoteModeViewController : NendViewController, CBCentralManagerDelegate, C
         self.remotePeripheral = peripheral
         
         centralManager.connect(peripheral, options: nil)
-        
+
     }
     
     //  ペリフェラル接続成功時
@@ -98,15 +105,12 @@ class RemoteModeViewController : NendViewController, CBCentralManagerDelegate, C
         for characteristic in service.characteristics! {
             print(characteristic.uuid)
             
-            alert.dismiss(withClickedButtonIndex: 0, animated: false)
-            
             if characteristic.uuid.isEqual(UUIDS.BUTTON) {
                 print("Discovered Button Characteristics")
                 buttonCharacteristic = characteristic
             }else if (characteristic.uuid.isEqual(UUIDS.MUSIC_INFO)){
                 print("Discovered Music Info Characteristics")
                 musicInfoCharacteristic = characteristic
-                peripheral.readValue(for: musicInfoCharacteristic)
             }else if (characteristic.uuid.isEqual(UUIDS.NOTIFY)){
                 print("Discovered Notifiy Characteristics")
                 notifyCharacteristic = characteristic
@@ -114,24 +118,12 @@ class RemoteModeViewController : NendViewController, CBCentralManagerDelegate, C
             }
         }
     }
-    
-    func peripheral(_ peripheral: CBPeripheral, didModifyServices invalidatedServices: [CBService]) {
-        for service : CBService in invalidatedServices {
-            if service.uuid.isEqual(UUIDS.SERVICE) {
-                alert.show()
-                centralManager = CBCentralManager(delegate: self, queue: nil)
-            }
-        }
-    }
-    
 
     // 値の書き込み成功
     func peripheral(_ peripheral: CBPeripheral, didWriteValueFor descriptor: CBDescriptor, error: Error?) {
         print("didWriteValueFor")
-        
-        
-        
     }
+    
     // 値の読み込み成功
     func peripheral(_ peripheral: CBPeripheral, didUpdateValueFor characteristic: CBCharacteristic, error: Error?) {
         print("didUpdateValueFor")
@@ -149,11 +141,8 @@ class RemoteModeViewController : NendViewController, CBCentralManagerDelegate, C
                 
                 let data = try JSONSerialization.jsonObject(with: characteristic.value!, options: []) as! Dictionary<String, AnyObject>
                 
-                lblTitle.text = data["TITLE"] as! String
-                lblArtist.text = data["ARTIST"] as! String
-                
-                print(data)
-                
+                lblTitle.setText(data["TITLE"] as! String)
+                lblArtist.setText(data["ARTIST"] as! String)
                 
             }catch{
                 print("ERROR")
@@ -171,25 +160,14 @@ class RemoteModeViewController : NendViewController, CBCentralManagerDelegate, C
         }
     }
     
-    func initAlert(){
-        indicator.frame = CGRect(x: 0, y: 0, width: 50, height: 50)
-        indicator.activityIndicatorViewStyle = .whiteLarge
-        indicator.color = UIColor.black
-    
-        indicator.startAnimating()
-    
-        alert.setValue(indicator, forKey: "accessoryView")
-    }
-    
-    
-    // ==============
-    // ボタン押下
-    // ==============
+    // ============
+    //  ボタンイベント
+    // ============
     
     /**
      * Playボタン押下
      */
-    @IBAction func didTouchBtnPlay(_ sender: Any) {
+    @IBAction func didTouchBtnPlay() {
         
         let val : Data = Data(bytes: [0])
         remotePeripheral.writeValue(val , for: buttonCharacteristic, type: .withResponse)
@@ -198,7 +176,7 @@ class RemoteModeViewController : NendViewController, CBCentralManagerDelegate, C
     /**
      * Nextボタン押下
      */
-    @IBAction func didTouchBtnNext(_ sender: Any) {
+    @IBAction func didTouchBtnNext() {
         let val : Data = Data(bytes: [1])
         remotePeripheral.writeValue(val , for: buttonCharacteristic, type: .withResponse)
     }
@@ -206,7 +184,7 @@ class RemoteModeViewController : NendViewController, CBCentralManagerDelegate, C
     /**
      * Pravボタン押下
      */
-    @IBAction func didTouchBtnPrev(_ sender: Any) {
+    @IBAction func didTouchBtnPrev() {
         let val : Data = Data(bytes: [2])
         remotePeripheral.writeValue(val , for: buttonCharacteristic, type: .withResponse)
     }
@@ -215,7 +193,7 @@ class RemoteModeViewController : NendViewController, CBCentralManagerDelegate, C
     /**
      * ボリューム(UP)ボタン押下
      */
-    @IBAction func didTouchBtnVolUp(_ sender: Any) {
+    @IBAction func didTouchBtnVolUp() {
         let val : Data = Data(bytes: [3])
         remotePeripheral.writeValue(val , for: buttonCharacteristic, type: .withResponse)
     }
@@ -223,8 +201,10 @@ class RemoteModeViewController : NendViewController, CBCentralManagerDelegate, C
     /**
      * ボリューム(Down)ボタン押下
      */
-    @IBAction func didTouchBtnVolDown(_ sender: Any) {
+    @IBAction func didTouchBtnVolDown() {
         let val : Data = Data(bytes: [4])
         remotePeripheral.writeValue(val , for: buttonCharacteristic, type: .withResponse)
     }
+
+    
 }
