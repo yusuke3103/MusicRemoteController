@@ -180,7 +180,7 @@
                         <outlet property="btnNext" destination="z6B-iM-Li6" id="HUO-D9-8o4"/>
                         <outlet property="btnPlay" destination="BQg-3K-dcN" id="cPL-c5-PMD"/>
                         <outlet property="btnPrev" destination="pgp-Fh-I3x" id="Y8Q-Ho-Y5F"/>
-                        <outlet property="imageArtwork" destination="ier-cy-I0h" id="kaP-re-vip"/>
+                        <outlet property="imgArtwork" destination="ier-cy-I0h" id="M6V-I1-Ela"/>
                         <outlet property="lblArtist" destination="ssa-Jk-EVL" id="l7g-uJ-d7g"/>
                         <outlet property="lblTitle" destination="RPf-Id-1D7" id="Gcw-oq-Si5"/>
                     </connections>
@@ -248,10 +248,33 @@
                                     <action selector="didTouchBtnPrev:" destination="dYY-7C-0A6" eventType="touchUpInside" id="sDP-YV-1Kr"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jsg-ak-cCJ">
+                                <rect key="frame" x="16" y="80" width="42" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YFT-43-6Fo">
+                                <rect key="frame" x="16" y="109" width="42" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
                     <navigationItem key="navigationItem" title="リモコンモード" id="AbE-Ut-OEo"/>
+                    <connections>
+                        <outlet property="btnNext" destination="abv-es-0rD" id="ZB7-o2-D0U"/>
+                        <outlet property="btnPlay" destination="ajC-CV-Pfg" id="UMf-hu-2LR"/>
+                        <outlet property="btnPrev" destination="Zf7-xv-vn6" id="43m-GP-Eq4"/>
+                        <outlet property="btnVolDown" destination="G9B-5G-z48" id="rLh-8I-NzS"/>
+                        <outlet property="btnVolUp" destination="sHl-Ut-4Aa" id="0pm-5s-Zyb"/>
+                        <outlet property="lblArtist" destination="YFT-43-6Fo" id="3cA-Dh-3b2"/>
+                        <outlet property="lblTitle" destination="Jsg-ak-cCJ" id="H6K-9H-Eyq"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WoW-NG-nKF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

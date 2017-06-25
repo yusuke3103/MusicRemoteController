@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="12120" systemVersion="16F73" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="AgC-eL-Hgc">
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="AgC-eL-Hgc">
     <device id="watch38" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="watchOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="12029"/>
     </dependencies>
     <scenes>
@@ -18,19 +18,19 @@
                         <label alignment="left" text="　" id="FDZ-q1-Wcd"/>
                         <button width="1" height="38" alignment="left" title="再生" id="XiB-Bx-85x">
                             <connections>
-                                <action selector="didTouchBtnPlay" destination="AgC-eL-Hgc" id="clB-CA-mGF"/>
+                                <action selector="didTouchBtnPlay:" destination="AgC-eL-Hgc" id="R4q-YY-Akc"/>
                             </connections>
                         </button>
                         <group width="1" alignment="left" id="50N-CJ-gY6">
                             <items>
                                 <button width="0.50000000000000011" alignment="left" title="前へ" id="NVj-qR-wK8">
                                     <connections>
-                                        <action selector="didTouchBtnPrev" destination="AgC-eL-Hgc" id="jjO-uY-Rds"/>
+                                        <action selector="didTouchBtnPrev:" destination="AgC-eL-Hgc" id="GeO-F8-UeD"/>
                                     </connections>
                                 </button>
                                 <button width="0.50000000000000011" alignment="right" title="次へ" id="mFM-EZ-Esf">
                                     <connections>
-                                        <action selector="didTouchBtnNext" destination="AgC-eL-Hgc" id="7n0-t6-f55"/>
+                                        <action selector="didTouchBtnNext:" destination="AgC-eL-Hgc" id="ucy-aN-4ho"/>
                                     </connections>
                                 </button>
                             </items>
@@ -39,12 +39,12 @@
                             <items>
                                 <button alignment="left" title="ー" id="DxE-Lg-lHe">
                                     <connections>
-                                        <action selector="didTouchBtnVolDown" destination="AgC-eL-Hgc" id="2go-Je-SGB"/>
+                                        <action selector="didTouchBtnVolDown:" destination="AgC-eL-Hgc" id="HNw-4e-fGp"/>
                                     </connections>
                                 </button>
                                 <button alignment="right" title="＋" id="GMU-cC-raT">
                                     <connections>
-                                        <action selector="didTouchBtnVolUp" destination="AgC-eL-Hgc" id="gct-kn-r65"/>
+                                        <action selector="didTouchBtnVolUp:" destination="AgC-eL-Hgc" id="Rvx-62-52J"/>
                                     </connections>
                                 </button>
                                 <label alignment="center" verticalAlignment="center" text="音量" id="grS-8L-BVd"/>
@@ -52,6 +52,11 @@
                         </group>
                     </items>
                     <connections>
+                        <outlet property="btnNext" destination="mFM-EZ-Esf" id="Uq2-uR-GfS"/>
+                        <outlet property="btnPlay" destination="XiB-Bx-85x" id="VBg-24-rJO"/>
+                        <outlet property="btnPrev" destination="NVj-qR-wK8" id="9lQ-Hq-Nlg"/>
+                        <outlet property="btnVolDown" destination="DxE-Lg-lHe" id="FXW-5g-ZBl"/>
+                        <outlet property="btnVolUp" destination="GMU-cC-raT" id="dSH-uc-coQ"/>
                         <outlet property="lblArtist" destination="FDZ-q1-Wcd" id="DFZ-3k-b81"/>
                         <outlet property="lblTitle" destination="SFV-YI-aPq" id="h8i-hc-d2p"/>
                     </connections>

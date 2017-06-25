@@ -4,6 +4,11 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
+		<key>CentralFramework.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>4</integer>
+		</dict>
 		<key>Glance - MusicRemoteController WatchKit App.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
@@ -33,6 +38,11 @@
 			<true/>
 		</dict>
 		<key>70188BEB1B779451003C91BE</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>70437FD31EED8E2700455BB1</key>
 		<dict>
 			<key>primary</key>
 			<true/>

@@ -32,13 +32,10 @@ class PlayerModeViewController : NendViewController ,CBPeripheralManagerDelegate
     
     var nowItem : Data!
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
         
         initPlyer()
-        
-        
         peripheralManager = CBPeripheralManager(delegate: self, queue: nil)
     }
     
@@ -83,6 +80,19 @@ class PlayerModeViewController : NendViewController ,CBPeripheralManagerDelegate
      * MPMediaPlayer状態変化
      */
     func playbackStateChange() {
+        var state : UInt8 = 0
+        
+        if player.playbackState == .playing {
+            state = UInt8(MPMusicPlaybackState.playing.rawValue)
+            btnPlay.setImage(UIImage(named: "stop.png"), for: .normal)
+        } else {
+            state = UInt8(MPMusicPlaybackState.paused.rawValue)
+            btnPlay.setImage(UIImage(named: "Play.png"), for: .normal)
+        }
+        
+        if buttonCharacteristic != nil{
+            peripheralManager.updateValue(Data(bytes: [state]), for: buttonCharacteristic as! CBMutableCharacteristic, onSubscribedCentrals: nil)
+        }
     }
     
     /**
@@ -99,17 +109,20 @@ class PlayerModeViewController : NendViewController ,CBPeripheralManagerDelegate
     
     func setPlayingItem() {
         
-        let nowplayingItem : MPMediaItem = player.nowPlayingItem!
+        var title = "";
+        var artist = "";
+        var artwork = UIImage(named: "nonimage.png")
         
-        let title : String = nowplayingItem.title!
-        let artist : String = nowplayingItem.artist!
-        
-        // アートワーク
-        var artwork = (nowplayingItem.artwork?.image(at: CGSize(width: 200, height: 200)))
-        if artwork == nil {
-            artwork = UIImage(named: "nonimage.png")
+        if (player.nowPlayingItem != nil){
+            let nowplayingItem : MPMediaItem = player.nowPlayingItem!
+            title = nowplayingItem.title!
+            artist = nowplayingItem.artist!
+            // アートワーク
+            artwork = (nowplayingItem.artwork?.image(at: CGSize(width: 200, height: 200)))
         }
+
         
+
         lblTitle.text = title
         lblArtist.text = artist
         imgArtwork.image = artwork
@@ -144,7 +157,7 @@ class PlayerModeViewController : NendViewController ,CBPeripheralManagerDelegate
         if peripheral.state.rawValue == CBPeripheralManagerState.poweredOn.rawValue {
             
             // ボタン押下イベント用
-            buttonCharacteristic = CBMutableCharacteristic(type: UUIDS.BUTTON, properties: [.write], value: nil, permissions: [.writeEncryptionRequired])
+            buttonCharacteristic = CBMutableCharacteristic(type: UUIDS.BUTTON, properties: [.write,.notifyEncryptionRequired], value: nil, permissions: [.writeEncryptionRequired])
             
             // 再生楽曲情報用
             musicInfoCharacteristic = CBMutableCharacteristic(type: UUIDS.MUSIC_INFO, properties: [.read ], value: nil, permissions: [.readEncryptionRequired])
@@ -184,29 +197,30 @@ class PlayerModeViewController : NendViewController ,CBPeripheralManagerDelegate
         }
     }
     
-
+    // ================
+    //  Recived Event
+    // ================
+    /**
+     * didReceiveWrite
+     */
     func peripheralManager(_ peripheral: CBPeripheralManager, didReceiveWrite requests: [CBATTRequest]) {
         print("didReceiveWrite")
     
-        
         for request in requests {
-            
             if request.characteristic.uuid.isEqual(buttonCharacteristic.uuid) {
                 WriteRequest(data: requests[0].value!)
             }
         }
-        
-        
         peripheralManager.respond(to: requests[0], withResult: .success)
     }
     
+    /**
+     * didReceiveRead
+     */
     func peripheralManager(_ peripheral: CBPeripheralManager, didReceiveRead request: CBATTRequest) {
+        
+        // RECEIVED MUSIC INFO READ
         if (request.characteristic.uuid.isEqual(UUIDS.MUSIC_INFO)) {
-            
-            print(request.offset)
-            
-            
-            
             if request.offset > nowItem.count {
                 
             }else{

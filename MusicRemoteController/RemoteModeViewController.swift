@@ -8,6 +8,7 @@
 
 import UIKit
 import CoreBluetooth
+import MediaPlayer
 
 class RemoteModeViewController : NendViewController, CBCentralManagerDelegate, CBPeripheralDelegate {
     
@@ -29,19 +30,26 @@ class RemoteModeViewController : NendViewController, CBCentralManagerDelegate, C
     @IBOutlet var btnPrev: UIButton!
     @IBOutlet var btnVolUp: UIButton!
     @IBOutlet var btnVolDown: UIButton!
-
-    
-
-    
     
     override func viewDidLoad() {
         
         super.viewDidLoad()
+        
+        let notificationCenter : NotificationCenter = NotificationCenter.default
+        notificationCenter.addObserver(self, selector: #selector(RemoteModeViewController.EnterForeground), name: .UIApplicationWillEnterForeground, object: nil)
+        
+        
         centralManager = CBCentralManager(delegate: self, queue: nil)
         
         initAlert()
         
         alert.show()
+    }
+    
+    func EnterForeground(){
+        print("EnterForeground")
+        
+        centralManager = CBCentralManager(delegate: self, queue: nil)
     }
     
     func centralManagerDidUpdateState(_ central: CBCentralManager) {
@@ -103,6 +111,7 @@ class RemoteModeViewController : NendViewController, CBCentralManagerDelegate, C
             if characteristic.uuid.isEqual(UUIDS.BUTTON) {
                 print("Discovered Button Characteristics")
                 buttonCharacteristic = characteristic
+                peripheral.setNotifyValue(true, for: buttonCharacteristic)
             }else if (characteristic.uuid.isEqual(UUIDS.MUSIC_INFO)){
                 print("Discovered Music Info Characteristics")
                 musicInfoCharacteristic = characteristic
@@ -128,9 +137,7 @@ class RemoteModeViewController : NendViewController, CBCentralManagerDelegate, C
     // 値の書き込み成功
     func peripheral(_ peripheral: CBPeripheral, didWriteValueFor descriptor: CBDescriptor, error: Error?) {
         print("didWriteValueFor")
-        
-        
-        
+        print(descriptor)
     }
     // 値の読み込み成功
     func peripheral(_ peripheral: CBPeripheral, didUpdateValueFor characteristic: CBCharacteristic, error: Error?) {
@@ -141,16 +148,27 @@ class RemoteModeViewController : NendViewController, CBCentralManagerDelegate, C
             return
         }
         
-        if characteristic.uuid.isEqual(UUIDS.NOTIFY){
+        // BUTTON
+        if characteristic.uuid.isEqual(UUIDS.BUTTON){
+            if Int(Array(characteristic.value!)[0]) == MPMusicPlaybackState.playing.rawValue {
+                btnPlay.setImage(UIImage(named: "stop.png"), for: .normal)
+            }else{
+                btnPlay.setImage(UIImage(named: "Play.png"), for: .normal)
+            }
+        }
+        // NOTIFY
+        else if characteristic.uuid.isEqual(UUIDS.NOTIFY){
             peripheral.readValue(for: musicInfoCharacteristic)
-        } else if characteristic.uuid.isEqual(UUIDS.MUSIC_INFO){
+        }
+        // MUSIC INFO
+        else if characteristic.uuid.isEqual(UUIDS.MUSIC_INFO){
             
             do{
                 
                 let data = try JSONSerialization.jsonObject(with: characteristic.value!, options: []) as! Dictionary<String, AnyObject>
                 
-                lblTitle.text = data["TITLE"] as! String
-                lblArtist.text = data["ARTIST"] as! String
+                lblTitle.text = data["TITLE"] as? String
+                lblArtist.text = data["ARTIST"] as? String
                 
                 print(data)
                 

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "0640"
+   LastUpgradeVersion = "0830"
    version = "2.0">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "70188BC61B779435003C91BE"
+               BlueprintIdentifier = "70188BEB1B779451003C91BE"
                BuildableName = "MusicRemoteController WatchKit App.app"
                BlueprintName = "MusicRemoteController WatchKit App"
                ReferencedContainer = "container:MusicRemoteController.xcodeproj">
@@ -28,7 +28,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "70188BBB1B779435003C91BE"
+               BlueprintIdentifier = "70188BE01B779450003C91BE"
                BuildableName = "MusicRemoteController WatchKit Extension.appex"
                BlueprintName = "MusicRemoteController WatchKit Extension"
                ReferencedContainer = "container:MusicRemoteController.xcodeproj">
@@ -51,30 +51,33 @@
       </BuildActionEntries>
    </BuildAction>
    <TestAction
+      buildConfiguration = "Debug"
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
-      shouldUseLaunchSchemeArgsEnv = "YES"
-      buildConfiguration = "Debug">
+      shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
       </Testables>
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "70188BC61B779435003C91BE"
+            BlueprintIdentifier = "70188BEB1B779451003C91BE"
             BuildableName = "MusicRemoteController WatchKit App.app"
             BlueprintName = "MusicRemoteController WatchKit App"
             ReferencedContainer = "container:MusicRemoteController.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
+      <AdditionalOptions>
+      </AdditionalOptions>
    </TestAction>
    <LaunchAction
+      buildConfiguration = "Debug"
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       launchStyle = "0"
       useCustomWorkingDirectory = "NO"
-      buildConfiguration = "Debug"
       ignoresPersistentStateOnLaunch = "NO"
       debugDocumentVersioning = "YES"
+      debugServiceExtension = "internal"
       allowLocationSimulation = "YES"
       launchAutomaticallySubstyle = "4">
       <RemoteRunnable
@@ -83,7 +86,7 @@
          RemotePath = "/MusicRemoteController">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "70188BC61B779435003C91BE"
+            BlueprintIdentifier = "70188BEB1B779451003C91BE"
             BuildableName = "MusicRemoteController WatchKit App.app"
             BlueprintName = "MusicRemoteController WatchKit App"
             ReferencedContainer = "container:MusicRemoteController.xcodeproj">
@@ -92,7 +95,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "70188BC61B779435003C91BE"
+            BlueprintIdentifier = "70188BEB1B779451003C91BE"
             BuildableName = "MusicRemoteController WatchKit App.app"
             BlueprintName = "MusicRemoteController WatchKit App"
             ReferencedContainer = "container:MusicRemoteController.xcodeproj">
@@ -102,10 +105,10 @@
       </AdditionalOptions>
    </LaunchAction>
    <ProfileAction
+      buildConfiguration = "Release"
       shouldUseLaunchSchemeArgsEnv = "YES"
       savedToolIdentifier = ""
       useCustomWorkingDirectory = "NO"
-      buildConfiguration = "Release"
       debugDocumentVersioning = "YES"
       launchAutomaticallySubstyle = "4">
       <RemoteRunnable
@@ -114,7 +117,7 @@
          RemotePath = "/MusicRemoteController">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "70188BC61B779435003C91BE"
+            BlueprintIdentifier = "70188BEB1B779451003C91BE"
             BuildableName = "MusicRemoteController WatchKit App.app"
             BlueprintName = "MusicRemoteController WatchKit App"
             ReferencedContainer = "container:MusicRemoteController.xcodeproj">
@@ -123,7 +126,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "70188BC61B779435003C91BE"
+            BlueprintIdentifier = "70188BEB1B779451003C91BE"
             BuildableName = "MusicRemoteController WatchKit App.app"
             BlueprintName = "MusicRemoteController WatchKit App"
             ReferencedContainer = "container:MusicRemoteController.xcodeproj">

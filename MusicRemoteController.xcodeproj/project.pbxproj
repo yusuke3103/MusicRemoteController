@@ -42,7 +42,6 @@
 		70B861A51EE6DA5900C63E3D /* NendAd.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 70B861A21EE6DA5900C63E3D /* NendAd.framework */; };
 		70B861A61EE6DA5900C63E3D /* NendAdResource.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 70B861A41EE6DA5900C63E3D /* NendAdResource.bundle */; };
 		70B861A81EE6DCED00C63E3D /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70B861A71EE6DCED00C63E3D /* MenuViewController.swift */; };
-		70F4A65F1EEBE67A00F584FD /* ImageUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70F4A65E1EEBE67A00F584FD /* ImageUtil.swift */; };
 		70F4A6621EEC156600F584FD /* InterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70F4A6611EEC156600F584FD /* InterfaceController.swift */; };
 		70F4A6641EEC16A800F584FD /* Define.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70F4A6631EEC16A800F584FD /* Define.swift */; };
 		70FFF76B1B67C74500A455C0 /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 70FFF76A1B67C74500A455C0 /* ImageIO.framework */; };
@@ -82,6 +81,26 @@
 				70188BFA1B779451003C91BE /* MusicRemoteController WatchKit Extension.appex in Embed App Extensions */,
 			);
 			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		70437FE01EED8E2700455BB1 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		70437FE51EED8EA700455BB1 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+			);
+			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXCopyFilesBuildPhase section */
@@ -129,7 +148,6 @@
 		70B861A21EE6DA5900C63E3D /* NendAd.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = NendAd.framework; sourceTree = "<group>"; };
 		70B861A41EE6DA5900C63E3D /* NendAdResource.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = NendAdResource.bundle; sourceTree = "<group>"; };
 		70B861A71EE6DCED00C63E3D /* MenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
-		70F4A65E1EEBE67A00F584FD /* ImageUtil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageUtil.swift; sourceTree = "<group>"; };
 		70F4A6601EEC156500F584FD /* MusicRemoteController WatchKit Extension-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MusicRemoteController WatchKit Extension-Bridging-Header.h"; sourceTree = "<group>"; };
 		70F4A6611EEC156600F584FD /* InterfaceController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InterfaceController.swift; sourceTree = "<group>"; };
 		70F4A6631EEC16A800F584FD /* Define.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Define.swift; sourceTree = "<group>"; };
@@ -267,7 +285,6 @@
 				70B8619D1EE5B24400C63E3D /* AppDelegate.swift */,
 				70B8619F1EE6D61C00C63E3D /* NendViewController.swift */,
 				70B861A71EE6DCED00C63E3D /* MenuViewController.swift */,
-				70F4A65E1EEBE67A00F584FD /* ImageUtil.swift */,
 			);
 			path = MusicRemoteController;
 			sourceTree = "<group>";
@@ -340,6 +357,7 @@
 				70188BDD1B779450003C91BE /* Sources */,
 				70188BDE1B779450003C91BE /* Frameworks */,
 				70188BDF1B779450003C91BE /* Resources */,
+				70437FE51EED8EA700455BB1 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -374,6 +392,7 @@
 				70A71DD218DF549A0085F62D /* Frameworks */,
 				70A71DD318DF549A0085F62D /* Resources */,
 				70188BDC1B779435003C91BE /* Embed App Extensions */,
+				70437FE01EED8E2700455BB1 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -409,7 +428,7 @@
 		70A71DCD18DF549A0085F62D /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0510;
+				LastUpgradeCheck = 0830;
 				ORGANIZATIONNAME = "Yusuke Sato";
 				TargetAttributes = {
 					70188BE01B779450003C91BE = {
@@ -517,7 +536,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				70B0719A1EDF14BD009631CC /* PlayerModeViewController.swift in Sources */,
-				70F4A65F1EEBE67A00F584FD /* ImageUtil.swift in Sources */,
 				70B861A81EE6DCED00C63E3D /* MenuViewController.swift in Sources */,
 				70B861A01EE6D61C00C63E3D /* NendViewController.swift in Sources */,
 				7092283F1EDC564A00502D4F /* RemoteModeViewController.swift in Sources */,
@@ -594,6 +612,7 @@
 				INFOPLIST_FILE = "MusicRemoteController WatchKit App/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
 				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = Sato.MusicRemoteController.watchkitapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = 4;
@@ -616,6 +635,7 @@
 				INFOPLIST_FILE = "MusicRemoteController WatchKit App/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
 				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_BUNDLE_IDENTIFIER = Sato.MusicRemoteController.watchkitapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = 4;
@@ -642,6 +662,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = Sato.MusicRemoteController.watchkitextension;
 				PRODUCT_NAME = "${TARGET_NAME}";
 				SKIP_INSTALL = YES;
 				SWIFT_OBJC_BRIDGING_HEADER = "MusicRemoteController WatchKit Extension/MusicRemoteController WatchKit Extension-Bridging-Header.h";
@@ -666,6 +687,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_BUNDLE_IDENTIFIER = Sato.MusicRemoteController.watchkitextension;
 				PRODUCT_NAME = "${TARGET_NAME}";
 				SKIP_INSTALL = YES;
 				SWIFT_OBJC_BRIDGING_HEADER = "MusicRemoteController WatchKit Extension/MusicRemoteController WatchKit Extension-Bridging-Header.h";
@@ -686,14 +708,20 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
@@ -709,6 +737,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -725,14 +754,19 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				COPY_PHASE_STRIP = YES;
 				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				GCC_WARN_UNDECLARED_SELECTOR = YES;
@@ -741,6 +775,8 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
 				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 3.0;
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
@@ -762,10 +798,11 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "MusicRemoteController/MusicRemoteController-Prefix.pch";
 				INFOPLIST_FILE = "MusicRemoteController/MusicRemoteController-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_BUNDLE_IDENTIFIER = "Sato.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "MusicRemoteController/MusicRemoteController-Bridging-Header.h";
@@ -792,11 +829,12 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "MusicRemoteController/MusicRemoteController-Prefix.pch";
 				INFOPLIST_FILE = "MusicRemoteController/MusicRemoteController-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				ONLY_ACTIVE_ARCH = YES;
 				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_BUNDLE_IDENTIFIER = "Sato.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "MusicRemoteController/MusicRemoteController-Bridging-Header.h";
@@ -823,6 +861,7 @@
 					"$(inherited)",
 				);
 				INFOPLIST_FILE = "MusicRemoteControllerTests/MusicRemoteControllerTests-Info.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = "yusuke.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = xctest;
@@ -843,6 +882,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "MusicRemoteController/MusicRemoteController-Prefix.pch";
 				INFOPLIST_FILE = "MusicRemoteControllerTests/MusicRemoteControllerTests-Info.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = "yusuke.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = xctest;

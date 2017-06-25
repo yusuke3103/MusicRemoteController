@@ -9,10 +9,9 @@
 import WatchKit
 import Foundation
 import CoreBluetooth
+import MediaPlayer
 
 class InterfaceController: WKInterfaceController, CBCentralManagerDelegate, CBPeripheralDelegate {
-    
-    var alert : UIAlertView!
     
     var centralManager: CBCentralManager!
     var buttonCharacteristic : CBCharacteristic!
@@ -23,34 +22,25 @@ class InterfaceController: WKInterfaceController, CBCentralManagerDelegate, CBPe
     @IBOutlet var lblTitle: WKInterfaceLabel!
     @IBOutlet var lblArtist: WKInterfaceLabel!
     
+    @IBOutlet var btnPlay: WKInterfaceButton!
+    @IBOutlet var btnNext: WKInterfaceButton!
+    @IBOutlet var btnPrev: WKInterfaceButton!
+    @IBOutlet var btnVolUp: WKInterfaceButton!
+    @IBOutlet var btnVolDown: WKInterfaceButton!
+    
+    
     override func awake(withContext context: Any?) {
         super.awake(withContext: context)
         
-        initAlertDialog()
     }
     
     override func willActivate() {
         super.willActivate()
         
+        print("willActivate")
+        
         centralManager = CBCentralManager(delegate: self, queue: nil)
-        
-        alert.show()
     }
-    
-    func initAlertDialog(){
-        alert = UIAlertView(title: "接続中...", message: "接続", delegate: nil, cancelButtonTitle: "キャンセル", otherButtonTitles: "OK", "")
-        
-    
-        let indicator : UIActivityIndicatorView = UIActivityIndicatorView()
-        indicator.frame = CGRect(x: 0, y: 0, width: 50, height: 50)
-        indicator.activityIndicatorViewStyle = .whiteLarge
-        indicator.color = UIColor.black
-        
-        indicator.startAnimating()
-        
-        alert.setValue(indicator, forKey: "accessoryView")
-    }
-    
     
     func centralManagerDidUpdateState(_ central: CBCentralManager) {
         print("Central Manager Did Update State");
@@ -58,6 +48,7 @@ class InterfaceController: WKInterfaceController, CBCentralManagerDelegate, CBPe
         if central.state.rawValue == CBCentralManagerState.poweredOn.rawValue {
             centralManager.scanForPeripherals(withServices: [UUIDS.SERVICE], options: nil)
         }
+        
     }
     
     func centralManager(_ central: CBCentralManager, didDiscover peripheral: CBPeripheral, advertisementData: [String : Any], rssi RSSI: NSNumber) {
@@ -68,7 +59,7 @@ class InterfaceController: WKInterfaceController, CBCentralManagerDelegate, CBPe
         self.remotePeripheral = peripheral
         
         centralManager.connect(peripheral, options: nil)
-
+        
     }
     
     //  ペリフェラル接続成功時
@@ -105,12 +96,16 @@ class InterfaceController: WKInterfaceController, CBCentralManagerDelegate, CBPe
         for characteristic in service.characteristics! {
             print(characteristic.uuid)
             
+            setControlEnable(flg: true)
+            
             if characteristic.uuid.isEqual(UUIDS.BUTTON) {
                 print("Discovered Button Characteristics")
                 buttonCharacteristic = characteristic
+                peripheral.setNotifyValue(true, for: buttonCharacteristic)
             }else if (characteristic.uuid.isEqual(UUIDS.MUSIC_INFO)){
                 print("Discovered Music Info Characteristics")
                 musicInfoCharacteristic = characteristic
+                peripheral.readValue(for: musicInfoCharacteristic)
             }else if (characteristic.uuid.isEqual(UUIDS.NOTIFY)){
                 print("Discovered Notifiy Characteristics")
                 notifyCharacteristic = characteristic
@@ -118,12 +113,22 @@ class InterfaceController: WKInterfaceController, CBCentralManagerDelegate, CBPe
             }
         }
     }
-
+    
+    func peripheral(_ peripheral: CBPeripheral, didModifyServices invalidatedServices: [CBService]) {
+        for service : CBService in invalidatedServices {
+            if service.uuid.isEqual(UUIDS.SERVICE) {
+                setControlEnable(flg: false);
+                centralManager = CBCentralManager(delegate: self, queue: nil)
+            }
+        }
+    }
+    
+    
     // 値の書き込み成功
     func peripheral(_ peripheral: CBPeripheral, didWriteValueFor descriptor: CBDescriptor, error: Error?) {
         print("didWriteValueFor")
+        print(descriptor)
     }
-    
     // 値の読み込み成功
     func peripheral(_ peripheral: CBPeripheral, didUpdateValueFor characteristic: CBCharacteristic, error: Error?) {
         print("didUpdateValueFor")
@@ -133,16 +138,30 @@ class InterfaceController: WKInterfaceController, CBCentralManagerDelegate, CBPe
             return
         }
         
-        if characteristic.uuid.isEqual(UUIDS.NOTIFY){
+        // BUTTON
+        if characteristic.uuid.isEqual(UUIDS.BUTTON){
+            if Int(Array(characteristic.value!)[0]) == MPMusicPlaybackState.playing.rawValue {
+                btnPlay.setTitle("停止")
+            }else{
+                btnPlay.setTitle("再生")
+            }
+        }
+            // NOTIFY
+        else if characteristic.uuid.isEqual(UUIDS.NOTIFY){
             peripheral.readValue(for: musicInfoCharacteristic)
-        } else if characteristic.uuid.isEqual(UUIDS.MUSIC_INFO){
+        }
+            // MUSIC INFO
+        else if characteristic.uuid.isEqual(UUIDS.MUSIC_INFO){
             
             do{
                 
                 let data = try JSONSerialization.jsonObject(with: characteristic.value!, options: []) as! Dictionary<String, AnyObject>
                 
-                lblTitle.setText(data["TITLE"] as! String)
-                lblArtist.setText(data["ARTIST"] as! String)
+                lblTitle.setText(data["TITLE"] as? String )
+                lblArtist.setText(data["ARTIST"] as? String)
+                
+                print(data)
+                
                 
             }catch{
                 print("ERROR")
@@ -160,14 +179,23 @@ class InterfaceController: WKInterfaceController, CBCentralManagerDelegate, CBPe
         }
     }
     
-    // ============
-    //  ボタンイベント
-    // ============
+    func setControlEnable(flg : Bool){
+        btnPlay.setEnabled(flg)
+        btnNext.setEnabled(flg)
+        btnPrev.setEnabled(flg)
+        btnVolUp.setEnabled(flg)
+        btnVolDown.setEnabled(flg)
+    }
+    
+    
+    // ==============
+    // ボタン押下
+    // ==============
     
     /**
      * Playボタン押下
      */
-    @IBAction func didTouchBtnPlay() {
+    @IBAction func didTouchBtnPlay(_ sender: Any) {
         
         let val : Data = Data(bytes: [0])
         remotePeripheral.writeValue(val , for: buttonCharacteristic, type: .withResponse)
@@ -176,7 +204,7 @@ class InterfaceController: WKInterfaceController, CBCentralManagerDelegate, CBPe
     /**
      * Nextボタン押下
      */
-    @IBAction func didTouchBtnNext() {
+    @IBAction func didTouchBtnNext(_ sender: Any) {
         let val : Data = Data(bytes: [1])
         remotePeripheral.writeValue(val , for: buttonCharacteristic, type: .withResponse)
     }
@@ -184,7 +212,7 @@ class InterfaceController: WKInterfaceController, CBCentralManagerDelegate, CBPe
     /**
      * Pravボタン押下
      */
-    @IBAction func didTouchBtnPrev() {
+    @IBAction func didTouchBtnPrev(_ sender: Any) {
         let val : Data = Data(bytes: [2])
         remotePeripheral.writeValue(val , for: buttonCharacteristic, type: .withResponse)
     }
@@ -193,7 +221,7 @@ class InterfaceController: WKInterfaceController, CBCentralManagerDelegate, CBPe
     /**
      * ボリューム(UP)ボタン押下
      */
-    @IBAction func didTouchBtnVolUp() {
+    @IBAction func didTouchBtnVolUp(_ sender: Any) {
         let val : Data = Data(bytes: [3])
         remotePeripheral.writeValue(val , for: buttonCharacteristic, type: .withResponse)
     }
@@ -201,10 +229,8 @@ class InterfaceController: WKInterfaceController, CBCentralManagerDelegate, CBPe
     /**
      * ボリューム(Down)ボタン押下
      */
-    @IBAction func didTouchBtnVolDown() {
+    @IBAction func didTouchBtnVolDown(_ sender: Any) {
         let val : Data = Data(bytes: [4])
         remotePeripheral.writeValue(val , for: buttonCharacteristic, type: .withResponse)
     }
-
-    
 }
