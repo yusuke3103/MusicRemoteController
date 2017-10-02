@@ -3,723 +3,559 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 46;
+	objectVersion = 48;
 	objects = {
 
 /* Begin PBXBuildFile section */
-		700E71851EDC590400BD565E /* Define.swift in Sources */ = {isa = PBXBuildFile; fileRef = 700E71841EDC590400BD565E /* Define.swift */; };
-		70188BE91B779450003C91BE /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 70188BE81B779450003C91BE /* Images.xcassets */; };
-		70188BED1B779451003C91BE /* MusicRemoteController WatchKit App.app in Resources */ = {isa = PBXBuildFile; fileRef = 70188BEC1B779451003C91BE /* MusicRemoteController WatchKit App.app */; };
-		70188BF51B779451003C91BE /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 70188BF31B779451003C91BE /* Interface.storyboard */; };
-		70188BF71B779451003C91BE /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 70188BF61B779451003C91BE /* Images.xcassets */; };
-		70188BFA1B779451003C91BE /* MusicRemoteController WatchKit Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 70188BE11B779450003C91BE /* MusicRemoteController WatchKit Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		70188C011B779581003C91BE /* CoreBluetooth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 70A71E1318DF565C0085F62D /* CoreBluetooth.framework */; };
-		708EF24818E8F7D800EE4616 /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 708EF24718E8F7D800EE4616 /* AdSupport.framework */; };
-		708EF24A18E8F7E300EE4616 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 708EF24918E8F7E300EE4616 /* Security.framework */; };
-		708EF25218E96B0D00EE4616 /* iPhone4.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 708EF25018E96B0D00EE4616 /* iPhone4.storyboard */; };
-		708EF25418E9915F00EE4616 /* iPhone5.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 708EF25318E9915F00EE4616 /* iPhone5.storyboard */; };
-		7092283F1EDC564A00502D4F /* RemoteModeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7092283E1EDC564A00502D4F /* RemoteModeViewController.swift */; };
-		70A71DD918DF549A0085F62D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 70A71DD818DF549A0085F62D /* Foundation.framework */; };
-		70A71DDB18DF549A0085F62D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 70A71DDA18DF549A0085F62D /* CoreGraphics.framework */; };
-		70A71DDD18DF549A0085F62D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 70A71DDC18DF549A0085F62D /* UIKit.framework */; };
-		70A71DF118DF549A0085F62D /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 70A71DF018DF549A0085F62D /* Images.xcassets */; };
-		70A71DF818DF549B0085F62D /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 70A71DF718DF549B0085F62D /* XCTest.framework */; };
-		70A71DF918DF549B0085F62D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 70A71DD818DF549A0085F62D /* Foundation.framework */; };
-		70A71DFA18DF549B0085F62D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 70A71DDC18DF549A0085F62D /* UIKit.framework */; };
-		70A71E0418DF549B0085F62D /* MusicRemoteControllerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 70A71E0318DF549B0085F62D /* MusicRemoteControllerTests.m */; };
-		70A71E1418DF565C0085F62D /* CoreBluetooth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 70A71E1318DF565C0085F62D /* CoreBluetooth.framework */; };
-		70A71E1618DF566E0085F62D /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 70A71E1518DF566E0085F62D /* MediaPlayer.framework */; };
-		70A71E1F18DF58330085F62D /* Next.png in Resources */ = {isa = PBXBuildFile; fileRef = 70A71E1818DF58330085F62D /* Next.png */; };
-		70A71E2018DF58330085F62D /* nonimage.png in Resources */ = {isa = PBXBuildFile; fileRef = 70A71E1918DF58330085F62D /* nonimage.png */; };
-		70A71E2118DF58330085F62D /* Play.png in Resources */ = {isa = PBXBuildFile; fileRef = 70A71E1A18DF58330085F62D /* Play.png */; };
-		70A71E2218DF58330085F62D /* Rev.png in Resources */ = {isa = PBXBuildFile; fileRef = 70A71E1B18DF58330085F62D /* Rev.png */; };
-		70A71E2318DF58330085F62D /* stop.png in Resources */ = {isa = PBXBuildFile; fileRef = 70A71E1C18DF58330085F62D /* stop.png */; };
-		70A71E2418DF58330085F62D /* VolDown.png in Resources */ = {isa = PBXBuildFile; fileRef = 70A71E1D18DF58330085F62D /* VolDown.png */; };
-		70A71E2518DF58330085F62D /* VolUp.png in Resources */ = {isa = PBXBuildFile; fileRef = 70A71E1E18DF58330085F62D /* VolUp.png */; };
-		70B0719A1EDF14BD009631CC /* PlayerModeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70B071991EDF14BD009631CC /* PlayerModeViewController.swift */; };
-		70B8619E1EE5B24400C63E3D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70B8619D1EE5B24400C63E3D /* AppDelegate.swift */; };
-		70B861A01EE6D61C00C63E3D /* NendViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70B8619F1EE6D61C00C63E3D /* NendViewController.swift */; };
-		70B861A51EE6DA5900C63E3D /* NendAd.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 70B861A21EE6DA5900C63E3D /* NendAd.framework */; };
-		70B861A61EE6DA5900C63E3D /* NendAdResource.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 70B861A41EE6DA5900C63E3D /* NendAdResource.bundle */; };
-		70B861A81EE6DCED00C63E3D /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70B861A71EE6DCED00C63E3D /* MenuViewController.swift */; };
-		70F4A6621EEC156600F584FD /* InterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70F4A6611EEC156600F584FD /* InterfaceController.swift */; };
-		70F4A6641EEC16A800F584FD /* Define.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70F4A6631EEC16A800F584FD /* Define.swift */; };
-		70FFF76B1B67C74500A455C0 /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 70FFF76A1B67C74500A455C0 /* ImageIO.framework */; };
+		29434E438F1A373C65F1673C /* Pods_MusicRemoteController.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B7AD07BD7ED6F53D35861B93 /* Pods_MusicRemoteController.framework */; };
+		7043ED851F81288A00EA9215 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 70F962451F80CC05008F5C20 /* LaunchScreen.storyboard */; };
+		70955F1D1F80CEAD00C32129 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70955F191F80CEAD00C32129 /* MenuViewController.swift */; };
+		70955F1E1F80CEAD00C32129 /* NendViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70955F1A1F80CEAD00C32129 /* NendViewController.swift */; };
+		70955F1F1F80CEAD00C32129 /* RemoteModeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70955F1B1F80CEAD00C32129 /* RemoteModeViewController.swift */; };
+		70955F201F80CEAD00C32129 /* PlayerModeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70955F1C1F80CEAD00C32129 /* PlayerModeViewController.swift */; };
+		70955F231F80CEC200C32129 /* AuthUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70955F211F80CEC100C32129 /* AuthUtil.swift */; };
+		70955F241F80CEC200C32129 /* Define.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70955F221F80CEC100C32129 /* Define.swift */; };
+		70955F2E1F80CFF900C32129 /* CoreBluetooth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 70955F2D1F80CFF900C32129 /* CoreBluetooth.framework */; };
+		70955F301F80D00500C32129 /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 70955F2F1F80D00500C32129 /* MediaPlayer.framework */; };
+		70955F311F80D10700C32129 /* Next.png in Resources */ = {isa = PBXBuildFile; fileRef = 70955F2C1F80CF2F00C32129 /* Next.png */; };
+		70955F321F80D10700C32129 /* nonimage.png in Resources */ = {isa = PBXBuildFile; fileRef = 70955F291F80CF2D00C32129 /* nonimage.png */; };
+		70955F331F80D10700C32129 /* Play.png in Resources */ = {isa = PBXBuildFile; fileRef = 70955F261F80CF2B00C32129 /* Play.png */; };
+		70955F341F80D10700C32129 /* Rev.png in Resources */ = {isa = PBXBuildFile; fileRef = 70955F281F80CF2C00C32129 /* Rev.png */; };
+		70955F351F80D10700C32129 /* stop.png in Resources */ = {isa = PBXBuildFile; fileRef = 70955F2A1F80CF2E00C32129 /* stop.png */; };
+		70955F361F80D10700C32129 /* VolDown.png in Resources */ = {isa = PBXBuildFile; fileRef = 70955F2B1F80CF2E00C32129 /* VolDown.png */; };
+		70955F371F80D10700C32129 /* VolUp.png in Resources */ = {isa = PBXBuildFile; fileRef = 70955F271F80CF2B00C32129 /* VolUp.png */; };
+		70955F391F80DBE200C32129 /* Define.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70955F381F80DBE200C32129 /* Define.swift */; };
+		70F9623D1F80CC05008F5C20 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70F9623C1F80CC05008F5C20 /* AppDelegate.swift */; };
+		70F962421F80CC05008F5C20 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 70F962401F80CC05008F5C20 /* Main.storyboard */; };
+		70F962441F80CC05008F5C20 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 70F962431F80CC05008F5C20 /* Assets.xcassets */; };
+		70F9624C1F80CC05008F5C20 /* MusicRemoteController WatchKit App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 70F9624B1F80CC05008F5C20 /* MusicRemoteController WatchKit App.app */; };
+		70F962521F80CC05008F5C20 /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 70F962501F80CC05008F5C20 /* Interface.storyboard */; };
+		70F962541F80CC05008F5C20 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 70F962531F80CC05008F5C20 /* Assets.xcassets */; };
+		70F9625B1F80CC06008F5C20 /* MusicRemoteController WatchKit Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 70F9625A1F80CC06008F5C20 /* MusicRemoteController WatchKit Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		70F962601F80CC06008F5C20 /* InterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70F9625F1F80CC06008F5C20 /* InterfaceController.swift */; };
+		70F962621F80CC06008F5C20 /* ExtensionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70F962611F80CC06008F5C20 /* ExtensionDelegate.swift */; };
+		70F962641F80CC06008F5C20 /* NotificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70F962631F80CC06008F5C20 /* NotificationController.swift */; };
+		70F962661F80CC06008F5C20 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 70F962651F80CC06008F5C20 /* Assets.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		70188BEE1B779451003C91BE /* PBXContainerItemProxy */ = {
+		70F9624D1F80CC05008F5C20 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 70A71DCD18DF549A0085F62D /* Project object */;
+			containerPortal = 70F962311F80CC05008F5C20 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 70188BEB1B779451003C91BE;
+			remoteGlobalIDString = 70F9624A1F80CC05008F5C20;
 			remoteInfo = "MusicRemoteController WatchKit App";
 		};
-		70188BF81B779451003C91BE /* PBXContainerItemProxy */ = {
+		70F9625C1F80CC06008F5C20 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 70A71DCD18DF549A0085F62D /* Project object */;
+			containerPortal = 70F962311F80CC05008F5C20 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 70188BE01B779450003C91BE;
+			remoteGlobalIDString = 70F962591F80CC06008F5C20;
 			remoteInfo = "MusicRemoteController WatchKit Extension";
-		};
-		70A71DFB18DF549B0085F62D /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 70A71DCD18DF549A0085F62D /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 70A71DD418DF549A0085F62D;
-			remoteInfo = MusicRemoteController;
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		70188BDC1B779435003C91BE /* Embed App Extensions */ = {
+		70F9626E1F80CC06008F5C20 /* Embed App Extensions */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 13;
 			files = (
-				70188BFA1B779451003C91BE /* MusicRemoteController WatchKit Extension.appex in Embed App Extensions */,
+				70F9625B1F80CC06008F5C20 /* MusicRemoteController WatchKit Extension.appex in Embed App Extensions */,
 			);
 			name = "Embed App Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		70437FE01EED8E2700455BB1 /* Embed Frameworks */ = {
+		70F962721F80CC06008F5C20 /* Embed Watch Content */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 10;
+			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
+			dstSubfolderSpec = 16;
 			files = (
+				70F9624C1F80CC05008F5C20 /* MusicRemoteController WatchKit App.app in Embed Watch Content */,
 			);
-			name = "Embed Frameworks";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		70437FE51EED8EA700455BB1 /* Embed Frameworks */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 10;
-			files = (
-			);
-			name = "Embed Frameworks";
+			name = "Embed Watch Content";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		700E71841EDC590400BD565E /* Define.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Define.swift; sourceTree = "<group>"; };
-		70188BE11B779450003C91BE /* MusicRemoteController WatchKit Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "MusicRemoteController WatchKit Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
-		70188BE41B779450003C91BE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		70188BE81B779450003C91BE /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		70188BEC1B779451003C91BE /* MusicRemoteController WatchKit App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "MusicRemoteController WatchKit App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		70188BF21B779451003C91BE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		70188BF41B779451003C91BE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
-		70188BF61B779451003C91BE /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		7025A9271B7B7DE90059286A /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/iPhone4.strings; sourceTree = "<group>"; };
-		7025A9281B7B7DE90059286A /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Interface.strings; sourceTree = "<group>"; };
-		708EF24718E8F7D800EE4616 /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = System/Library/Frameworks/AdSupport.framework; sourceTree = SDKROOT; };
-		708EF24918E8F7E300EE4616 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
-		708EF25118E96B0D00EE4616 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/iPhone4.storyboard; sourceTree = "<group>"; };
-		708EF25318E9915F00EE4616 /* iPhone5.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = iPhone5.storyboard; sourceTree = "<group>"; };
-		7092283D1EDC564A00502D4F /* MusicRemoteController-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MusicRemoteController-Bridging-Header.h"; sourceTree = "<group>"; };
-		7092283E1EDC564A00502D4F /* RemoteModeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RemoteModeViewController.swift; sourceTree = "<group>"; };
-		70A71DD518DF549A0085F62D /* MusicRemoteController.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MusicRemoteController.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		70A71DD818DF549A0085F62D /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
-		70A71DDA18DF549A0085F62D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
-		70A71DDC18DF549A0085F62D /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
-		70A71DE018DF549A0085F62D /* MusicRemoteController-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "MusicRemoteController-Info.plist"; sourceTree = "<group>"; };
-		70A71DE618DF549A0085F62D /* MusicRemoteController-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MusicRemoteController-Prefix.pch"; sourceTree = "<group>"; };
-		70A71DF018DF549A0085F62D /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		70A71DF618DF549B0085F62D /* MusicRemoteControllerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MusicRemoteControllerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		70A71DF718DF549B0085F62D /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
-		70A71DFF18DF549B0085F62D /* MusicRemoteControllerTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "MusicRemoteControllerTests-Info.plist"; sourceTree = "<group>"; };
-		70A71E0318DF549B0085F62D /* MusicRemoteControllerTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MusicRemoteControllerTests.m; sourceTree = "<group>"; };
-		70A71E1318DF565C0085F62D /* CoreBluetooth.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreBluetooth.framework; path = System/Library/Frameworks/CoreBluetooth.framework; sourceTree = SDKROOT; };
-		70A71E1518DF566E0085F62D /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
-		70A71E1818DF58330085F62D /* Next.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Next.png; sourceTree = "<group>"; };
-		70A71E1918DF58330085F62D /* nonimage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = nonimage.png; sourceTree = "<group>"; };
-		70A71E1A18DF58330085F62D /* Play.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Play.png; sourceTree = "<group>"; };
-		70A71E1B18DF58330085F62D /* Rev.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Rev.png; sourceTree = "<group>"; };
-		70A71E1C18DF58330085F62D /* stop.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = stop.png; sourceTree = "<group>"; };
-		70A71E1D18DF58330085F62D /* VolDown.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = VolDown.png; sourceTree = "<group>"; };
-		70A71E1E18DF58330085F62D /* VolUp.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = VolUp.png; sourceTree = "<group>"; };
-		70B071991EDF14BD009631CC /* PlayerModeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayerModeViewController.swift; sourceTree = "<group>"; };
-		70B8619D1EE5B24400C63E3D /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		70B8619F1EE6D61C00C63E3D /* NendViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NendViewController.swift; sourceTree = "<group>"; };
-		70B861A21EE6DA5900C63E3D /* NendAd.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = NendAd.framework; sourceTree = "<group>"; };
-		70B861A41EE6DA5900C63E3D /* NendAdResource.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = NendAdResource.bundle; sourceTree = "<group>"; };
-		70B861A71EE6DCED00C63E3D /* MenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
-		70F4A6601EEC156500F584FD /* MusicRemoteController WatchKit Extension-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MusicRemoteController WatchKit Extension-Bridging-Header.h"; sourceTree = "<group>"; };
-		70F4A6611EEC156600F584FD /* InterfaceController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InterfaceController.swift; sourceTree = "<group>"; };
-		70F4A6631EEC16A800F584FD /* Define.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Define.swift; sourceTree = "<group>"; };
-		70FFF76A1B67C74500A455C0 /* ImageIO.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ImageIO.framework; path = System/Library/Frameworks/ImageIO.framework; sourceTree = SDKROOT; };
+		540363335D08AEAC9FBDDFCC /* Pods-MusicRemoteController.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MusicRemoteController.release.xcconfig"; path = "Pods/Target Support Files/Pods-MusicRemoteController/Pods-MusicRemoteController.release.xcconfig"; sourceTree = "<group>"; };
+		70955F191F80CEAD00C32129 /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
+		70955F1A1F80CEAD00C32129 /* NendViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NendViewController.swift; sourceTree = "<group>"; };
+		70955F1B1F80CEAD00C32129 /* RemoteModeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteModeViewController.swift; sourceTree = "<group>"; };
+		70955F1C1F80CEAD00C32129 /* PlayerModeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerModeViewController.swift; sourceTree = "<group>"; };
+		70955F211F80CEC100C32129 /* AuthUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthUtil.swift; sourceTree = "<group>"; };
+		70955F221F80CEC100C32129 /* Define.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Define.swift; sourceTree = "<group>"; };
+		70955F261F80CF2B00C32129 /* Play.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Play.png; sourceTree = "<group>"; };
+		70955F271F80CF2B00C32129 /* VolUp.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = VolUp.png; sourceTree = "<group>"; };
+		70955F281F80CF2C00C32129 /* Rev.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Rev.png; sourceTree = "<group>"; };
+		70955F291F80CF2D00C32129 /* nonimage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = nonimage.png; sourceTree = "<group>"; };
+		70955F2A1F80CF2E00C32129 /* stop.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = stop.png; sourceTree = "<group>"; };
+		70955F2B1F80CF2E00C32129 /* VolDown.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = VolDown.png; sourceTree = "<group>"; };
+		70955F2C1F80CF2F00C32129 /* Next.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Next.png; sourceTree = "<group>"; };
+		70955F2D1F80CFF900C32129 /* CoreBluetooth.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreBluetooth.framework; path = System/Library/Frameworks/CoreBluetooth.framework; sourceTree = SDKROOT; };
+		70955F2F1F80D00500C32129 /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
+		70955F381F80DBE200C32129 /* Define.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Define.swift; sourceTree = "<group>"; };
+		70955F3A1F81024E00C32129 /* Sprash.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Sprash.png; sourceTree = "<group>"; };
+		70F962391F80CC05008F5C20 /* MusicRemoteController.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MusicRemoteController.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		70F9623C1F80CC05008F5C20 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		70F962411F80CC05008F5C20 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		70F962431F80CC05008F5C20 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		70F962461F80CC05008F5C20 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		70F962481F80CC05008F5C20 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		70F9624B1F80CC05008F5C20 /* MusicRemoteController WatchKit App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "MusicRemoteController WatchKit App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		70F962511F80CC05008F5C20 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
+		70F962531F80CC05008F5C20 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		70F962551F80CC05008F5C20 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		70F9625A1F80CC06008F5C20 /* MusicRemoteController WatchKit Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "MusicRemoteController WatchKit Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		70F9625F1F80CC06008F5C20 /* InterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterfaceController.swift; sourceTree = "<group>"; };
+		70F962611F80CC06008F5C20 /* ExtensionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionDelegate.swift; sourceTree = "<group>"; };
+		70F962631F80CC06008F5C20 /* NotificationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationController.swift; sourceTree = "<group>"; };
+		70F962651F80CC06008F5C20 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		70F962671F80CC06008F5C20 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		70F962681F80CC06008F5C20 /* PushNotificationPayload.apns */ = {isa = PBXFileReference; lastKnownFileType = text; path = PushNotificationPayload.apns; sourceTree = "<group>"; };
+		75E5FC3E7AAD55C687C6D3A6 /* Pods-MusicRemoteController.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MusicRemoteController.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MusicRemoteController/Pods-MusicRemoteController.debug.xcconfig"; sourceTree = "<group>"; };
+		B7AD07BD7ED6F53D35861B93 /* Pods_MusicRemoteController.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MusicRemoteController.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		70188BDE1B779450003C91BE /* Frameworks */ = {
+		103144128F0A5E742AA36994 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				70188C011B779581003C91BE /* CoreBluetooth.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		70A71DD218DF549A0085F62D /* Frameworks */ = {
+		70F962361F80CC05008F5C20 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				70FFF76B1B67C74500A455C0 /* ImageIO.framework in Frameworks */,
-				708EF24A18E8F7E300EE4616 /* Security.framework in Frameworks */,
-				708EF24818E8F7D800EE4616 /* AdSupport.framework in Frameworks */,
-				70A71E1618DF566E0085F62D /* MediaPlayer.framework in Frameworks */,
-				70A71E1418DF565C0085F62D /* CoreBluetooth.framework in Frameworks */,
-				70A71DDB18DF549A0085F62D /* CoreGraphics.framework in Frameworks */,
-				70B861A51EE6DA5900C63E3D /* NendAd.framework in Frameworks */,
-				70A71DDD18DF549A0085F62D /* UIKit.framework in Frameworks */,
-				70A71DD918DF549A0085F62D /* Foundation.framework in Frameworks */,
+				70955F301F80D00500C32129 /* MediaPlayer.framework in Frameworks */,
+				70955F2E1F80CFF900C32129 /* CoreBluetooth.framework in Frameworks */,
+				29434E438F1A373C65F1673C /* Pods_MusicRemoteController.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		70A71DF318DF549B0085F62D /* Frameworks */ = {
+		70F962571F80CC06008F5C20 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				70A71DF818DF549B0085F62D /* XCTest.framework in Frameworks */,
-				70A71DFA18DF549B0085F62D /* UIKit.framework in Frameworks */,
-				70A71DF918DF549B0085F62D /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		70188BE21B779450003C91BE /* MusicRemoteController WatchKit Extension */ = {
+		66ACEE5FB7830A9D5D8E7485 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				70188BE81B779450003C91BE /* Images.xcassets */,
-				70188BE31B779450003C91BE /* Supporting Files */,
-				70F4A6611EEC156600F584FD /* InterfaceController.swift */,
-				70F4A6601EEC156500F584FD /* MusicRemoteController WatchKit Extension-Bridging-Header.h */,
-				70F4A6631EEC16A800F584FD /* Define.swift */,
-			);
-			path = "MusicRemoteController WatchKit Extension";
-			sourceTree = "<group>";
-		};
-		70188BE31B779450003C91BE /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				70188BE41B779450003C91BE /* Info.plist */,
-			);
-			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		70188BF01B779451003C91BE /* MusicRemoteController WatchKit App */ = {
-			isa = PBXGroup;
-			children = (
-				70188BF31B779451003C91BE /* Interface.storyboard */,
-				70188BF61B779451003C91BE /* Images.xcassets */,
-				70188BF11B779451003C91BE /* Supporting Files */,
-			);
-			path = "MusicRemoteController WatchKit App";
-			sourceTree = "<group>";
-		};
-		70188BF11B779451003C91BE /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				70188BF21B779451003C91BE /* Info.plist */,
-			);
-			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		70A71DCC18DF549A0085F62D = {
-			isa = PBXGroup;
-			children = (
-				70B861A11EE6DA5800C63E3D /* NendAd.embeddedframework */,
-				70A71DDE18DF549A0085F62D /* MusicRemoteController */,
-				70A71DFD18DF549B0085F62D /* MusicRemoteControllerTests */,
-				70188BE21B779450003C91BE /* MusicRemoteController WatchKit Extension */,
-				70188BF01B779451003C91BE /* MusicRemoteController WatchKit App */,
-				70A71DD718DF549A0085F62D /* Frameworks */,
-				70A71DD618DF549A0085F62D /* Products */,
-			);
-			sourceTree = "<group>";
-			usesTabs = 0;
-		};
-		70A71DD618DF549A0085F62D /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				70A71DD518DF549A0085F62D /* MusicRemoteController.app */,
-				70A71DF618DF549B0085F62D /* MusicRemoteControllerTests.xctest */,
-				70188BE11B779450003C91BE /* MusicRemoteController WatchKit Extension.appex */,
-				70188BEC1B779451003C91BE /* MusicRemoteController WatchKit App.app */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
-		70A71DD718DF549A0085F62D /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				70FFF76A1B67C74500A455C0 /* ImageIO.framework */,
-				708EF24918E8F7E300EE4616 /* Security.framework */,
-				708EF24718E8F7D800EE4616 /* AdSupport.framework */,
-				70A71E1518DF566E0085F62D /* MediaPlayer.framework */,
-				70A71E1318DF565C0085F62D /* CoreBluetooth.framework */,
-				70A71DD818DF549A0085F62D /* Foundation.framework */,
-				70A71DDA18DF549A0085F62D /* CoreGraphics.framework */,
-				70A71DDC18DF549A0085F62D /* UIKit.framework */,
-				70A71DF718DF549B0085F62D /* XCTest.framework */,
+				70955F2F1F80D00500C32129 /* MediaPlayer.framework */,
+				70955F2D1F80CFF900C32129 /* CoreBluetooth.framework */,
+				B7AD07BD7ED6F53D35861B93 /* Pods_MusicRemoteController.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		70A71DDE18DF549A0085F62D /* MusicRemoteController */ = {
+		70955F251F80CF1200C32129 /* images */ = {
 			isa = PBXGroup;
 			children = (
-				708EF25018E96B0D00EE4616 /* iPhone4.storyboard */,
-				708EF25318E9915F00EE4616 /* iPhone5.storyboard */,
-				70A71DF018DF549A0085F62D /* Images.xcassets */,
-				70A71DDF18DF549A0085F62D /* Supporting Files */,
-				7092283E1EDC564A00502D4F /* RemoteModeViewController.swift */,
-				7092283D1EDC564A00502D4F /* MusicRemoteController-Bridging-Header.h */,
-				700E71841EDC590400BD565E /* Define.swift */,
-				70B071991EDF14BD009631CC /* PlayerModeViewController.swift */,
-				70B8619D1EE5B24400C63E3D /* AppDelegate.swift */,
-				70B8619F1EE6D61C00C63E3D /* NendViewController.swift */,
-				70B861A71EE6DCED00C63E3D /* MenuViewController.swift */,
-			);
-			path = MusicRemoteController;
-			sourceTree = "<group>";
-		};
-		70A71DDF18DF549A0085F62D /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				70A71E1718DF58330085F62D /* images */,
-				70A71DE018DF549A0085F62D /* MusicRemoteController-Info.plist */,
-				70A71DE618DF549A0085F62D /* MusicRemoteController-Prefix.pch */,
-			);
-			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		70A71DFD18DF549B0085F62D /* MusicRemoteControllerTests */ = {
-			isa = PBXGroup;
-			children = (
-				70A71E0318DF549B0085F62D /* MusicRemoteControllerTests.m */,
-				70A71DFE18DF549B0085F62D /* Supporting Files */,
-			);
-			path = MusicRemoteControllerTests;
-			sourceTree = "<group>";
-		};
-		70A71DFE18DF549B0085F62D /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				70A71DFF18DF549B0085F62D /* MusicRemoteControllerTests-Info.plist */,
-			);
-			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		70A71E1718DF58330085F62D /* images */ = {
-			isa = PBXGroup;
-			children = (
-				70A71E1818DF58330085F62D /* Next.png */,
-				70A71E1918DF58330085F62D /* nonimage.png */,
-				70A71E1A18DF58330085F62D /* Play.png */,
-				70A71E1B18DF58330085F62D /* Rev.png */,
-				70A71E1C18DF58330085F62D /* stop.png */,
-				70A71E1D18DF58330085F62D /* VolDown.png */,
-				70A71E1E18DF58330085F62D /* VolUp.png */,
+				70955F3A1F81024E00C32129 /* Sprash.png */,
+				70955F2C1F80CF2F00C32129 /* Next.png */,
+				70955F291F80CF2D00C32129 /* nonimage.png */,
+				70955F261F80CF2B00C32129 /* Play.png */,
+				70955F281F80CF2C00C32129 /* Rev.png */,
+				70955F2A1F80CF2E00C32129 /* stop.png */,
+				70955F2B1F80CF2E00C32129 /* VolDown.png */,
+				70955F271F80CF2B00C32129 /* VolUp.png */,
 			);
 			path = images;
 			sourceTree = "<group>";
 		};
-		70B861A11EE6DA5800C63E3D /* NendAd.embeddedframework */ = {
+		70F962301F80CC05008F5C20 = {
 			isa = PBXGroup;
 			children = (
-				70B861A21EE6DA5900C63E3D /* NendAd.framework */,
-				70B861A31EE6DA5900C63E3D /* Resources */,
+				70F9623B1F80CC05008F5C20 /* MusicRemoteController */,
+				70F9624F1F80CC05008F5C20 /* MusicRemoteController WatchKit App */,
+				70F9625E1F80CC06008F5C20 /* MusicRemoteController WatchKit Extension */,
+				70F9623A1F80CC05008F5C20 /* Products */,
+				7B0A7AF67412C58997EE6423 /* Pods */,
+				66ACEE5FB7830A9D5D8E7485 /* Frameworks */,
 			);
-			path = NendAd.embeddedframework;
 			sourceTree = "<group>";
 		};
-		70B861A31EE6DA5900C63E3D /* Resources */ = {
+		70F9623A1F80CC05008F5C20 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				70B861A41EE6DA5900C63E3D /* NendAdResource.bundle */,
+				70F962391F80CC05008F5C20 /* MusicRemoteController.app */,
+				70F9624B1F80CC05008F5C20 /* MusicRemoteController WatchKit App.app */,
+				70F9625A1F80CC06008F5C20 /* MusicRemoteController WatchKit Extension.appex */,
 			);
-			path = Resources;
+			name = Products;
+			sourceTree = "<group>";
+		};
+		70F9623B1F80CC05008F5C20 /* MusicRemoteController */ = {
+			isa = PBXGroup;
+			children = (
+				70955F251F80CF1200C32129 /* images */,
+				70955F211F80CEC100C32129 /* AuthUtil.swift */,
+				70955F221F80CEC100C32129 /* Define.swift */,
+				70955F191F80CEAD00C32129 /* MenuViewController.swift */,
+				70955F1A1F80CEAD00C32129 /* NendViewController.swift */,
+				70955F1C1F80CEAD00C32129 /* PlayerModeViewController.swift */,
+				70955F1B1F80CEAD00C32129 /* RemoteModeViewController.swift */,
+				70F9623C1F80CC05008F5C20 /* AppDelegate.swift */,
+				70F962401F80CC05008F5C20 /* Main.storyboard */,
+				70F962431F80CC05008F5C20 /* Assets.xcassets */,
+				70F962451F80CC05008F5C20 /* LaunchScreen.storyboard */,
+				70F962481F80CC05008F5C20 /* Info.plist */,
+			);
+			path = MusicRemoteController;
+			sourceTree = "<group>";
+		};
+		70F9624F1F80CC05008F5C20 /* MusicRemoteController WatchKit App */ = {
+			isa = PBXGroup;
+			children = (
+				70F962501F80CC05008F5C20 /* Interface.storyboard */,
+				70F962531F80CC05008F5C20 /* Assets.xcassets */,
+				70F962551F80CC05008F5C20 /* Info.plist */,
+			);
+			path = "MusicRemoteController WatchKit App";
+			sourceTree = "<group>";
+		};
+		70F9625E1F80CC06008F5C20 /* MusicRemoteController WatchKit Extension */ = {
+			isa = PBXGroup;
+			children = (
+				70955F381F80DBE200C32129 /* Define.swift */,
+				70F9625F1F80CC06008F5C20 /* InterfaceController.swift */,
+				70F962611F80CC06008F5C20 /* ExtensionDelegate.swift */,
+				70F962631F80CC06008F5C20 /* NotificationController.swift */,
+				70F962651F80CC06008F5C20 /* Assets.xcassets */,
+				70F962671F80CC06008F5C20 /* Info.plist */,
+				70F962681F80CC06008F5C20 /* PushNotificationPayload.apns */,
+			);
+			path = "MusicRemoteController WatchKit Extension";
+			sourceTree = "<group>";
+		};
+		7B0A7AF67412C58997EE6423 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				75E5FC3E7AAD55C687C6D3A6 /* Pods-MusicRemoteController.debug.xcconfig */,
+				540363335D08AEAC9FBDDFCC /* Pods-MusicRemoteController.release.xcconfig */,
+			);
+			name = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		70188BE01B779450003C91BE /* MusicRemoteController WatchKit Extension */ = {
+		70F962381F80CC05008F5C20 /* MusicRemoteController */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 70188BFE1B779451003C91BE /* Build configuration list for PBXNativeTarget "MusicRemoteController WatchKit Extension" */;
+			buildConfigurationList = 70F962731F80CC06008F5C20 /* Build configuration list for PBXNativeTarget "MusicRemoteController" */;
 			buildPhases = (
-				70188BDD1B779450003C91BE /* Sources */,
-				70188BDE1B779450003C91BE /* Frameworks */,
-				70188BDF1B779450003C91BE /* Resources */,
-				70437FE51EED8EA700455BB1 /* Embed Frameworks */,
+				B713DDBE94A5D782E94C5192 /* [CP] Check Pods Manifest.lock */,
+				70F962351F80CC05008F5C20 /* Sources */,
+				70F962361F80CC05008F5C20 /* Frameworks */,
+				70F962371F80CC05008F5C20 /* Resources */,
+				70F962721F80CC06008F5C20 /* Embed Watch Content */,
+				6B7952532B74829D4A9C0C39 /* [CP] Embed Pods Frameworks */,
+				68FCD539A192FC3438CF5DED /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				70188BEF1B779451003C91BE /* PBXTargetDependency */,
-			);
-			name = "MusicRemoteController WatchKit Extension";
-			productName = "MusicRemoteController WatchKit Extension";
-			productReference = 70188BE11B779450003C91BE /* MusicRemoteController WatchKit Extension.appex */;
-			productType = "com.apple.product-type.watchkit-extension";
-		};
-		70188BEB1B779451003C91BE /* MusicRemoteController WatchKit App */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 70188BFB1B779451003C91BE /* Build configuration list for PBXNativeTarget "MusicRemoteController WatchKit App" */;
-			buildPhases = (
-				70188BEA1B779451003C91BE /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = "MusicRemoteController WatchKit App";
-			productName = "MusicRemoteController WatchKit App";
-			productReference = 70188BEC1B779451003C91BE /* MusicRemoteController WatchKit App.app */;
-			productType = "com.apple.product-type.application.watchapp";
-		};
-		70A71DD418DF549A0085F62D /* MusicRemoteController */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 70A71E0718DF549B0085F62D /* Build configuration list for PBXNativeTarget "MusicRemoteController" */;
-			buildPhases = (
-				70A71DD118DF549A0085F62D /* Sources */,
-				70A71DD218DF549A0085F62D /* Frameworks */,
-				70A71DD318DF549A0085F62D /* Resources */,
-				70188BDC1B779435003C91BE /* Embed App Extensions */,
-				70437FE01EED8E2700455BB1 /* Embed Frameworks */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				70188BF91B779451003C91BE /* PBXTargetDependency */,
+				70F9624E1F80CC05008F5C20 /* PBXTargetDependency */,
 			);
 			name = MusicRemoteController;
 			productName = MusicRemoteController;
-			productReference = 70A71DD518DF549A0085F62D /* MusicRemoteController.app */;
+			productReference = 70F962391F80CC05008F5C20 /* MusicRemoteController.app */;
 			productType = "com.apple.product-type.application";
 		};
-		70A71DF518DF549B0085F62D /* MusicRemoteControllerTests */ = {
+		70F9624A1F80CC05008F5C20 /* MusicRemoteController WatchKit App */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 70A71E0A18DF549B0085F62D /* Build configuration list for PBXNativeTarget "MusicRemoteControllerTests" */;
+			buildConfigurationList = 70F9626F1F80CC06008F5C20 /* Build configuration list for PBXNativeTarget "MusicRemoteController WatchKit App" */;
 			buildPhases = (
-				70A71DF218DF549B0085F62D /* Sources */,
-				70A71DF318DF549B0085F62D /* Frameworks */,
-				70A71DF418DF549B0085F62D /* Resources */,
+				70F962491F80CC05008F5C20 /* Resources */,
+				70F9626E1F80CC06008F5C20 /* Embed App Extensions */,
+				103144128F0A5E742AA36994 /* Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				70A71DFC18DF549B0085F62D /* PBXTargetDependency */,
+				70F9625D1F80CC06008F5C20 /* PBXTargetDependency */,
 			);
-			name = MusicRemoteControllerTests;
-			productName = MusicRemoteControllerTests;
-			productReference = 70A71DF618DF549B0085F62D /* MusicRemoteControllerTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
+			name = "MusicRemoteController WatchKit App";
+			productName = "MusicRemoteController WatchKit App";
+			productReference = 70F9624B1F80CC05008F5C20 /* MusicRemoteController WatchKit App.app */;
+			productType = "com.apple.product-type.application.watchapp2";
+		};
+		70F962591F80CC06008F5C20 /* MusicRemoteController WatchKit Extension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 70F9626B1F80CC06008F5C20 /* Build configuration list for PBXNativeTarget "MusicRemoteController WatchKit Extension" */;
+			buildPhases = (
+				70F962561F80CC06008F5C20 /* Sources */,
+				70F962571F80CC06008F5C20 /* Frameworks */,
+				70F962581F80CC06008F5C20 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "MusicRemoteController WatchKit Extension";
+			productName = "MusicRemoteController WatchKit Extension";
+			productReference = 70F9625A1F80CC06008F5C20 /* MusicRemoteController WatchKit Extension.appex */;
+			productType = "com.apple.product-type.watchkit2-extension";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		70A71DCD18DF549A0085F62D /* Project object */ = {
+		70F962311F80CC05008F5C20 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0830;
+				LastSwiftUpdateCheck = 0900;
+				LastUpgradeCheck = 0900;
 				ORGANIZATIONNAME = "Yusuke Sato";
 				TargetAttributes = {
-					70188BE01B779450003C91BE = {
-						CreatedOnToolsVersion = 6.4;
-						DevelopmentTeam = KT5UFMR857;
-						LastSwiftMigration = 0830;
-					};
-					70188BEB1B779451003C91BE = {
-						CreatedOnToolsVersion = 6.4;
-						DevelopmentTeam = KT5UFMR857;
-					};
-					70A71DD418DF549A0085F62D = {
-						DevelopmentTeam = KT5UFMR857;
-						LastSwiftMigration = 0830;
+					70F962381F80CC05008F5C20 = {
+						CreatedOnToolsVersion = 9.0;
+						ProvisioningStyle = Manual;
 						SystemCapabilities = {
 							com.apple.BackgroundModes = {
 								enabled = 1;
 							};
 						};
 					};
-					70A71DF518DF549B0085F62D = {
-						DevelopmentTeam = KT5UFMR857;
-						TestTargetID = 70A71DD418DF549A0085F62D;
+					70F9624A1F80CC05008F5C20 = {
+						CreatedOnToolsVersion = 9.0;
+						ProvisioningStyle = Manual;
+					};
+					70F962591F80CC06008F5C20 = {
+						CreatedOnToolsVersion = 9.0;
+						ProvisioningStyle = Manual;
+						SystemCapabilities = {
+							com.apple.BackgroundModes.watchos.extension = {
+								enabled = 0;
+							};
+						};
 					};
 				};
 			};
-			buildConfigurationList = 70A71DD018DF549A0085F62D /* Build configuration list for PBXProject "MusicRemoteController" */;
-			compatibilityVersion = "Xcode 3.2";
-			developmentRegion = English;
+			buildConfigurationList = 70F962341F80CC05008F5C20 /* Build configuration list for PBXProject "MusicRemoteController" */;
+			compatibilityVersion = "Xcode 8.0";
+			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				en,
 				Base,
 			);
-			mainGroup = 70A71DCC18DF549A0085F62D;
-			productRefGroup = 70A71DD618DF549A0085F62D /* Products */;
+			mainGroup = 70F962301F80CC05008F5C20;
+			productRefGroup = 70F9623A1F80CC05008F5C20 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				70A71DD418DF549A0085F62D /* MusicRemoteController */,
-				70A71DF518DF549B0085F62D /* MusicRemoteControllerTests */,
-				70188BE01B779450003C91BE /* MusicRemoteController WatchKit Extension */,
-				70188BEB1B779451003C91BE /* MusicRemoteController WatchKit App */,
+				70F962381F80CC05008F5C20 /* MusicRemoteController */,
+				70F9624A1F80CC05008F5C20 /* MusicRemoteController WatchKit App */,
+				70F962591F80CC06008F5C20 /* MusicRemoteController WatchKit Extension */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		70188BDF1B779450003C91BE /* Resources */ = {
+		70F962371F80CC05008F5C20 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				70188BED1B779451003C91BE /* MusicRemoteController WatchKit App.app in Resources */,
-				70188BE91B779450003C91BE /* Images.xcassets in Resources */,
+				7043ED851F81288A00EA9215 /* LaunchScreen.storyboard in Resources */,
+				70955F351F80D10700C32129 /* stop.png in Resources */,
+				70F962441F80CC05008F5C20 /* Assets.xcassets in Resources */,
+				70955F341F80D10700C32129 /* Rev.png in Resources */,
+				70955F321F80D10700C32129 /* nonimage.png in Resources */,
+				70955F361F80D10700C32129 /* VolDown.png in Resources */,
+				70955F331F80D10700C32129 /* Play.png in Resources */,
+				70955F311F80D10700C32129 /* Next.png in Resources */,
+				70955F371F80D10700C32129 /* VolUp.png in Resources */,
+				70F962421F80CC05008F5C20 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		70188BEA1B779451003C91BE /* Resources */ = {
+		70F962491F80CC05008F5C20 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				70188BF51B779451003C91BE /* Interface.storyboard in Resources */,
-				70188BF71B779451003C91BE /* Images.xcassets in Resources */,
+				70F962541F80CC05008F5C20 /* Assets.xcassets in Resources */,
+				70F962521F80CC05008F5C20 /* Interface.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		70A71DD318DF549A0085F62D /* Resources */ = {
+		70F962581F80CC06008F5C20 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				70A71DF118DF549A0085F62D /* Images.xcassets in Resources */,
-				70A71E2318DF58330085F62D /* stop.png in Resources */,
-				708EF25218E96B0D00EE4616 /* iPhone4.storyboard in Resources */,
-				70A71E2218DF58330085F62D /* Rev.png in Resources */,
-				708EF25418E9915F00EE4616 /* iPhone5.storyboard in Resources */,
-				70A71E2018DF58330085F62D /* nonimage.png in Resources */,
-				70A71E2418DF58330085F62D /* VolDown.png in Resources */,
-				70B861A61EE6DA5900C63E3D /* NendAdResource.bundle in Resources */,
-				70A71E2118DF58330085F62D /* Play.png in Resources */,
-				70A71E1F18DF58330085F62D /* Next.png in Resources */,
-				70A71E2518DF58330085F62D /* VolUp.png in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		70A71DF418DF549B0085F62D /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
+				70F962661F80CC06008F5C20 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		68FCD539A192FC3438CF5DED /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-MusicRemoteController/Pods-MusicRemoteController-resources.sh",
+				"${PODS_ROOT}/NendSDK_iOS/NendSDK_iOS-3.3.2/Nend/NendAd/NendAd.embeddedframework/NendAd.framework/Resources/NendAdResource.bundle",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MusicRemoteController/Pods-MusicRemoteController-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6B7952532B74829D4A9C0C39 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MusicRemoteController/Pods-MusicRemoteController-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B713DDBE94A5D782E94C5192 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-MusicRemoteController-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
-		70188BDD1B779450003C91BE /* Sources */ = {
+		70F962351F80CC05008F5C20 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				70F4A6621EEC156600F584FD /* InterfaceController.swift in Sources */,
-				70F4A6641EEC16A800F584FD /* Define.swift in Sources */,
+				70F9623D1F80CC05008F5C20 /* AppDelegate.swift in Sources */,
+				70955F1F1F80CEAD00C32129 /* RemoteModeViewController.swift in Sources */,
+				70955F1E1F80CEAD00C32129 /* NendViewController.swift in Sources */,
+				70955F1D1F80CEAD00C32129 /* MenuViewController.swift in Sources */,
+				70955F201F80CEAD00C32129 /* PlayerModeViewController.swift in Sources */,
+				70955F231F80CEC200C32129 /* AuthUtil.swift in Sources */,
+				70955F241F80CEC200C32129 /* Define.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		70A71DD118DF549A0085F62D /* Sources */ = {
+		70F962561F80CC06008F5C20 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				70B0719A1EDF14BD009631CC /* PlayerModeViewController.swift in Sources */,
-				70B861A81EE6DCED00C63E3D /* MenuViewController.swift in Sources */,
-				70B861A01EE6D61C00C63E3D /* NendViewController.swift in Sources */,
-				7092283F1EDC564A00502D4F /* RemoteModeViewController.swift in Sources */,
-				70B8619E1EE5B24400C63E3D /* AppDelegate.swift in Sources */,
-				700E71851EDC590400BD565E /* Define.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		70A71DF218DF549B0085F62D /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				70A71E0418DF549B0085F62D /* MusicRemoteControllerTests.m in Sources */,
+				70F962641F80CC06008F5C20 /* NotificationController.swift in Sources */,
+				70F962621F80CC06008F5C20 /* ExtensionDelegate.swift in Sources */,
+				70955F391F80DBE200C32129 /* Define.swift in Sources */,
+				70F962601F80CC06008F5C20 /* InterfaceController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		70188BEF1B779451003C91BE /* PBXTargetDependency */ = {
+		70F9624E1F80CC05008F5C20 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 70188BEB1B779451003C91BE /* MusicRemoteController WatchKit App */;
-			targetProxy = 70188BEE1B779451003C91BE /* PBXContainerItemProxy */;
+			target = 70F9624A1F80CC05008F5C20 /* MusicRemoteController WatchKit App */;
+			targetProxy = 70F9624D1F80CC05008F5C20 /* PBXContainerItemProxy */;
 		};
-		70188BF91B779451003C91BE /* PBXTargetDependency */ = {
+		70F9625D1F80CC06008F5C20 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 70188BE01B779450003C91BE /* MusicRemoteController WatchKit Extension */;
-			targetProxy = 70188BF81B779451003C91BE /* PBXContainerItemProxy */;
-		};
-		70A71DFC18DF549B0085F62D /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 70A71DD418DF549A0085F62D /* MusicRemoteController */;
-			targetProxy = 70A71DFB18DF549B0085F62D /* PBXContainerItemProxy */;
+			target = 70F962591F80CC06008F5C20 /* MusicRemoteController WatchKit Extension */;
+			targetProxy = 70F9625C1F80CC06008F5C20 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		70188BF31B779451003C91BE /* Interface.storyboard */ = {
+		70F962401F80CC05008F5C20 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				70188BF41B779451003C91BE /* Base */,
-				7025A9281B7B7DE90059286A /* ja */,
+				70F962411F80CC05008F5C20 /* Base */,
 			);
-			name = Interface.storyboard;
+			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
-		708EF25018E96B0D00EE4616 /* iPhone4.storyboard */ = {
+		70F962451F80CC05008F5C20 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				708EF25118E96B0D00EE4616 /* Base */,
-				7025A9271B7B7DE90059286A /* ja */,
+				70F962461F80CC05008F5C20 /* Base */,
 			);
-			name = iPhone4.storyboard;
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		70F962501F80CC05008F5C20 /* Interface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				70F962511F80CC05008F5C20 /* Base */,
+			);
+			name = Interface.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		70188BFC1B779451003C91BE /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CLANG_WARN_UNREACHABLE_CODE = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEVELOPMENT_TEAM = KT5UFMR857;
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				IBSC_MODULE = MusicRemoteController_WatchKit_Extension;
-				INFOPLIST_FILE = "MusicRemoteController WatchKit App/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
-				MTL_ENABLE_DEBUG_INFO = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = Sato.MusicRemoteController.watchkitapp;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = 4;
-				"TARGETED_DEVICE_FAMILY[sdk=iphonesimulator*]" = "1,4";
-			};
-			name = Debug;
-		};
-		70188BFD1B779451003C91BE /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CLANG_WARN_UNREACHABLE_CODE = YES;
-				CODE_SIGN_IDENTITY = "iPhone Distribution";
-				COPY_PHASE_STRIP = NO;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEVELOPMENT_TEAM = KT5UFMR857;
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				IBSC_MODULE = MusicRemoteController_WatchKit_Extension;
-				INFOPLIST_FILE = "MusicRemoteController WatchKit App/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
-				MTL_ENABLE_DEBUG_INFO = NO;
-				PRODUCT_BUNDLE_IDENTIFIER = Sato.MusicRemoteController.watchkitapp;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = 4;
-				"TARGETED_DEVICE_FAMILY[sdk=iphonesimulator*]" = "1,4";
-			};
-			name = Release;
-		};
-		70188BFF1B779451003C91BE /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CLANG_ENABLE_MODULES = YES;
-				CLANG_WARN_UNREACHABLE_CODE = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEVELOPMENT_TEAM = KT5UFMR857;
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = "MusicRemoteController WatchKit Extension/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
-				MTL_ENABLE_DEBUG_INFO = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = Sato.MusicRemoteController.watchkitextension;
-				PRODUCT_NAME = "${TARGET_NAME}";
-				SKIP_INSTALL = YES;
-				SWIFT_OBJC_BRIDGING_HEADER = "MusicRemoteController WatchKit Extension/MusicRemoteController WatchKit Extension-Bridging-Header.h";
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 3.0;
-			};
-			name = Debug;
-		};
-		70188C001B779451003C91BE /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CLANG_ENABLE_MODULES = YES;
-				CLANG_WARN_UNREACHABLE_CODE = YES;
-				CODE_SIGN_IDENTITY = "iPhone Distribution";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
-				COPY_PHASE_STRIP = NO;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEVELOPMENT_TEAM = KT5UFMR857;
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				INFOPLIST_FILE = "MusicRemoteController WatchKit Extension/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
-				MTL_ENABLE_DEBUG_INFO = NO;
-				PRODUCT_BUNDLE_IDENTIFIER = Sato.MusicRemoteController.watchkitextension;
-				PRODUCT_NAME = "${TARGET_NAME}";
-				SKIP_INSTALL = YES;
-				SWIFT_OBJC_BRIDGING_HEADER = "MusicRemoteController WatchKit Extension/MusicRemoteController WatchKit Extension-Bridging-Header.h";
-				SWIFT_VERSION = 3.0;
-			};
-			name = Release;
-		};
-		70A71E0518DF549B0085F62D /* Debug */ = {
+		70F962691F80CC06008F5C20 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
-				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -727,7 +563,6 @@
 					"DEBUG=1",
 					"$(inherited)",
 				);
-				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				GCC_WARN_UNDECLARED_SELECTOR = YES;
@@ -735,37 +570,49 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
-				SWIFT_VERSION = 3.0;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
-		70A71E0618DF549B0085F62D /* Release */ = {
+		70F9626A1F80CC06008F5C20 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Distribution";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
-				COPY_PHASE_STRIP = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
@@ -774,170 +621,174 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
-				SWIFT_VERSION = 3.0;
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
 		};
-		70A71E0818DF549B0085F62D /* Debug */ = {
+		70F9626C1F80CC06008F5C20 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = KT5UFMR857;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/NendAd.embeddedframework",
-				);
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "MusicRemoteController/MusicRemoteController-Prefix.pch";
-				INFOPLIST_FILE = "MusicRemoteController/MusicRemoteController-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				LIBRARY_SEARCH_PATHS = "$(inherited)";
-				OTHER_LDFLAGS = "-ObjC";
-				PRODUCT_BUNDLE_IDENTIFIER = "Sato.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
-				SWIFT_OBJC_BRIDGING_HEADER = "MusicRemoteController/MusicRemoteController-Bridging-Header.h";
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 3.0;
-				WRAPPER_EXTENSION = app;
+				INFOPLIST_FILE = "MusicRemoteController WatchKit Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = Sato.MusicRemoteController.watchkitapp.watchkitextension;
+				PRODUCT_NAME = "${TARGET_NAME}";
+				PROVISIONING_PROFILE = "7b489388-997a-4264-9d12-3be8b255a803";
+				PROVISIONING_PROFILE_SPECIFIER = iOSDevelopProfile;
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 2.0;
 			};
 			name = Debug;
 		};
-		70A71E0918DF549B0085F62D /* Release */ = {
+		70F9626D1F80CC06008F5C20 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_IDENTITY = "iPhone Distribution";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "iPhone Distribution";
+				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = KT5UFMR857;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/NendAd.embeddedframework",
-				);
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "MusicRemoteController/MusicRemoteController-Prefix.pch";
-				INFOPLIST_FILE = "MusicRemoteController/MusicRemoteController-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				LIBRARY_SEARCH_PATHS = "$(inherited)";
-				ONLY_ACTIVE_ARCH = YES;
-				OTHER_LDFLAGS = "-ObjC";
-				PRODUCT_BUNDLE_IDENTIFIER = "Sato.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
-				SWIFT_OBJC_BRIDGING_HEADER = "MusicRemoteController/MusicRemoteController-Bridging-Header.h";
-				SWIFT_VERSION = 3.0;
-				WRAPPER_EXTENSION = app;
+				INFOPLIST_FILE = "MusicRemoteController WatchKit Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = Sato.MusicRemoteController.watchkitapp.watchkitextension;
+				PRODUCT_NAME = "${TARGET_NAME}";
+				PROVISIONING_PROFILE = "85cf0662-bc42-44ee-9c2a-465a8c629d1d";
+				PROVISIONING_PROFILE_SPECIFIER = "MRC WatchKit Extension2";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 2.0;
 			};
 			name = Release;
 		};
-		70A71E0B18DF549B0085F62D /* Debug */ = {
+		70F962701F80CC06008F5C20 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/MusicRemoteController.app/MusicRemoteController";
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = KT5UFMR857;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-					"$(DEVELOPER_FRAMEWORKS_DIR)",
-				);
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "MusicRemoteController/MusicRemoteController-Prefix.pch";
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = "MusicRemoteControllerTests/MusicRemoteControllerTests-Info.plist";
-				PRODUCT_BUNDLE_IDENTIFIER = "yusuke.${PRODUCT_NAME:rfc1034identifier}";
+				IBSC_MODULE = MusicRemoteController_WatchKit_Extension;
+				INFOPLIST_FILE = "MusicRemoteController WatchKit App/Info.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = Sato.MusicRemoteController.watchkitapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUNDLE_LOADER)";
-				WRAPPER_EXTENSION = xctest;
+				PROVISIONING_PROFILE = "7b489388-997a-4264-9d12-3be8b255a803";
+				PROVISIONING_PROFILE_SPECIFIER = iOSDevelopProfile;
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 2.0;
 			};
 			name = Debug;
 		};
-		70A71E0C18DF549B0085F62D /* Release */ = {
+		70F962711F80CC06008F5C20 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/MusicRemoteController.app/MusicRemoteController";
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "iPhone Distribution";
+				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = KT5UFMR857;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-					"$(DEVELOPER_FRAMEWORKS_DIR)",
-				);
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "MusicRemoteController/MusicRemoteController-Prefix.pch";
-				INFOPLIST_FILE = "MusicRemoteControllerTests/MusicRemoteControllerTests-Info.plist";
-				PRODUCT_BUNDLE_IDENTIFIER = "yusuke.${PRODUCT_NAME:rfc1034identifier}";
+				IBSC_MODULE = MusicRemoteController_WatchKit_Extension;
+				INFOPLIST_FILE = "MusicRemoteController WatchKit App/Info.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = Sato.MusicRemoteController.watchkitapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUNDLE_LOADER)";
-				WRAPPER_EXTENSION = xctest;
+				PROVISIONING_PROFILE = "707d7626-76bd-4766-9a9e-cef7aac5656c";
+				PROVISIONING_PROFILE_SPECIFIER = "MRC WatchKitAPP";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 2.0;
+			};
+			name = Release;
+		};
+		70F962741F80CC06008F5C20 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 75E5FC3E7AAD55C687C6D3A6 /* Pods-MusicRemoteController.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = KT5UFMR857;
+				INFOPLIST_FILE = MusicRemoteController/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = Sato.MusicRemoteController;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "7b489388-997a-4264-9d12-3be8b255a803";
+				PROVISIONING_PROFILE_SPECIFIER = iOSDevelopProfile;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		70F962751F80CC06008F5C20 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 540363335D08AEAC9FBDDFCC /* Pods-MusicRemoteController.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = KT5UFMR857;
+				INFOPLIST_FILE = MusicRemoteController/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = Sato.MusicRemoteController;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "114645f1-dcf9-46bd-806e-1171a65657ef";
+				PROVISIONING_PROFILE_SPECIFIER = "MRC Provisioning";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		70188BFB1B779451003C91BE /* Build configuration list for PBXNativeTarget "MusicRemoteController WatchKit App" */ = {
+		70F962341F80CC05008F5C20 /* Build configuration list for PBXProject "MusicRemoteController" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				70188BFC1B779451003C91BE /* Debug */,
-				70188BFD1B779451003C91BE /* Release */,
+				70F962691F80CC06008F5C20 /* Debug */,
+				70F9626A1F80CC06008F5C20 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		70188BFE1B779451003C91BE /* Build configuration list for PBXNativeTarget "MusicRemoteController WatchKit Extension" */ = {
+		70F9626B1F80CC06008F5C20 /* Build configuration list for PBXNativeTarget "MusicRemoteController WatchKit Extension" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				70188BFF1B779451003C91BE /* Debug */,
-				70188C001B779451003C91BE /* Release */,
+				70F9626C1F80CC06008F5C20 /* Debug */,
+				70F9626D1F80CC06008F5C20 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		70A71DD018DF549A0085F62D /* Build configuration list for PBXProject "MusicRemoteController" */ = {
+		70F9626F1F80CC06008F5C20 /* Build configuration list for PBXNativeTarget "MusicRemoteController WatchKit App" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				70A71E0518DF549B0085F62D /* Debug */,
-				70A71E0618DF549B0085F62D /* Release */,
+				70F962701F80CC06008F5C20 /* Debug */,
+				70F962711F80CC06008F5C20 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		70A71E0718DF549B0085F62D /* Build configuration list for PBXNativeTarget "MusicRemoteController" */ = {
+		70F962731F80CC06008F5C20 /* Build configuration list for PBXNativeTarget "MusicRemoteController" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				70A71E0818DF549B0085F62D /* Debug */,
-				70A71E0918DF549B0085F62D /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		70A71E0A18DF549B0085F62D /* Build configuration list for PBXNativeTarget "MusicRemoteControllerTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				70A71E0B18DF549B0085F62D /* Debug */,
-				70A71E0C18DF549B0085F62D /* Release */,
+				70F962741F80CC06008F5C20 /* Debug */,
+				70F962751F80CC06008F5C20 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = 70A71DCD18DF549A0085F62D /* Project object */;
+	rootObject = 70F962311F80CC05008F5C20 /* Project object */;
 }

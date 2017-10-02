@@ -4,12 +4,7 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
-		<key>CentralFramework.xcscheme</key>
-		<dict>
-			<key>orderHint</key>
-			<integer>4</integer>
-		</dict>
-		<key>Glance - MusicRemoteController WatchKit App.xcscheme</key>
+		<key>MusicRemoteController WatchKit App (Notification).xcscheme</key>
 		<dict>
 			<key>orderHint</key>
 			<integer>3</integer>
@@ -17,42 +12,22 @@
 		<key>MusicRemoteController WatchKit App.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>1</integer>
+			<integer>2</integer>
 		</dict>
 		<key>MusicRemoteController.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>0</integer>
-		</dict>
-		<key>Notification - MusicRemoteController WatchKit App.xcscheme</key>
-		<dict>
-			<key>orderHint</key>
-			<integer>2</integer>
+			<integer>1</integer>
 		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>70188BC61B779435003C91BE</key>
+		<key>70F962381F80CC05008F5C20</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>70188BEB1B779451003C91BE</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>70437FD31EED8E2700455BB1</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>70A71DD418DF549A0085F62D</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>70A71DF518DF549B0085F62D</key>
+		<key>70F9624A1F80CC05008F5C20</key>
 		<dict>
 			<key>primary</key>
 			<true/>

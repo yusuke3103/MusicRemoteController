@@ -1,68 +1,79 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="AgC-eL-Hgc">
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="13196" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="AgC-eL-Hgc">
     <device id="watch38" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="watchOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="12029"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="13051"/>
     </dependencies>
     <scenes>
         <!--Interface Controller-->
         <scene sceneID="aou-V4-d1y">
             <objects>
-                <controller id="AgC-eL-Hgc" customClass="InterfaceController" customModule="MusicRemoteController_WatchKit_Extension">
+                <controller id="AgC-eL-Hgc" customClass="InterfaceController" customModule="MusicRemoteController_WatchKit_App" customModuleProvider="target">
                     <items>
-                        <label alignment="left" text="　" id="SFV-YI-aPq"/>
-                        <label alignment="left" text="　" id="FDZ-q1-Wcd"/>
-                        <button width="1" height="38" alignment="left" title="再生" id="XiB-Bx-85x">
+                        <group width="1" alignment="left" id="PHM-B6-rP2">
+                            <items>
+                                <label alignment="left" text="接続：" id="Qg3-bQ-A1Q">
+                                    <fontDescription key="font" type="system" pointSize="9"/>
+                                </label>
+                                <label alignment="left" text="NG" id="xes-4w-kcZ">
+                                    <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    <fontDescription key="font" type="system" pointSize="9"/>
+                                </label>
+                            </items>
+                        </group>
+                        <label width="1" alignment="left" text=" " id="CSv-R6-pXp"/>
+                        <label width="1" alignment="left" text=" " id="3W5-27-h2b"/>
+                        <button width="1" alignment="left" title="再生" id="QZi-s6-CrO">
                             <connections>
-                                <action selector="didTouchBtnPlay:" destination="AgC-eL-Hgc" id="R4q-YY-Akc"/>
+                                <action selector="TouchPlay" destination="AgC-eL-Hgc" id="V6m-Y9-Ur2"/>
                             </connections>
                         </button>
-                        <group width="1" alignment="left" id="50N-CJ-gY6">
+                        <group width="1" alignment="left" id="JaQ-Sp-MxW">
                             <items>
-                                <button width="0.50000000000000011" alignment="left" title="前へ" id="NVj-qR-wK8">
+                                <button width="0.5" alignment="left" title="前へ" id="AnI-br-NO0">
                                     <connections>
-                                        <action selector="didTouchBtnPrev:" destination="AgC-eL-Hgc" id="GeO-F8-UeD"/>
+                                        <action selector="TouchPrev" destination="AgC-eL-Hgc" id="eg1-Ep-ZFW"/>
                                     </connections>
                                 </button>
-                                <button width="0.50000000000000011" alignment="right" title="次へ" id="mFM-EZ-Esf">
+                                <button width="0.5" alignment="left" title="次へ" id="unW-7d-Fed">
                                     <connections>
-                                        <action selector="didTouchBtnNext:" destination="AgC-eL-Hgc" id="ucy-aN-4ho"/>
+                                        <action selector="TouchNext" destination="AgC-eL-Hgc" id="upz-NN-Cq5"/>
                                     </connections>
                                 </button>
                             </items>
                         </group>
-                        <group width="1" alignment="left" id="ghn-h9-64t">
+                        <group width="1" alignment="left" id="Pwb-Pq-xed">
                             <items>
-                                <button alignment="left" title="ー" id="DxE-Lg-lHe">
+                                <button width="0.5" alignment="left" title="ー" id="3pj-4m-7gN">
                                     <connections>
-                                        <action selector="didTouchBtnVolDown:" destination="AgC-eL-Hgc" id="HNw-4e-fGp"/>
+                                        <action selector="TouchVolDown" destination="AgC-eL-Hgc" id="E9C-Ey-j2F"/>
                                     </connections>
                                 </button>
-                                <button alignment="right" title="＋" id="GMU-cC-raT">
+                                <button width="0.5" alignment="left" title="＋" id="na3-vN-Qgv">
                                     <connections>
-                                        <action selector="didTouchBtnVolUp:" destination="AgC-eL-Hgc" id="Rvx-62-52J"/>
+                                        <action selector="TouchVolUp" destination="AgC-eL-Hgc" id="Hlg-nZ-JSa"/>
                                     </connections>
                                 </button>
-                                <label alignment="center" verticalAlignment="center" text="音量" id="grS-8L-BVd"/>
                             </items>
                         </group>
                     </items>
                     <connections>
-                        <outlet property="btnNext" destination="mFM-EZ-Esf" id="Uq2-uR-GfS"/>
-                        <outlet property="btnPlay" destination="XiB-Bx-85x" id="VBg-24-rJO"/>
-                        <outlet property="btnPrev" destination="NVj-qR-wK8" id="9lQ-Hq-Nlg"/>
-                        <outlet property="btnVolDown" destination="DxE-Lg-lHe" id="FXW-5g-ZBl"/>
-                        <outlet property="btnVolUp" destination="GMU-cC-raT" id="dSH-uc-coQ"/>
-                        <outlet property="lblArtist" destination="FDZ-q1-Wcd" id="DFZ-3k-b81"/>
-                        <outlet property="lblTitle" destination="SFV-YI-aPq" id="h8i-hc-d2p"/>
+                        <outlet property="btnNext" destination="unW-7d-Fed" id="cEY-d0-xh0"/>
+                        <outlet property="btnPlay" destination="QZi-s6-CrO" id="0DI-Td-0yu"/>
+                        <outlet property="btnPrev" destination="AnI-br-NO0" id="BB7-S2-O1B"/>
+                        <outlet property="btnVolDown" destination="3pj-4m-7gN" id="GK1-kD-2PS"/>
+                        <outlet property="btnVolUp" destination="na3-vN-Qgv" id="REd-1U-U7y"/>
+                        <outlet property="lblArtist" destination="3W5-27-h2b" id="68e-Tp-sVM"/>
+                        <outlet property="lblState" destination="xes-4w-kcZ" id="H4S-fL-vh2"/>
+                        <outlet property="lblTitle" destination="CSv-R6-pXp" id="bb3-hL-SRz"/>
                     </connections>
                 </controller>
             </objects>
-            <point key="canvasLocation" x="585" y="272"/>
+            <point key="canvasLocation" x="220" y="345"/>
         </scene>
     </scenes>
 </document>

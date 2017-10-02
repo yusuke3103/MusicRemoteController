@@ -2,7 +2,7 @@
 //  Define.swift
 //  MusicRemoteController
 //
-//  Created by Yusuke Sato on 2017/05/29.
+//  Created by Yusuke Sato on 2017/09/30.
 //  Copyright © 2017年 Yusuke Sato. All rights reserved.
 //
 
