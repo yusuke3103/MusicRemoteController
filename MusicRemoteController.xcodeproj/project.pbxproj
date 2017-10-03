@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		29434E438F1A373C65F1673C /* Pods_MusicRemoteController.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B7AD07BD7ED6F53D35861B93 /* Pods_MusicRemoteController.framework */; };
 		7043ED851F81288A00EA9215 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 70F962451F80CC05008F5C20 /* LaunchScreen.storyboard */; };
+		7068C2F91F83B9F9008CEB38 /* Sprash.png in Resources */ = {isa = PBXBuildFile; fileRef = 70955F3A1F81024E00C32129 /* Sprash.png */; };
 		70955F1D1F80CEAD00C32129 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70955F191F80CEAD00C32129 /* MenuViewController.swift */; };
 		70955F1E1F80CEAD00C32129 /* NendViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70955F1A1F80CEAD00C32129 /* NendViewController.swift */; };
 		70955F1F1F80CEAD00C32129 /* RemoteModeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70955F1B1F80CEAD00C32129 /* RemoteModeViewController.swift */; };
@@ -366,6 +367,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7068C2F91F83B9F9008CEB38 /* Sprash.png in Resources */,
 				7043ED851F81288A00EA9215 /* LaunchScreen.storyboard in Resources */,
 				70955F351F80D10700C32129 /* stop.png in Resources */,
 				70F962441F80CC05008F5C20 /* Assets.xcassets in Resources */,

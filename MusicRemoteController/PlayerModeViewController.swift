@@ -51,37 +51,39 @@ class PlayerModeViewController : NendViewController ,CBPeripheralManagerDelegate
         super.viewDidAppear(animated)
         
         if AuthUtil.isMpMediaLibrary(view: self) && AuthUtil.isCoreBluetoothAuth(view: self) {
-
-        }
-        
-        if (MPMediaQuery.songs().items?.count)! > 0 {
-            // プレーヤーの初期化
-            _player = MPMusicPlayerController.systemMusicPlayer
-            // 通知センターの初期化
-            _notificationCenter = NotificationCenter.default
-
-            // 再生状態変更通知
-            _notificationCenter.addObserver(self, selector: #selector(self.playbackStateChange), name: .MPMusicPlayerControllerPlaybackStateDidChange, object: _player)
             
-            // 再生状態変更通知
-            _notificationCenter.addObserver(self, selector: #selector(self.playingItemChange), name: NSNotification.Name.MPMusicPlayerControllerNowPlayingItemDidChange, object: _player)
-
-            // 通知開始
-            _player.beginGeneratingPlaybackNotifications()
-            
-            // 再生中でない場合適当な全曲からランダム
-            if _player.playbackState == .stopped {
-                self._player.setQueue(with: .songs())
+            if (MPMediaQuery.songs().items?.count)! > 0 {
+                // プレーヤーの初期化
+                _player = MPMusicPlayerController.systemMusicPlayer
+                // 通知センターの初期化
+                _notificationCenter = NotificationCenter.default
+                
+                // 再生状態変更通知
+                _notificationCenter.addObserver(self, selector: #selector(self.playbackStateChange), name: .MPMusicPlayerControllerPlaybackStateDidChange, object: _player)
+                
+                // 再生状態変更通知
+                _notificationCenter.addObserver(self, selector: #selector(self.playingItemChange), name: NSNotification.Name.MPMusicPlayerControllerNowPlayingItemDidChange, object: _player)
+                
+                // 通知開始
+                _player.beginGeneratingPlaybackNotifications()
+                
+                // 再生中でない場合適当な全曲からランダム
+                if _player.playbackState == .stopped {
+                    self._player.setQueue(with: .songs())
+                }
+                
+                playingItemChange()
+                
+                playbackStateChange()
+                
+                _peripheralManager = CBPeripheralManager(delegate: self, queue: nil, options: options)
+                
+            }else{
+                let alert : UIAlertView = UIAlertView(title: "再生可能な曲がありません。", message: "メニューへ戻ります。", delegate: self, cancelButtonTitle: "OK")
+                alert.show()
             }
-            
-            playingItemChange()
-            
-            playbackStateChange()
-            
-            _peripheralManager = CBPeripheralManager(delegate: self, queue: nil, options: options)
-            
         }else{
-            let alert : UIAlertView = UIAlertView(title: "再生可能な曲がありません。", message: "メニューへ戻ります。", delegate: self, cancelButtonTitle: "OK")
+            let alert : UIAlertView = UIAlertView(title: "アプリの動作に必要な許可がありません。", message: "メニューへ戻ります。", delegate: self, cancelButtonTitle: "OK")
             alert.show()
         }
     }
