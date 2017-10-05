@@ -51,11 +51,10 @@ class AuthUtil {
     static func isCoreBluetoothAuth(view : UIViewController) -> Bool {
         
         var isCoreBluetoothAuth : Bool = false;
-        
         switch CBPeripheralManager.authorizationStatus() {
         case .notDetermined: // 未設定の場合
             print("Determined")
-            
+            isCoreBluetoothAuth = true
             break
         case .restricted:    // 機能制限されている場合
             print("Restricted")

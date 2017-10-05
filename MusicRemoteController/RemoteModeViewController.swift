@@ -204,7 +204,7 @@ class RemoteModeViewController : NendViewController, CBCentralManagerDelegate , 
     
     func alertView(_ alertView: UIAlertView, clickedButtonAt buttonIndex: Int) {
         if buttonIndex == 0 {
-            self.navigationController?.popViewController(animated: true)
+            //self.navigationController?.popViewController(animated: true)
         }
     }
     

@@ -279,8 +279,18 @@ class PlayerModeViewController : NendViewController ,CBPeripheralManagerDelegate
         if (_player.nowPlayingItem != nil){
             let item : MPMediaItem = _player.nowPlayingItem!
             
-            title = item.title!
-            artist = item.artist!
+            if item.title != nil {
+                title = item.title!
+            }else{
+                title = ""
+            }
+            
+            if item.artist != nil{
+                artist = item.artist!
+            }else{
+                artist = ""
+            }
+            
             max = Float(item.playbackDuration)
             durationTime = convertDoubleToTimeString(time: (_player.nowPlayingItem?.playbackDuration)!)
             

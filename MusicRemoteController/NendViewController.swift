@@ -15,8 +15,6 @@ class NendViewController : UIViewController, NADViewDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let rect : CGRect = UIScreen.main.bounds
-        
         nadView = NADView(isAdjustAdSize: true)
         nadView.delegate = self
         
