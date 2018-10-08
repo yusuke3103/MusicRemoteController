@@ -1,11 +1,11 @@
 PODS:
-  - NendSDK_iOS (3.3.2)
+  - NendSDK_iOS (5.0.2)
 
 DEPENDENCIES:
   - NendSDK_iOS
 
 SPEC CHECKSUMS:
-  NendSDK_iOS: ab81f23480c81fbad63ee2d8caf92d0cc425ff29
+  NendSDK_iOS: 412b3d68be41227468d808e94f5e9aee8f6cb62c
 
 PODFILE CHECKSUM: dfe3aca0044fa7ae4d1b1b4c37be2d818f0e707e
 
